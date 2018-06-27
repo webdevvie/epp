@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<epp xmlns="urn:ietf:params:xml:ns:epp-1.0"
+     xmlns:domain="urn:ietf:params:xml:ns:domain-1.0"
+     xmlns:contact="urn:ietf:params:xml:ns:contact-1.0"
+     xmlns:host="urn:ietf:params:xml:ns:host-1.0">
+    <response>
+        <result code="1000">
+            <msg>Command completed successfully</msg>
+        </result>
+        <trID>
+            <clTRID>we_7d07868da425e2b8159b077be9d4e253a3e7cfdd</clTRID>
+            <svTRID>RESP_2b25a48f3ede5c438f15c33a12969f6e8f0eca44c7f3</svTRID>
+        </trID>
+    </response>
+</epp>

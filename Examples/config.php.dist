@@ -1,0 +1,7 @@
+<?php
+
+$username = 'fillme';
+$password = 'fillme';
+//add ssl:// to the address to connect to an ssl connection
+$address = 'fillme';
+$port = 7000;

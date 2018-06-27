@@ -1,0 +1,5 @@
++.gitattributes export-ignore
++.gitignore export-ignore
++README.md export-ignore
++Examples export-ignore
++Tests export-ignore

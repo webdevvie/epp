@@ -1,0 +1,33 @@
+{
+    "name": "webdevvie/epp",
+    "description": "An extendable PHP epp client",
+    "type": "library",
+    "license": "Apache-2.0",
+    "authors": [
+        {
+            "name": "John Bakker",
+            "email": "me@johnbakker.name"
+        }
+    ],
+    "require": {
+        "php": ">=5.6.0",
+        "guzzlehttp/guzzle": "~6",
+        "jms/serializer": "^1.10",
+        "webdevvie/nestis": "^1.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^5.3",
+        "squizlabs/php_codesniffer":"~2.0",
+        "mockery/mockery": "^0.9.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "Webdevvie\\Epp\\": ""
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    }
+}

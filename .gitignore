@@ -1,0 +1,5 @@
+vendor
+.idea
+Examples/config.php
+build
+bin

@@ -1,0 +1,17 @@
+{
+    "test.com": {
+        "name": "test.com",
+        "available": false,
+        "reason": "Domain is in use."
+    },
+    "test1234.frl": {
+        "name": "test1234.frl",
+        "available": true,
+        "reason": ""
+    },
+    "test12345.frl": {
+        "name": "test12345.frl",
+        "available": true,
+        "reason": ""
+    }
+}
