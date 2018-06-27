@@ -14,7 +14,6 @@ before_script:
 
 # Commands you want to run that will verify your build.
 script: vendor/bin/phpunit Tests
-script: vendor/bin/phpcs --standard=phpcs.xml .
 
 # allow_failures: Allow this build to fail under the specified environments.
 # fast_finish: If your build fails do not continue trying to build, just stop.
