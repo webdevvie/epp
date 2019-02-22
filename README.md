@@ -1,7 +1,5 @@
 webdevvie/epp
 =============
-[![Build Status](https://travis-ci.org/webdevvie/epp.svg?branch=master)](https://travis-ci.org/webdevvie/epp)
-
 
 An extendable PHP EPP library. 
 
