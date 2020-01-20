@@ -61,6 +61,49 @@ class RawEppConnection
     private $port;
 
     /**
+     * Enable the readsleep functionality
+     * @var boolean
+     */
+    private $enableReadSleep = true;
+
+    /**
+     * The initial wait time in microseconds between read attempts
+     * @var integer
+     */
+    private $readSleepTimeInitialValue = 100;
+
+    /**
+     * The maximum time between read attempts in microseconds
+     * @var integer
+     */
+    private $readSleepTimeLimit = 100000;
+
+    /**
+     * When using the readsleep incrementor, increment the sleep time with incrementor value 1 until the
+     * the sleep time exceeds this value is exceeded then switch to the second incrementor value
+     * @var integer
+     */
+    private $readSleepTimeIncrementorLimit = 10000;
+
+    /**
+     * Enable the read sleep incrementor
+     * @var boolean
+     */
+    private $readSleepTimeIncrementEnabled = true;
+
+    /**
+     * The initial incrementor value
+     * @var integer
+     */
+    private $readSleepTimeIncrementor1 = 1000;
+
+    /**
+     * The second incrementor value
+     * @var integer
+     */
+    private $readSleepTimeIncrementor2 = 100;
+
+    /**
      * RawTcpConnection constructor.
      * @param string  $serverAddress
      * @param integer $port
@@ -168,6 +211,36 @@ class RawEppConnection
     }
 
     /**
+     * Allows the ability turn off or tweak the response read timings.
+     * Disabling the readSleep will result in high CPU usage when waiting for a response from the epp server
+     *
+     * @param boolean $enableReadSleep
+     * @param boolean $incrementorEnabled
+     * @param integer $initialReadSleepTime
+     * @param integer $limit
+     * @param integer $readSleepTimeIncrementorLimit
+     * @param integer $incrementor1
+     * @param integer $incrementor2
+     */
+    public function setReadTimings(
+        $enableReadSleep = true,
+        $incrementorEnabled = true,
+        $initialReadSleepTime = 100,
+        $limit = 100000,
+        $readSleepTimeIncrementorLimit = 10000,
+        $incrementor1 = 1000,
+        $incrementor2 = 100
+    ) {
+        $this->enableReadSleep = $enableReadSleep;
+        $this->readSleepTimeInitialValue = $initialReadSleepTime;
+        $this->readSleepTimeLimit = $limit;
+        $this->readSleepTimeIncrementorLimit = $readSleepTimeIncrementorLimit;
+        $this->readSleepTimeIncrementEnabled = $incrementorEnabled;
+        $this->readSleepTimeIncrementor1 = $incrementor1;
+        $this->readSleepTimeIncrementor2 = $incrementor2;
+    }
+
+    /**
      * This will read 1 response from the connection if there is one
      * @param boolean $nonBlocking prevents blocking of the thread. if no content is there it returns false
      * @param integer $timeout
@@ -192,17 +265,38 @@ class RawEppConnection
                 $readLength = 4;
                 //$readbuffer = "";
                 $read = "";
+                $useSleep = $this->enableReadSleep;
+                $readSleepTime = $this->readSleepTimeInitialValue;
+                $readSleepTimeLimit = $this->readSleepTimeLimit;
+                $readSleepTimeIncrementorLimit = $this->readSleepTimeIncrementorLimit;
+                $readSleepTimeIncrementEnabled = $this->readSleepTimeIncrementEnabled;
+                $readSleepTimeIncrementor1 = $this->readSleepTimeIncrementor1;
+                $readSleepTimeIncrementor2 = $this->readSleepTimeIncrementor2;
+//                $loops=0;
                 while ($readLength > 0) {
+//                    $loops++;
                     if ($readbuffer = fread($this->connection, $readLength)) {
                         $readLength = $readLength - strlen($readbuffer);
                         $read .= $readbuffer;
                         $time = time() + $timeout;
+                    } elseif($useSleep) {
+                        usleep($readSleepTime);
+                        if ($readSleepTimeIncrementEnabled) {
+                            if ($readSleepTime < $readSleepTimeLimit) {
+                                if ($readSleepTime > $readSleepTimeIncrementorLimit) {
+                                    $readSleepTime += $readSleepTimeIncrementor2;
+                                } else {
+                                    $readSleepTime += $readSleepTimeIncrementor1;
+                                }
+                            }
+                        }
                     }
                     //Check if timeout occured
                     if (time() >= $time) {
                         return false;
                     }
                 }
+//                echo "LOOPS: $loops\n";
                 $length = $this->readInteger($read) - 4;
             }
             if ($length > 1000000) {
@@ -237,8 +331,8 @@ class RawEppConnection
 
     /**
      * @param integer|null $timeout
-     * @throws ConnectionException
      * @return void
+     * @throws ConnectionException
      */
     public function connectToServer($timeout = null)
     {
