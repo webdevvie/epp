@@ -3,3 +3,4 @@ vendor
 sample-code/config.php
 build
 bin
+composer.lock

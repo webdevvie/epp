@@ -1,8 +1,10 @@
 {
     "name": "webdevvie/epp",
     "description": "An extendable PHP epp client",
+    "version": "0.1",
     "type": "library",
     "license": "Apache-2.0",
+    "keywords": [ "EPP","language","serialization" ],
     "authors": [
         {
             "name": "John Bakker",
@@ -10,8 +12,7 @@
         }
     ],
     "require": {
-        "php": ">=7.2",
-        "guzzlehttp/guzzle": "~6",
+        "php": ">=7.1",
         "jms/serializer": "^1.10",
         "webdevvie/nestis": "^1.0"
     },
@@ -29,5 +30,9 @@
         "psr-4": {
             "Tests\\": "tests/"
         }
+    },
+    "config": {
+        "sort-packages": true,
+        "bin-dir": "bin"
     }
 }
