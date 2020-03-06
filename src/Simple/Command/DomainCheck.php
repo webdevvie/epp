@@ -4,9 +4,10 @@ namespace Webdevvie\Epp\Simple\Command;
 
 use JMS\Serializer\Annotation\ExclusionPolicy;
 use JMS\Serializer\Annotation\XmlRoot;
-use Webdevvie\Epp\Messages\Command;
+use Webdevvie\Epp\Messages\CommandMessage;
 use Webdevvie\Epp\Simple\SimpleEppCommand;
-
+use Webdevvie\Epp\Messages\Command\Check\DomainCheckMessage;
+use Webdevvie\Epp\Messages\Command\CheckMessage;
 /**
  * Class DomainCheck
  * @package Webdevvie\Epp\Simple\Command
@@ -26,11 +27,11 @@ class DomainCheck extends SimpleEppCommand
      */
     public function __construct(array $names)
     {
-        $command = new Command();
-        $check = new Command\Check();
+        $command = new CommandMessage();
+        $check = new CheckMessage();
         $command->setCheck($check);
-        $domainCheck = new Command\Domain\Check();
-        $domainCheck->setName($names);
+        $domainCheck = new DomainCheckMessage();
+        $domainCheck->setNames($names);
         $check->setDomainCheck($domainCheck);
         $this->setCommand($command);
     }

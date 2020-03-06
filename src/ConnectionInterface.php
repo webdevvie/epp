@@ -47,19 +47,20 @@ interface ConnectionInterface
     public function logout();
 
     /**
-     * @param EppMessage $eppMessage
-     * @param integer    $timeout
+     * @param EppMessageInterface $eppMessage
+     * @param integer             $timeout
      * @return null|EppMessage
      * @throws ConnectionException
      */
-    public function sendCommand(EppMessage $eppMessage, $timeout = 60);
+    public function sendCommand(EppMessageInterface $eppMessage, $timeout = 60);
 
     /**
-     * @param string $xml
+     * @param string      $xml
+     * @param string|null $responseClass
      * @return EppMessageInterface
      * @throws DeserializationException
      */
-    public function deserializeMessage($xml);
+    public function deserializeMessage($xml, $responseClass = null);
 
     /**
      * @param EppMessageInterface $eppMessage

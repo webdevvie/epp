@@ -14,8 +14,8 @@
     version="2013-10-23">
 
 	<!-- Import common element types. -->
-	<import namespace="urn:ietf:params:xml:ns:eppcom-1.0" schemaLocation="eppcom-1.0.xsd"/>
-	<import namespace="urn:ietf:params:xml:ns:contact-1.0" schemaLocation="contact-1.0.xsd"/>
+	<import namespace="urn:ietf:params:xml:ns:eppcom-1.0" schemaLocation="../base/eppcom-1.0.xsd"/>
+	<import namespace="urn:ietf:params:xml:ns:contact-1.0" schemaLocation="../base/contact-1.0.xsd"/>
 
 	<annotation>
 		<documentation>

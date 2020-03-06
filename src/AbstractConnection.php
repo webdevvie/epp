@@ -90,13 +90,14 @@ abstract class AbstractConnection implements ConnectionInterface
     }
 
     /**
-     * @param string $xml
+     * @param string      $xml
+     * @param string|null $responseClass
      * @return EppMessageInterface
      * @throws DeserializationException
      */
-    public function deserializeMessage($xml)
+    public function deserializeMessage($xml, $responseClass = null)
     {
-        return $this->serializer->deserialize($xml);
+        return $this->serializer->deserialize($xml, $responseClass);
     }
 
     /**

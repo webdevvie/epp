@@ -26,6 +26,7 @@ use Webdevvie\Epp\EppMessageInterface;
  * @XmlNamespace(uri="http://www.metaregistrar.com/epp/command-ext-1.0", prefix="command-ext")
  * @XmlNamespace(uri="http://www.metaregistrar.com/epp/command-ext-domain-1.0", prefix="command-ext-domain")
  * @XmlNamespace(uri="http://www.metaregistrar.com/epp/command-ext-contact-1.0", prefix="command-ext-contact")
+ * @XmlNamespace(uri="http://rxsd.domain-registry.nl/sidn-ext-epp-1.0", prefix="csidn-ext-epp")
  * @ExclusionPolicy("all")
  * @XmlRoot("epp")
  */

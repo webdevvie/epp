@@ -13,11 +13,11 @@
   </annotation>
   
   <import namespace="urn:ietf:params:xml:ns:eppcom-1.0"
-          schemaLocation="eppcom-1.0.xsd"/>
+          schemaLocation="../base/eppcom-1.0.xsd"/>
   <import namespace="urn:ietf:params:xml:ns:epp-1.0"
-          schemaLocation="epp-1.0.xsd"/>
+          schemaLocation="../base/epp-1.0.xsd"/>
   <import namespace="urn:ietf:params:xml:ns:domain-1.0"
-          schemaLocation="domain-1.0.xsd"/>
+          schemaLocation="../base/domain-1.0.xsd"/>
 
   <!-- Extensions on existing commands -->
   <element name="ext" type="sidn:extType"/>

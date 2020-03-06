@@ -20,25 +20,27 @@ if ($connection->connect()) {
         //wait up to 60 seconds for the domaincheck to be performed
         $response = $connection->sendCommand($eppMessage, 60);
         $nestis = new \Webdevvie\Nestis\Nestis();
-        $checkResponses = $nestis->getNestedItem('response/resData/domainChkData/cd',$response,[]);
-        foreach($checkResponses as $checkResponse)
-        {
-            /**
-             * @var \Webdevvie\Epp\Messages\Response\ResData\Domain\Cd $checkResponse
-             */
-            echo "\n".$checkResponse->getName()->getName().($checkResponse->getName()->isAvail()?' Available':' Unavailable');
-            if(!$checkResponse->getName()->isAvail())
-            {
-                $reason = $checkResponse->getReason();
-                if(!is_null($reason))
-                {
-                    echo "\n\t Reason:".$reason->getReason();
+        $code = $nestis->getNestedItem('response/result/code', $response, 1000);
+        $msg = $nestis->getNestedItem('response/result/msg', $response, '');
+        if ($response->getResponse()->getResult()->getCode() != '1000') {
+            echo "\n$msg\n";
+        } else {
+
+
+            $checkResponses = $nestis->getNestedItem('response/resData/chkData/domainCd', $response, []);
+            foreach ($checkResponses as $checkResponse) {
+                /**
+                 * @var \Webdevvie\Epp\Messages\ResData\ChkData\DomainCD $checkResponse
+                 */
+                echo "\n" . $checkResponse->getDomainName()->getName() . ($checkResponse->getDomainName()->isAvailable() ? ' Available' : ' Unavailable');
+                if (!$checkResponse->getDomainName()->isAvailable()) {
+                    $reason = $checkResponse->getReason();
+                    if (!is_null($reason)) {
+                        echo "\n\t Reason:" . $reason->getReason();
+                    }
                 }
             }
-
         }
-
-
         echo "\nLogging out";
         $connection->logout();
     } else {

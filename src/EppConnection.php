@@ -199,7 +199,7 @@ class EppConnection extends AbstractConnection
             $this->debug("Welcome xml:" . $welcomeXml);
             $this->hello = $welcomeXml;
             if ($welcomeXml !== false) {
-                $this->welcomeMessage = $this->deserializeMessage($welcomeXml);
+                $this->welcomeMessage = $this->deserializeMessage($welcomeXml, null);
                 if (!is_null($this->welcomeMessage)) {
                     return true;
                 }
@@ -332,12 +332,12 @@ class EppConnection extends AbstractConnection
     }
 
     /**
-     * @param EppMessage $eppMessage
-     * @param integer    $timeout
+     * @param EppMessageInterface $eppMessage
+     * @param integer             $timeout
      * @return null|EppMessage
      * @throws ConnectionException
      */
-    public function sendCommand(EppMessage $eppMessage, $timeout = 60)
+    public function sendCommand(EppMessageInterface $eppMessage, $timeout = 60)
     {
         return $this->writeAndWaitForResponse($eppMessage, $timeout);
     }
@@ -348,7 +348,7 @@ class EppConnection extends AbstractConnection
      * @return null|EppMessageInterface|SimpleEppResponse
      * @throws ConnectionException
      */
-    protected function writeAndWaitForResponse(EppMessage $eppMessage, $timeout = null)
+    protected function writeAndWaitForResponse(EppMessageInterface $eppMessage, $timeout = null)
     {
         $responseClass = null;
         if ($eppMessage instanceof SimpleEppCommand) {
@@ -363,7 +363,7 @@ class EppConnection extends AbstractConnection
         }
         $this->debug($xmlResponse);
         $response = $this->deserializeMessage($xmlResponse, $responseClass);
-        if (is_object($response) && !is_null($responseClass)) {
+        if (is_object($response) && !is_null($responseClass) && is_callable([$response, 'setNestis'])) {
             $response->setNestis($this->nestis);
         }
         return $response;

@@ -57,16 +57,21 @@ class EppSerializer implements EppSerializerInterface
     }
 
     /**
-     * @param string $xml
+     * @param string      $xml
+     * @param string|null $responseClass
      * @return null|EppMessageInterface
      * @throws DeserializationException
      */
-    public function deserialize($xml)
+    public function deserialize($xml, $responseClass = null)
     {
+        $cl = $this->eppMessageClass;
+        if (!is_null($responseClass)) {
+            $cl = $responseClass;
+        }
         try {
             $out = $this->serializer->deserialize(
                 $xml,
-                $this->eppMessageClass,
+                $cl,
                 'xml',
                 DeserializationContext::create()->setSerializeNull(false)
             );
@@ -98,7 +103,6 @@ class EppSerializer implements EppSerializerInterface
         }
         return $this->cleanupDuplicateNamespaces($out);
     }
-
 
     /**
      * @param string $xml

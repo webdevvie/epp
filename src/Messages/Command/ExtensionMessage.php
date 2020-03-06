@@ -16,6 +16,7 @@ use Webdevvie\Epp\Messages\Extension\Rgp\Update;
 use Webdevvie\Epp\Messages\Extension\SecDns\SecDnsCreate;
 use Webdevvie\Epp\Messages\Extension\SecDns\SecDnsInfData;
 use Webdevvie\Epp\Messages\Extension\SecDns\SecDnsUpdate;
+use Webdevvie\Epp\Messages\Extension\Sidn\Ext as SidnExtEpp;
 
 /**
  * Class Command
@@ -40,7 +41,6 @@ class ExtensionMessage extends AbstractCommandMessage
      * @Expose
      */
     protected $secDnsInfData;
-
 
     /**
      * @var SecDnsUpdate
@@ -105,6 +105,14 @@ class ExtensionMessage extends AbstractCommandMessage
      */
     protected $metaregistrarContactInfData;
 
+    /**
+     * @var SidnExtEpp
+     * @Type("Webdevvie\Epp\Messages\Extension\Sidn\Ext")
+     * @SerializedName("ext")
+     * @XmlElement(namespace="http://rxsd.domain-registry.nl/sidn-ext-epp-1.0")
+     * @Expose
+     */
+    protected $sidnExt;
 
     /**
      * @return SecDnsCreate
@@ -267,4 +275,24 @@ class ExtensionMessage extends AbstractCommandMessage
         $this->metaregistrarContactInfData = $metaregistrarContactInfData;
         return $this;
     }
+
+    /**
+     * @return SidnExtEpp
+     */
+    public function getSidnExt(): SidnExtEpp
+    {
+        return $this->sidnExt;
+    }
+
+    /**
+     * @param SidnExtEpp $sidnExt
+     * @return ExtensionMessage
+     */
+    public function setSidnExt(SidnExtEpp $sidnExt): ExtensionMessage
+    {
+        $this->sidnExt = $sidnExt;
+        return $this;
+    }
+
+
 }

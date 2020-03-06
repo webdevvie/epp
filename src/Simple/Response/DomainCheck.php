@@ -4,6 +4,7 @@ namespace Webdevvie\Epp\Simple\Response;
 
 use JMS\Serializer\Annotation\ExclusionPolicy;
 use JMS\Serializer\Annotation\XmlRoot;
+use Webdevvie\Epp\Messages\ResData\ChkData\DomainCD;
 use Webdevvie\Epp\Messages\Response\ResData\Domain\Cd;
 use Webdevvie\Epp\Simple\SimpleEppResponse;
 
@@ -21,16 +22,16 @@ class DomainCheck extends SimpleEppResponse
     public function getCheckResults()
     {
         $out = [];
-        $results = $this->nestis->getNestedItem('response/resData/domainChkData/cd', $this, []);
+        $results = $this->nestis->getNestedItem('response/resData/chkData/domainCd', $this, []);
         foreach ($results as $result) {
             /**
-             * @var Cd $result
+             * @var DomainCD $result
              */
-            $name = $result->getName();
+            $name = $result->getDomainName();
             $reason = $this->nestis->getNestedItem('reason/reason', $result, '');
             $out[$name->getName()] = [
                 'name' => $name->getName(),
-                'available' => $name->isAvail(),
+                'available' => $name->isAvailable(),
                 'reason' => $reason
             ];
         }

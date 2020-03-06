@@ -20,8 +20,9 @@ interface EppSerializerInterface
 
     /**
      * @param string $xml
+     * @param string|null $responseClass
      * @return null|EppMessageInterface
      * @throws DeserializationException
      */
-    public function deserialize($xml);
+    public function deserialize($xml, $responseClass=null);
 }

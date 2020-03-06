@@ -13,7 +13,7 @@
 
 	<!-- Import common element types. -->
 	<import namespace="urn:ietf:params:xml:ns:eppcom-1.0"
-		schemaLocation="eppcom-1.0.xsd" />
+		schemaLocation="../base/eppcom-1.0.xsd" />
 
 	<annotation>
 		<documentation>
