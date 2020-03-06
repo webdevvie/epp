@@ -2,19 +2,15 @@
 namespace Webdevvie\Epp\Messages\ResData\CreData;
 
 use JMS\Serializer\Annotation\ExclusionPolicy;
-use JMS\Serializer\Annotation\SerializedName;
 use JMS\Serializer\Annotation\Expose;
+use JMS\Serializer\Annotation\SerializedName;
 use JMS\Serializer\Annotation\Type;
-use JMS\Serializer\Annotation\XmlNamespace;
 use JMS\Serializer\Annotation\XmlElement;
-use JMS\Serializer\XmlSerializationVisitor;
-use JMS\Serializer\SerializationContext;
-
-use JMS\Serializer\Annotation\PostSerialize;
-use Webdevvie\Epp\Messages\Command\AbstractCommandMessage;
-use Webdevvie\Epp\Messages\Extension\Metaregistrar\Snippets\Dns\Content;
-use Webdevvie\Epp\Messages\Extension\Metaregistrar\ResData\InfData\DnsInfData;
 use JMS\Serializer\Annotation\XmlList;
+use JMS\Serializer\Annotation\XmlNamespace;
+use Webdevvie\Epp\Messages\Command\AbstractCommandMessage;
+use Webdevvie\Epp\Messages\Extension\Metaregistrar\ResData\InfData\DnsInfData;
+use Webdevvie\Epp\Messages\Extension\Metaregistrar\Snippets\Dns\Content;
 
 /**
  * Class Dns

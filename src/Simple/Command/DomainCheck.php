@@ -2,11 +2,10 @@
 
 namespace Webdevvie\Epp\Simple\Command;
 
-use Webdevvie\Epp\Messages\Command;
-use Webdevvie\Epp\Messages\EppMessage;
 use JMS\Serializer\Annotation\ExclusionPolicy;
-use Webdevvie\Epp\Simple\SimpleEppCommand;
 use JMS\Serializer\Annotation\XmlRoot;
+use Webdevvie\Epp\Messages\Command;
+use Webdevvie\Epp\Simple\SimpleEppCommand;
 
 /**
  * Class DomainCheck

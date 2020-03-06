@@ -2,15 +2,15 @@
 
 namespace Webdevvie\Epp\Messages\Command\Create;
 
-use Webdevvie\Epp\Messages\Command\AbstractCommandMessage;
 use JMS\Serializer\Annotation\ExclusionPolicy;
-use JMS\Serializer\Annotation\SerializedName;
 use JMS\Serializer\Annotation\Expose;
+use JMS\Serializer\Annotation\SerializedName;
 use JMS\Serializer\Annotation\Type;
 use JMS\Serializer\Annotation\XmlElement;
-use JMS\Serializer\Annotation\XmlNamespace;
-use Webdevvie\Epp\Messages\Snippets\Host\Addr;
 use JMS\Serializer\Annotation\XmlList;
+use JMS\Serializer\Annotation\XmlNamespace;
+use Webdevvie\Epp\Messages\Command\AbstractCommandMessage;
+use Webdevvie\Epp\Messages\Snippets\Host\Addr;
 
 /**
  * Class Contact
@@ -41,15 +41,6 @@ class HostCreateMessage extends AbstractCommandMessage
      */
     protected $addr = [];
 
-    /**
-     * @var string
-     */
-    protected $messageHandler = 'epp.handler.host::create';
-
-    /**
-     * @var string
-     */
-    protected $ralMessageHandler = 'ral.fe.host.create::create';
 
     /**
      * @return string

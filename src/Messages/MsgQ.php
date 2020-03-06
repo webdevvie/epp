@@ -3,15 +3,12 @@
 namespace Webdevvie\Epp\Messages;
 
 use JMS\Serializer\Annotation\ExclusionPolicy;
-use JMS\Serializer\Annotation\SerializedName;
 use JMS\Serializer\Annotation\Expose;
+use JMS\Serializer\Annotation\SerializedName;
 use JMS\Serializer\Annotation\Type;
-use JMS\Serializer\SerializationContext;
-use JMS\Serializer\XmlSerializationVisitor;
-use Webdevvie\Epp\Messages\Command\AbstractCommandMessage;
-use Webdevvie\Epp\Messages\Command\CheckMessage;
-use JMS\Serializer\Annotation\XmlNamespace;
 use JMS\Serializer\Annotation\XmlAttribute;
+use JMS\Serializer\Annotation\XmlNamespace;
+use Webdevvie\Epp\Messages\Command\AbstractCommandMessage;
 use Webdevvie\Epp\Messages\MsgQ\Message;
 
 /**

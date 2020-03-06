@@ -1,18 +1,18 @@
 <?php
 namespace Webdevvie\Epp\Messages\Command;
 
+use JMS\Serializer\Annotation\ExclusionPolicy;
+use JMS\Serializer\Annotation\Expose;
+use JMS\Serializer\Annotation\SerializedName;
+use JMS\Serializer\Annotation\Type;
+use JMS\Serializer\Annotation\XmlElement;
+use JMS\Serializer\Annotation\XmlNamespace;
 use Webdevvie\Epp\Messages\AbstractEppMessage;
 use Webdevvie\Epp\Messages\AbstractMessage;
 use Webdevvie\Epp\Messages\Command\Check\ContactCheckMessage;
+use Webdevvie\Epp\Messages\Command\Check\DomainCheckMessage;
 use Webdevvie\Epp\Messages\Command\Check\HostCheckMessage;
 use Webdevvie\Epp\Messages\MessageInterface;
-use JMS\Serializer\Annotation\ExclusionPolicy;
-use JMS\Serializer\Annotation\SerializedName;
-use JMS\Serializer\Annotation\Expose;
-use JMS\Serializer\Annotation\Type;
-use Webdevvie\Epp\Messages\Command\Check\DomainCheckMessage;
-use JMS\Serializer\Annotation\XmlNamespace;
-use JMS\Serializer\Annotation\XmlElement;
 
 /**
  * Class Command

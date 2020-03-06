@@ -2,23 +2,12 @@
 namespace Webdevvie\Epp\Messages\ResData\RenData;
 
 use JMS\Serializer\Annotation\ExclusionPolicy;
-use JMS\Serializer\Annotation\SerializedName;
 use JMS\Serializer\Annotation\Expose;
+use JMS\Serializer\Annotation\SerializedName;
 use JMS\Serializer\Annotation\Type;
-use Webdevvie\Epp\Messages\Command\AbstractCommandMessage;
-use Webdevvie\Epp\Messages\Command\CheckMessage;
-use JMS\Serializer\Annotation\XmlNamespace;
-use Webdevvie\Epp\Messages\ResData\ChkData\DomainCD;
 use JMS\Serializer\Annotation\XmlElement;
-use JMS\Serializer\XmlSerializationVisitor;
-use JMS\Serializer\SerializationContext;
-
-use JMS\Serializer\Annotation\PostSerialize;
-use Webdevvie\Epp\Messages\Snippets\Domain\AuthInfo;
-use Webdevvie\Epp\Messages\Snippets\Domain\DomainContact;
-use Webdevvie\Epp\Messages\Snippets\Domain\DomainHost as DomainHostSnippet;
-use Webdevvie\Epp\Messages\Snippets\Domain\Ns;
-use Webdevvie\Epp\Messages\Snippets\Domain\Status;
+use JMS\Serializer\Annotation\XmlNamespace;
+use Webdevvie\Epp\Messages\Command\AbstractCommandMessage;
 
 /**
  * Class Domain

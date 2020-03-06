@@ -3,11 +3,9 @@
 namespace Webdevvie\Epp\Messages\Command;
 
 use JMS\Serializer\Annotation\ExclusionPolicy;
-use JMS\Serializer\Annotation\SerializedName;
 use JMS\Serializer\Annotation\Expose;
+use JMS\Serializer\Annotation\SerializedName;
 use JMS\Serializer\Annotation\Type;
-use Webdevvie\Epp\Messages\Command\AbstractCommandMessage;
-use JMS\Serializer\Annotation\XmlNamespace;
 use JMS\Serializer\Annotation\XmlElement;
 use Webdevvie\Epp\Messages\Extension\Metaregistrar\ExtCommand\Contact\ExtContactInfData;
 use Webdevvie\Epp\Messages\Extension\Metaregistrar\ExtCommand\Domain\ExtDomainChkData;
@@ -269,5 +267,4 @@ class ExtensionMessage extends AbstractCommandMessage
         $this->metaregistrarContactInfData = $metaregistrarContactInfData;
         return $this;
     }
-
 }

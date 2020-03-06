@@ -2,12 +2,12 @@
 
 namespace Webdevvie\Epp\Messages\Command\Check;
 
-use Webdevvie\Epp\Messages\Command\AbstractCommandMessage;
 use JMS\Serializer\Annotation\ExclusionPolicy;
 use JMS\Serializer\Annotation\Expose;
 use JMS\Serializer\Annotation\Type;
-use JMS\Serializer\Annotation\XmlNamespace;
 use JMS\Serializer\Annotation\XmlList;
+use JMS\Serializer\Annotation\XmlNamespace;
+use Webdevvie\Epp\Messages\Command\AbstractCommandMessage;
 
 /**
  * Class Contact
@@ -26,16 +26,6 @@ class ContactCheckMessage extends AbstractCommandMessage
      * @Expose
      */
     protected $id = [];
-
-    /**
-     * @var string
-     */
-    protected $messageHandler = 'epp.handler.contact::check';
-
-    /**
-     * @var string
-     */
-    protected $ralMessageHandler = 'ral.fe.contact.check::check';
 
     /**
      * @return string[]

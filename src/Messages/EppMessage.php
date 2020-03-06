@@ -1,17 +1,14 @@
 <?php
+
 namespace Webdevvie\Epp\Messages;
 
-use Webdevvie\Epp\EppMessageInterface;
-use Webdevvie\Epp\Messages\Command\ExtensionMessage;
 use JMS\Serializer\Annotation\ExclusionPolicy;
-use JMS\Serializer\Annotation\SerializedName;
 use JMS\Serializer\Annotation\Expose;
+use JMS\Serializer\Annotation\SerializedName;
 use JMS\Serializer\Annotation\Type;
-use Webdevvie\Epp\Messages\CommandMessage;
 use JMS\Serializer\Annotation\XmlNamespace;
 use JMS\Serializer\Annotation\XmlRoot;
-use JMS\Serializer\Annotation\PostDeserialize;
-use JMS\Serializer\Annotation\XmlElement;
+use Webdevvie\Epp\EppMessageInterface;
 
 /**
  * Class Domain
@@ -35,45 +32,6 @@ use JMS\Serializer\Annotation\XmlElement;
 class EppMessage extends AbstractEppMessage implements EppMessageInterface
 {
     /**
-     * @return string
-     */
-    public function getMessageHandler()
-    {
-        return $this->messageHandler;
-    }
-    /**
-     * @return string
-     */
-    public function getRalMessageHandler()
-    {
-        return $this->ralMessageHandler;
-    }
-    /**
-     * @param string $messageHandler
-     * @return void
-     */
-    public function setMessageHandler($messageHandler)
-    {
-        $this->messageHandler = $messageHandler;
-    }
-    /**
-     * @param string $messageHandler
-     * @return void
-     */
-    public function setRalMessageHandler($messageHandler)
-    {
-        $this->ralMessageHandler = $messageHandler;
-    }
-
-    /**
-     * @var string
-     */
-    protected $messageHandler;
-    /**
-     * @var string
-     */
-    protected $ralMessageHandler;
-    /**
      * @var GreetingMessage
      * @Type("Webdevvie\Epp\Messages\GreetingMessage")
      * @SerializedName("greeting")
@@ -81,6 +39,7 @@ class EppMessage extends AbstractEppMessage implements EppMessageInterface
      * @Expose
      */
     protected $greeting;
+
     /**
      * @var HelloMessage
      * @Type("Webdevvie\Epp\Messages\HelloMessage")
@@ -89,6 +48,7 @@ class EppMessage extends AbstractEppMessage implements EppMessageInterface
      * @Expose
      */
     protected $hello;
+
     /**
      * @var CommandMessage
      * @Type("Webdevvie\Epp\Messages\CommandMessage")
@@ -107,7 +67,6 @@ class EppMessage extends AbstractEppMessage implements EppMessageInterface
      */
     protected $response;
 
-
     /**
      * @param HelloMessage $hello
      * @return EppMessage
@@ -117,7 +76,6 @@ class EppMessage extends AbstractEppMessage implements EppMessageInterface
         $this->hello = $hello;
         return $this;
     }
-
 
     /**
      * @return ResponseMessage
@@ -172,6 +130,7 @@ class EppMessage extends AbstractEppMessage implements EppMessageInterface
         $this->extension = $extension;
         return $this;
     }
+
     /**
      * @return string
      */

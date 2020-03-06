@@ -1,19 +1,12 @@
 <?php
 namespace Webdevvie\Epp\Messages\Command\Login;
 
-use JMS\Serializer\Annotation as Serializer;
-use JMS\Serializer\EventDispatcher\ObjectEvent;
-use JMS\Serializer\XmlDeserializationVisitor;
-use Webdevvie\Epp\Messages\Command\AbstractCommandMessage;
 use JMS\Serializer\Annotation\ExclusionPolicy;
-use JMS\Serializer\Annotation\SerializedName;
 use JMS\Serializer\Annotation\Expose;
+use JMS\Serializer\Annotation\SerializedName;
 use JMS\Serializer\Annotation\Type;
-use JMS\Serializer\Annotation\XmlElement;
-
-use JMS\Serializer\DeserializationContext;
 use JMS\Serializer\Annotation\XmlNamespace;
-use JMS\Serializer\Annotation\XmlList;
+use Webdevvie\Epp\Messages\Command\AbstractCommandMessage;
 
 /**
  * Class LoginMessage
@@ -67,10 +60,6 @@ class LoginMessage extends AbstractCommandMessage
      */
     protected $svcs;
 
-    /**
-     * @var string
-     */
-    protected $messageHandler = 'epp.handler.login::login';
 
     /**
      * @return string
@@ -159,16 +148,6 @@ class LoginMessage extends AbstractCommandMessage
     public function setSvcs($svcs)
     {
         $this->svcs = $svcs;
-        return $this;
-    }
-
-    /**
-     * @param string $messageHandler
-     * @return LoginMessage
-     */
-    public function setMessageHandler($messageHandler)
-    {
-        $this->messageHandler = $messageHandler;
         return $this;
     }
 }

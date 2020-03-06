@@ -2,18 +2,12 @@
 
 namespace Webdevvie\Epp\Messages\Command\Check;
 
-use JMS\Serializer\XmlDeserializationVisitor;
-use Webdevvie\Epp\Messages\Command\AbstractCommandMessage;
 use JMS\Serializer\Annotation\ExclusionPolicy;
-use JMS\Serializer\Annotation\SerializedName;
 use JMS\Serializer\Annotation\Expose;
 use JMS\Serializer\Annotation\Type;
-use JMS\Serializer\Annotation\XmlElement;
-
-use JMS\Serializer\DeserializationContext;
-use JMS\Serializer\Annotation\XmlNamespace;
 use JMS\Serializer\Annotation\XmlList;
-use Webdevvie\Epp\Messages\Command\Check\Name;
+use JMS\Serializer\Annotation\XmlNamespace;
+use Webdevvie\Epp\Messages\Command\AbstractCommandMessage;
 
 /**
  * Class Domain
@@ -33,15 +27,6 @@ class DomainCheckMessage extends AbstractCommandMessage
      */
     protected $name = [];
 
-    /**
-     * @var string
-     */
-    protected $messageHandler = 'epp.handler.domain::check';
-
-    /**
-     * @var string
-     */
-    protected $ralMessageHandler = 'ral.fe.domain.check::check';
 
     /**
      * @return string

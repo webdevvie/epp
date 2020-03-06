@@ -3,16 +3,16 @@
 namespace Webdevvie\Epp\Messages\Command;
 
 use JMS\Serializer\Annotation\ExclusionPolicy;
-use JMS\Serializer\Annotation\SerializedName;
 use JMS\Serializer\Annotation\Expose;
+use JMS\Serializer\Annotation\SerializedName;
 use JMS\Serializer\Annotation\Type;
+use JMS\Serializer\Annotation\XmlElement;
+use JMS\Serializer\Annotation\XmlNamespace;
 use Webdevvie\Epp\Messages\AbstractEppMessage;
 use Webdevvie\Epp\Messages\Command\Create\ContactCreateMessage;
 use Webdevvie\Epp\Messages\Command\Create\DnsCreateMessage;
 use Webdevvie\Epp\Messages\Command\Create\DomainCreateMessage;
 use Webdevvie\Epp\Messages\Command\Create\HostCreateMessage;
-use JMS\Serializer\Annotation\XmlNamespace;
-use JMS\Serializer\Annotation\XmlElement;
 use Webdevvie\Epp\Messages\Command\Create\SSLCreateMessage;
 
 /**
@@ -167,5 +167,4 @@ class CreateMessage extends AbstractEppMessage
         $this->metaregistrarSslCreate = $metaregistrarSslCreate;
         return $this;
     }
-
 }

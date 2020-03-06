@@ -2,18 +2,18 @@
 
 namespace Webdevvie\Epp\Messages\Command\Create;
 
-use Webdevvie\Epp\Messages\Command\AbstractCommandMessage;
 use JMS\Serializer\Annotation\ExclusionPolicy;
-use JMS\Serializer\Annotation\SerializedName;
 use JMS\Serializer\Annotation\Expose;
+use JMS\Serializer\Annotation\SerializedName;
 use JMS\Serializer\Annotation\Type;
 use JMS\Serializer\Annotation\XmlElement;
+use JMS\Serializer\Annotation\XmlList;
 use JMS\Serializer\Annotation\XmlNamespace;
+use Webdevvie\Epp\Messages\Command\AbstractCommandMessage;
 use Webdevvie\Epp\Messages\Snippets\Domain\AuthInfo;
 use Webdevvie\Epp\Messages\Snippets\Domain\DomainContact;
 use Webdevvie\Epp\Messages\Snippets\Domain\Ns;
 use Webdevvie\Epp\Messages\Snippets\Domain\Period;
-use JMS\Serializer\Annotation\XmlList;
 
 /**
  * Class Domain
@@ -83,16 +83,6 @@ class DomainCreateMessage extends AbstractCommandMessage
      * @Expose
      */
     protected $authInfo;
-
-    /**
-     * @var string
-     */
-    protected $messageHandler = 'epp.handler.domain::create';
-
-    /**
-     * @var string
-     */
-    protected $ralMessageHandler = 'ral.fe.domain.create::create';
 
     /**
      * @return string

@@ -2,22 +2,12 @@
 namespace Webdevvie\Epp\Messages\ResData\ChkData;
 
 use JMS\Serializer\Annotation\ExclusionPolicy;
-use JMS\Serializer\Annotation\SerializedName;
 use JMS\Serializer\Annotation\Expose;
+use JMS\Serializer\Annotation\SerializedName;
 use JMS\Serializer\Annotation\Type;
-use Webdevvie\Epp\Messages\Command\CheckMessage;
+use JMS\Serializer\Annotation\XmlAttribute;
 use JMS\Serializer\Annotation\XmlNamespace;
 use JMS\Serializer\Annotation\XmlValue;
-
-use JMS\Serializer\XmlSerializationVisitor;
-use JMS\Serializer\SerializationContext;
-use Webdevvie\Epp\Messages\ResData\ChkData\ContactCD;
-use Webdevvie\Epp\Messages\ResData\ChkData\ContactCheckDataMessage;
-use Webdevvie\Epp\Messages\EppMessage;
-use Webdevvie\Epp\Messages\ResDataMessage;
-use Webdevvie\Epp\Messages\ResponseMessage;
-use Webdevvie\Epp\Messages\ResultMessage;
-use JMS\Serializer\Annotation\XmlAttribute;
 
 /**
  * Class Command

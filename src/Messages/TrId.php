@@ -2,12 +2,11 @@
 namespace Webdevvie\Epp\Messages;
 
 use JMS\Serializer\Annotation\ExclusionPolicy;
-use JMS\Serializer\Annotation\SerializedName;
 use JMS\Serializer\Annotation\Expose;
+use JMS\Serializer\Annotation\SerializedName;
 use JMS\Serializer\Annotation\Type;
-use Webdevvie\Epp\Messages\Command\CheckMessage;
-use JMS\Serializer\Annotation\XmlNamespace;
 use JMS\Serializer\Annotation\XmlElement;
+use JMS\Serializer\Annotation\XmlNamespace;
 
 /**
  * Class Command

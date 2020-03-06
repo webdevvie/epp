@@ -1,21 +1,15 @@
 <?php
 namespace Webdevvie\Epp\Messages\Snippets\Domain;
 
-use JMS\Serializer\Annotation as Serializer;
-use JMS\Serializer\SerializationContext;
-use JMS\Serializer\XmlDeserializationVisitor;
-use JMS\Serializer\XmlSerializationVisitor;
-use Webdevvie\Epp\Messages\Command\AbstractCommandMessage;
 use JMS\Serializer\Annotation\ExclusionPolicy;
-use JMS\Serializer\Annotation\SerializedName;
 use JMS\Serializer\Annotation\Expose;
+use JMS\Serializer\Annotation\SerializedName;
 use JMS\Serializer\Annotation\Type;
-use JMS\Serializer\Annotation\XmlElement;
-
-use JMS\Serializer\DeserializationContext;
-use JMS\Serializer\Annotation\XmlNamespace;
 use JMS\Serializer\Annotation\XmlAttribute;
+use JMS\Serializer\Annotation\XmlElement;
+use JMS\Serializer\Annotation\XmlNamespace;
 use JMS\Serializer\Annotation\XmlValue;
+use Webdevvie\Epp\Messages\Command\AbstractCommandMessage;
 
 /**
  * Class Domain

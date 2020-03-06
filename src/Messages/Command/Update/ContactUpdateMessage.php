@@ -2,16 +2,13 @@
 
 namespace Webdevvie\Epp\Messages\Command\Update;
 
-use JMS\Serializer\XmlDeserializationVisitor;
-use Webdevvie\Epp\Messages\Command\AbstractCommandMessage;
 use JMS\Serializer\Annotation\ExclusionPolicy;
-use JMS\Serializer\Annotation\SerializedName;
 use JMS\Serializer\Annotation\Expose;
+use JMS\Serializer\Annotation\SerializedName;
 use JMS\Serializer\Annotation\Type;
 use JMS\Serializer\Annotation\XmlElement;
-
-use JMS\Serializer\DeserializationContext;
 use JMS\Serializer\Annotation\XmlNamespace;
+use Webdevvie\Epp\Messages\Command\AbstractCommandMessage;
 use Webdevvie\Epp\Messages\Snippets\Contact\Chg;
 
 /**
@@ -44,15 +41,6 @@ class ContactUpdateMessage extends AbstractCommandMessage
      */
     protected $chg;
 
-    /**
-     * @var string
-     */
-    protected $messageHandler = 'epp.handler.contact::update';
-
-    /**
-     * @var string
-     */
-    protected $ralMessageHandler = 'ral.fe.contact.update::update';
 
     /**
      * @return string

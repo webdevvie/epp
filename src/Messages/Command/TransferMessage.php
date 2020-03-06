@@ -2,15 +2,15 @@
 namespace Webdevvie\Epp\Messages\Command;
 
 use JMS\Serializer\Annotation\ExclusionPolicy;
-use JMS\Serializer\Annotation\SerializedName;
 use JMS\Serializer\Annotation\Expose;
+use JMS\Serializer\Annotation\SerializedName;
 use JMS\Serializer\Annotation\Type;
+use JMS\Serializer\Annotation\XmlAttribute;
+use JMS\Serializer\Annotation\XmlElement;
+use JMS\Serializer\Annotation\XmlNamespace;
 use Webdevvie\Epp\Messages\AbstractEppMessage;
 use Webdevvie\Epp\Messages\Command\Transfer\ContactTransferMessage;
-use JMS\Serializer\Annotation\XmlNamespace;
-use JMS\Serializer\Annotation\XmlElement;
 use Webdevvie\Epp\Messages\Command\Transfer\DomainTransferMessage;
-use JMS\Serializer\Annotation\XmlAttribute;
 
 /**
  * Class Command

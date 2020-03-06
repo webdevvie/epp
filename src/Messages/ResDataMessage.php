@@ -3,26 +3,26 @@
 namespace Webdevvie\Epp\Messages;
 
 use JMS\Serializer\Annotation\ExclusionPolicy;
-use JMS\Serializer\Annotation\SerializedName;
 use JMS\Serializer\Annotation\Expose;
+use JMS\Serializer\Annotation\SerializedName;
 use JMS\Serializer\Annotation\Type;
+use JMS\Serializer\Annotation\XmlElement;
 use JMS\Serializer\Annotation\XmlNamespace;
+use Webdevvie\Epp\Messages\Extension\Metaregistrar\ResData\CreData\DnsCreData;
+use Webdevvie\Epp\Messages\Extension\Metaregistrar\ResData\CreData\SSLCreData;
+use Webdevvie\Epp\Messages\Extension\Metaregistrar\ResData\InfData\DnsInfData;
+use Webdevvie\Epp\Messages\Extension\Metaregistrar\ResData\InfData\SSLInfData;
+use Webdevvie\Epp\Messages\Extension\Metaregistrar\ResData\RenData\SSLRenData;
 use Webdevvie\Epp\Messages\ResData\ChkData\ContactCheckDataMessage;
+use Webdevvie\Epp\Messages\ResData\ChkData\DomainCheckDataMessage;
 use Webdevvie\Epp\Messages\ResData\ChkData\HostCheckDataMessage;
 use Webdevvie\Epp\Messages\ResData\CreData\ContactCreData;
-use Webdevvie\Epp\Messages\ResData\ChkData\DomainCheckDataMessage;
-use JMS\Serializer\Annotation\XmlElement;
 use Webdevvie\Epp\Messages\ResData\CreData\DomainCreData;
-use Webdevvie\Epp\Messages\Extension\Metaregistrar\ResData\CreData\SSLCreData;
-use Webdevvie\Epp\Messages\ResData\InfData\ContactInfData;
-use Webdevvie\Epp\Messages\Extension\Metaregistrar\ResData\CreData\DnsCreData;
-use Webdevvie\Epp\Messages\Extension\Metaregistrar\ResData\InfData\DnsInfData;
-use Webdevvie\Epp\Messages\ResData\InfData\DomainInfData;
 use Webdevvie\Epp\Messages\ResData\CreData\HostCreData;
-use Webdevvie\Epp\Messages\Extension\Metaregistrar\ResData\InfData\SSLInfData;
-use Webdevvie\Epp\Messages\ResData\RenData\DomainRenData;
+use Webdevvie\Epp\Messages\ResData\InfData\ContactInfData;
+use Webdevvie\Epp\Messages\ResData\InfData\DomainInfData;
 use Webdevvie\Epp\Messages\ResData\InfData\HostInfData;
-use Webdevvie\Epp\Messages\Extension\Metaregistrar\ResData\RenData\SSLRenData;
+use Webdevvie\Epp\Messages\ResData\RenData\DomainRenData;
 use Webdevvie\Epp\Messages\ResData\TrnData\DomainTrnData;
 
 /**

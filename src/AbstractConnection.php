@@ -2,26 +2,11 @@
 
 namespace Webdevvie\Epp;
 
-use JMS\Serializer\Annotation\ExclusionPolicy;
-use JMS\Serializer\Annotation\Expose;
-use JMS\Serializer\Annotation\SerializedName;
-use JMS\Serializer\Annotation\Type;
-use JMS\Serializer\Annotation\XmlAttribute;
-use JMS\Serializer\Annotation\XmlList;
-use JMS\Serializer\Annotation\XmlValue;
-use JMS\Serializer\DeserializationContext;
-use JMS\Serializer\SerializationContext;
-use JMS\Serializer\SerializerBuilder;
-use JMS\Serializer\Annotation\XmlNamespace;
-use JMS\Serializer\Annotation\XmlRoot;
-use JMS\Serializer\Annotation\PostDeserialize;
-use JMS\Serializer\Annotation\XmlElement;
 use JMS\Serializer\Serializer;
 use Webdevvie\Epp\Exception\ConnectionException;
 use Webdevvie\Epp\Exception\DeserializationException;
 use Webdevvie\Epp\Exception\LoginException;
 use Webdevvie\Epp\Exception\SerializationException;
-use Webdevvie\Epp\Messages\EppMessage;
 use Webdevvie\Nestis\Nestis;
 
 /**
@@ -44,6 +29,11 @@ abstract class AbstractConnection implements ConnectionInterface
      * @var boolean
      */
     protected $autoDestruct = true;
+
+    /**
+     *
+     */
+    protected $cltridPrefix = 'wbd_';
 
     /**
      * Connection constructor.
@@ -85,7 +75,7 @@ abstract class AbstractConnection implements ConnectionInterface
     {
         $now = microtime(true);
         $rand = substr(sha1(uniqid('', true) . $now), 0, 60);
-        $id = 'we_' . $rand;
+        $id = $this->cltridPrefix . $rand;
         return $id;
     }
 

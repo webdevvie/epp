@@ -2,17 +2,13 @@
 
 namespace Webdevvie\Epp\Messages\Command;
 
-use JMS\Serializer\Annotation as Serializer;
 use JMS\Serializer\Annotation\ExclusionPolicy;
-use JMS\Serializer\Annotation\SerializedName;
 use JMS\Serializer\Annotation\Expose;
+use JMS\Serializer\Annotation\SerializedName;
 use JMS\Serializer\Annotation\Type;
-use JMS\Serializer\DeserializationContext;
-use JMS\Serializer\XmlDeserializationVisitor;
-use Webdevvie\Epp\Messages\AbstractEppMessage;
-use JMS\Serializer\Annotation\XmlNamespace;
-use JMS\Serializer\Annotation\XmlElement;
 use JMS\Serializer\Annotation\XmlAttribute;
+use JMS\Serializer\Annotation\XmlNamespace;
+use Webdevvie\Epp\Messages\AbstractEppMessage;
 
 /**
  * Class PollMessage
@@ -40,11 +36,6 @@ class PollMessage extends AbstractEppMessage
      * @Expose
      */
     private $msgId;
-
-    /**
-     * @var string
-     */
-    protected $messageHandler = 'epp.handler.poll::poll';
 
     /**
      * @return string

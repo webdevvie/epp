@@ -2,13 +2,13 @@
 
 namespace Webdevvie\Epp\Messages\Extension\Metaregistrar\Command\Create;
 
-use Webdevvie\Epp\Messages\Command\AbstractCommandMessage;
 use JMS\Serializer\Annotation\ExclusionPolicy;
-use JMS\Serializer\Annotation\SerializedName;
 use JMS\Serializer\Annotation\Expose;
+use JMS\Serializer\Annotation\SerializedName;
 use JMS\Serializer\Annotation\Type;
 use JMS\Serializer\Annotation\XmlElement;
 use JMS\Serializer\Annotation\XmlNamespace;
+use Webdevvie\Epp\Messages\Command\AbstractCommandMessage;
 use Webdevvie\Epp\Messages\Extension\Metaregistrar\Snippets\SSL\Approver;
 use Webdevvie\Epp\Messages\Extension\Metaregistrar\Snippets\SSL\Hosts;
 
@@ -82,10 +82,6 @@ class SSLCreateMessage extends AbstractCommandMessage
      */
     protected $language;
 
-    /**
-     * @var string
-     */
-    protected $messageHandler = 'epp.handler.ssl::create';
 
     /**
      * @return string

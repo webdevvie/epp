@@ -2,16 +2,16 @@
 namespace Webdevvie\Epp\Messages\Command;
 
 use JMS\Serializer\Annotation\ExclusionPolicy;
-use JMS\Serializer\Annotation\SerializedName;
 use JMS\Serializer\Annotation\Expose;
+use JMS\Serializer\Annotation\SerializedName;
 use JMS\Serializer\Annotation\Type;
-use Webdevvie\Epp\Messages\AbstractEppMessage;
-use JMS\Serializer\Annotation\XmlNamespace;
 use JMS\Serializer\Annotation\XmlElement;
+use JMS\Serializer\Annotation\XmlNamespace;
+use Webdevvie\Epp\Messages\AbstractEppMessage;
 use Webdevvie\Epp\Messages\Command\Info\ContactInfoMessage;
-use Webdevvie\Epp\Messages\Extension\Metaregistrar\Command\Info\DnsInfoMessage;
 use Webdevvie\Epp\Messages\Command\Info\DomainInfoMessage;
 use Webdevvie\Epp\Messages\Command\Info\HostInfoMessage;
+use Webdevvie\Epp\Messages\Extension\Metaregistrar\Command\Info\DnsInfoMessage;
 use Webdevvie\Epp\Messages\Extension\Metaregistrar\Command\Info\SSLInfoMessage;
 
 /**

@@ -279,7 +279,7 @@ class RawEppConnection
                         $readLength = $readLength - strlen($readbuffer);
                         $read .= $readbuffer;
                         $time = time() + $timeout;
-                    } elseif($useSleep) {
+                    } elseif ($useSleep) {
                         usleep($readSleepTime);
                         if ($readSleepTimeIncrementEnabled) {
                             if ($readSleepTime < $readSleepTimeLimit) {

@@ -2,25 +2,17 @@
 
 namespace Webdevvie\Epp\Messages\ResData\InfData;
 
-use JMS\Serializer\EventDispatcher\Event;
-use JMS\Serializer\EventDispatcher\ObjectEvent;
-use JMS\Serializer\Metadata\PropertyMetadata;
-use JMS\Serializer\SerializationContext;
-use JMS\Serializer\XmlDeserializationVisitor;
-use JMS\Serializer\XmlSerializationVisitor;
-use Webdevvie\Epp\Messages\Command\AbstractCommandMessage;
 use JMS\Serializer\Annotation\ExclusionPolicy;
-use JMS\Serializer\Annotation\SerializedName;
 use JMS\Serializer\Annotation\Expose;
+use JMS\Serializer\Annotation\SerializedName;
 use JMS\Serializer\Annotation\Type;
 use JMS\Serializer\Annotation\XmlElement;
-
-use JMS\Serializer\DeserializationContext;
+use JMS\Serializer\Annotation\XmlList;
 use JMS\Serializer\Annotation\XmlNamespace;
+use Webdevvie\Epp\Messages\Command\AbstractCommandMessage;
 use Webdevvie\Epp\Messages\Snippets\Contact\Disclose;
 use Webdevvie\Epp\Messages\Snippets\Contact\PostalInfo;
 use Webdevvie\Epp\Messages\Snippets\Contact\Status;
-use JMS\Serializer\Annotation\XmlList;
 
 /**
  * Class Contact

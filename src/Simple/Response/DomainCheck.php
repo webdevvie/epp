@@ -3,8 +3,8 @@
 namespace Webdevvie\Epp\Simple\Response;
 
 use JMS\Serializer\Annotation\ExclusionPolicy;
-use Webdevvie\Epp\Messages\Response\ResData\Domain\Cd;
 use JMS\Serializer\Annotation\XmlRoot;
+use Webdevvie\Epp\Messages\Response\ResData\Domain\Cd;
 use Webdevvie\Epp\Simple\SimpleEppResponse;
 
 /**

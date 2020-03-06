@@ -2,15 +2,11 @@
 namespace Webdevvie\Epp\Messages\ResData\CreData;
 
 use JMS\Serializer\Annotation\ExclusionPolicy;
-use JMS\Serializer\Annotation\SerializedName;
 use JMS\Serializer\Annotation\Expose;
+use JMS\Serializer\Annotation\SerializedName;
 use JMS\Serializer\Annotation\Type;
-use Webdevvie\Epp\Messages\Command\CheckMessage;
-use JMS\Serializer\Annotation\XmlNamespace;
-use Webdevvie\Epp\Messages\ResData\ChkData\DomainCD;
 use JMS\Serializer\Annotation\XmlElement;
-use JMS\Serializer\XmlSerializationVisitor;
-use JMS\Serializer\SerializationContext;
+use JMS\Serializer\Annotation\XmlNamespace;
 
 /**
  * Class Command

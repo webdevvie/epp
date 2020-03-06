@@ -5,8 +5,8 @@ namespace Webdevvie\Epp\Messages\Extension\Metaregistrar\ExtCommand\Domain;
 use JMS\Serializer\Annotation\ExclusionPolicy;
 use JMS\Serializer\Annotation\Expose;
 use JMS\Serializer\Annotation\Type;
-use Webdevvie\Epp\Messages\Command\AbstractCommandMessage;
 use JMS\Serializer\Annotation\XmlList;
+use Webdevvie\Epp\Messages\Command\AbstractCommandMessage;
 
 /**
  * Class Command

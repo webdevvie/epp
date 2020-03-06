@@ -3,21 +3,15 @@
 namespace Webdevvie\Epp\Messages\ResData\InfData;
 
 use JMS\Serializer\Annotation\ExclusionPolicy;
-use JMS\Serializer\Annotation\SerializedName;
 use JMS\Serializer\Annotation\Expose;
+use JMS\Serializer\Annotation\SerializedName;
 use JMS\Serializer\Annotation\Type;
-use Webdevvie\Epp\Messages\Command\AbstractCommandMessage;
-use Webdevvie\Epp\Messages\Command\CheckMessage;
-use JMS\Serializer\Annotation\XmlNamespace;
-use Webdevvie\Epp\Messages\ResData\ChkData\HostCD;
 use JMS\Serializer\Annotation\XmlElement;
-use JMS\Serializer\XmlSerializationVisitor;
-use JMS\Serializer\SerializationContext;
-
-use JMS\Serializer\Annotation\PostSerialize;
+use JMS\Serializer\Annotation\XmlList;
+use JMS\Serializer\Annotation\XmlNamespace;
+use Webdevvie\Epp\Messages\Command\AbstractCommandMessage;
 use Webdevvie\Epp\Messages\Snippets\Host\Addr;
 use Webdevvie\Epp\Messages\Snippets\Host\Status;
-use JMS\Serializer\Annotation\XmlList;
 
 /**
  * Class Host

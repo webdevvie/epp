@@ -4,17 +4,17 @@ namespace Webdevvie\Epp;
 
 use Webdevvie\Epp\Exception\ConnectionException;
 use Webdevvie\Epp\Exception\LoginException;
-use Webdevvie\Epp\Messages\CommandMessage;
-use Webdevvie\Epp\Messages\EppMessage;
+use Webdevvie\Epp\Messages\Command\Login\LoginMessage;
 use Webdevvie\Epp\Messages\Command\Login\Options;
 use Webdevvie\Epp\Messages\Command\Login\SvcExtension;
 use Webdevvie\Epp\Messages\Command\Login\Svcs;
+use Webdevvie\Epp\Messages\Command\Logout\LogoutMessage;
+use Webdevvie\Epp\Messages\CommandMessage;
+use Webdevvie\Epp\Messages\EppMessage;
 use Webdevvie\Epp\Messages\Greeting;
 use Webdevvie\Epp\Messages\Hello;
 use Webdevvie\Epp\Simple\SimpleEppCommand;
 use Webdevvie\Epp\Simple\SimpleEppResponse;
-use Webdevvie\Epp\Messages\Command\Logout\LogoutMessage;
-use Webdevvie\Epp\Messages\Command\Login\LoginMessage;
 
 /**
  * Class EppConnection
@@ -95,7 +95,7 @@ class EppConnection extends AbstractConnection
     /**
      * @var boolean
      */
-    protected $mimickServerGreeting = true;
+    protected $mimicServerGreeting = true;
 
     /**
      * @var boolean|callable
@@ -139,12 +139,12 @@ class EppConnection extends AbstractConnection
     }
 
     /**
-     * @param boolean $mimickServerGreeting
+     * @param boolean $mimicServerGreeting
      * @return void
      */
-    public function setMimickServerGreeting($mimickServerGreeting)
+    public function setmimicServerGreeting($mimicServerGreeting)
     {
-        $this->mimickServerGreeting = $mimickServerGreeting;
+        $this->mimicServerGreeting = $mimicServerGreeting;
     }
 
     /**
@@ -278,7 +278,7 @@ class EppConnection extends AbstractConnection
         $login->setPw($this->password);
         $svcs = new Svcs();
         $options = new Options();
-        if (!$this->mimickServerGreeting || is_null($this->welcomeMessage)) {
+        if (!$this->mimicServerGreeting || is_null($this->welcomeMessage)) {
             $options->setLang($this->lang);
             $options->setVersion($this->version);
             if (count($this->extURI) > 0) {
@@ -343,8 +343,8 @@ class EppConnection extends AbstractConnection
     }
 
     /**
-     * @param EppMessageInterface   $eppMessage
-     * @param integer|null $timeout
+     * @param EppMessageInterface $eppMessage
+     * @param integer|null        $timeout
      * @return null|EppMessageInterface|SimpleEppResponse
      * @throws ConnectionException
      */

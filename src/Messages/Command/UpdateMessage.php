@@ -2,18 +2,16 @@
 namespace Webdevvie\Epp\Messages\Command;
 
 use JMS\Serializer\Annotation\ExclusionPolicy;
-use JMS\Serializer\Annotation\SerializedName;
 use JMS\Serializer\Annotation\Expose;
+use JMS\Serializer\Annotation\SerializedName;
 use JMS\Serializer\Annotation\Type;
-use Webdevvie\Epp\Messages\AbstractEppMessage;
-use Webdevvie\Epp\Messages\Command\Create\ContactCreateMessage;
-use Webdevvie\Epp\Messages\Command\Create\HostCreateMessage;
-use JMS\Serializer\Annotation\XmlNamespace;
 use JMS\Serializer\Annotation\XmlElement;
+use JMS\Serializer\Annotation\XmlNamespace;
+use Webdevvie\Epp\Messages\AbstractEppMessage;
 use Webdevvie\Epp\Messages\Command\Update\ContactUpdateMessage;
-use Webdevvie\Epp\Messages\Extension\Metaregistrar\Command\Update\DnsUpdateMessage;
 use Webdevvie\Epp\Messages\Command\Update\DomainUpdateMessage;
 use Webdevvie\Epp\Messages\Command\Update\HostUpdateMessage;
+use Webdevvie\Epp\Messages\Extension\Metaregistrar\Command\Update\DnsUpdateMessage;
 
 /**
  * Class Command
@@ -138,6 +136,4 @@ class UpdateMessage extends AbstractEppMessage
         $this->metaregistrarDnsUpdate = $metaregistrarDnsUpdate;
         return $this;
     }
-
-
 }

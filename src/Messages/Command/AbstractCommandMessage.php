@@ -1,13 +1,8 @@
 <?php
+
 namespace Webdevvie\Epp\Messages\Command;
 
-use JMS\Serializer\Metadata\PropertyMetadata;
-use JMS\Serializer\SerializationContext;
-use JMS\Serializer\XmlDeserializationVisitor;
 use JMS\Serializer\Annotation\ExclusionPolicy;
-
-use JMS\Serializer\DeserializationContext;
-use JMS\Serializer\XmlSerializationVisitor;
 use Webdevvie\Epp\Messages\AbstractEppMessage;
 
 /**
@@ -19,16 +14,6 @@ use Webdevvie\Epp\Messages\AbstractEppMessage;
  */
 abstract class AbstractCommandMessage extends AbstractEppMessage
 {
-    /**
-     * @var string
-     */
-    protected $messageHandler = '';
-
-    /**
-     * @var string
-     */
-    protected $ralMessageHandler = '';
-
     /**
      * @return array
      */

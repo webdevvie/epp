@@ -2,11 +2,10 @@
 
 namespace Webdevvie\Epp\Simple;
 
-use Webdevvie\Epp\Messages\Command;
-use Webdevvie\Epp\Messages\EppMessage;
 use JMS\Serializer\Annotation\ExclusionPolicy;
-use Webdevvie\Nestis\Nestis;
 use JMS\Serializer\Annotation\XmlRoot;
+use Webdevvie\Epp\Messages\EppMessage;
+use Webdevvie\Nestis\Nestis;
 
 /**
  * Class SimpleEppResponse

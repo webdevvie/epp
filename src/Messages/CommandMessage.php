@@ -4,12 +4,12 @@ namespace Webdevvie\Epp\Messages;
 
 use JMS\Serializer\Annotation as Serializer;
 use JMS\Serializer\Annotation\ExclusionPolicy;
-use JMS\Serializer\Annotation\SerializedName;
 use JMS\Serializer\Annotation\Expose;
+use JMS\Serializer\Annotation\SerializedName;
 use JMS\Serializer\Annotation\Type;
+use JMS\Serializer\Annotation\XmlNamespace;
 use Webdevvie\Epp\Messages\Command\CheckMessage;
 use Webdevvie\Epp\Messages\Command\CreateMessage;
-use JMS\Serializer\Annotation\XmlNamespace;
 use Webdevvie\Epp\Messages\Command\DeleteMessage;
 use Webdevvie\Epp\Messages\Command\ExtensionMessage;
 use Webdevvie\Epp\Messages\Command\InfoMessage;
@@ -19,7 +19,6 @@ use Webdevvie\Epp\Messages\Command\PollMessage;
 use Webdevvie\Epp\Messages\Command\RenewMessage;
 use Webdevvie\Epp\Messages\Command\TransferMessage;
 use Webdevvie\Epp\Messages\Command\UpdateMessage;
-use Webdevvie\Epp\Messages\Extension\Metaregistrar\ExtCommandMessage;
 
 /**
  * Class Command
