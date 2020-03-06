@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+	Created: 15-08-2013
+	Version: 0.4 draft
+	Author(s): Theo Leloux, Rik Ribbers, Edwin Godefrooij, Marc Groeneweg
+	Copyright: SIDN 2013 
+ -->
+<schema targetNamespace="http://rxsd.domain-registry.nl/sidn-reseller-1.0"
+    xmlns:reseller="http://rxsd.domain-registry.nl/sidn-reseller-1.0"
+    xmlns:eppcom="urn:ietf:params:xml:ns:eppcom-1.0"
+    xmlns:contact="urn:ietf:params:xml:ns:contact-1.0"
+    xmlns="http://www.w3.org/2001/XMLSchema"
+    elementFormDefault="qualified"
+    version="2013-10-23">
+
+	<!-- Import common element types. -->
+	<import namespace="urn:ietf:params:xml:ns:eppcom-1.0" schemaLocation="eppcom-1.0.xsd"/>
+	<import namespace="urn:ietf:params:xml:ns:contact-1.0" schemaLocation="contact-1.0.xsd"/>
+
+	<annotation>
+		<documentation>
+	        Extensible Provisioning Protocol v1.0
+			SIDN reseller provisioning schema.
+		</documentation>
+	</annotation>
+
+    <!-- Child elements found in EPP reseller commands.  -->
+    <element name="check" type="reseller:checkType"/>
+    <element name="create" type="reseller:createType"/>
+    <element name="delete"  type="reseller:deleteAndInfoType"/>
+    <element name="info" type="reseller:deleteAndInfoType"/>
+    <element name="update" type="reseller:updateType"/>
+
+    <!-- Child response elements.  -->
+    <element name="chkData" type="reseller:chkDataType"/>
+	<element name="creData" type="reseller:creDataType"/>
+    <element name="infData" type="reseller:infDataType"/>
+
+	<complexType name="checkType">
+		<sequence>
+			<element name="id" type="reseller:referenceType" maxOccurs="unbounded" minOccurs="1" />
+		</sequence>
+	</complexType>
+
+	<complexType name="deleteAndInfoType">
+		<sequence>
+			<element name="id" type="reseller:referenceType" maxOccurs="1" minOccurs="1" />
+		</sequence>
+	</complexType>
+
+	<!-- Child elements of the <create> command. -->
+    <complexType name="createType">
+        <sequence>
+            <element name="id" type="eppcom:clIDType" /> 
+            <element name="tradingName"  type="reseller:tradingNameType"/>
+			<element name="url" type="anyURI" minOccurs="0" />
+            <element name="email" type="reseller:emailType" minOccurs="0" />
+			<element name="voice" type="contact:e164Type" minOccurs="0" />
+			<element name="address" type="contact:addrType" />
+        </sequence>
+    </complexType>
+
+    <!-- Child elements of the <update> command. -->
+    <complexType name="updateType">
+        <sequence>
+            <element name="id" type="eppcom:clIDType"/>
+			<element name="add" type="reseller:addRemType" minOccurs="0"/>
+			<element name="rem" type="reseller:addRemType" minOccurs="0"/>
+			<element name="chg" type="reseller:chgType" minOccurs="0"/>
+		</sequence>
+	</complexType>
+	
+	<!-- Data elements that can be added or removed -->
+	<complexType name="addRemType">
+		<sequence>
+			<element name="status" type="reseller:statusType" maxOccurs="5"/>
+		</sequence>
+	</complexType>
+	
+	<!-- Data elements that can be changed -->
+	<complexType name="chgType">
+		<sequence>
+            <element name="tradingName" type="reseller:tradingNameType" minOccurs="0"/>            
+			<element name="url" type="anyURI" minOccurs="0"/>			
+			<element name="email" type="reseller:emailType" minOccurs="0" />
+			<element name="voice" type="contact:e164Type" minOccurs="0" />
+			<element name="address" type="contact:addrType" minOccurs="0" />
+        </sequence>
+    </complexType>
+
+  <!-- <check> response elements -->
+    <complexType name="chkDataType">
+        <sequence>
+            <element name="cd" type="reseller:checkDataType"
+                maxOccurs="unbounded"/>
+        </sequence>
+    </complexType>
+
+    <complexType name="checkDataType">
+        <sequence>
+            <element name="id" type="reseller:checkIdType"/>
+            <element name="reason" type="eppcom:reasonType"
+                minOccurs="0"/>
+        </sequence>
+    </complexType>
+
+    <complexType name="checkIdType">
+        <simpleContent>
+            <extension base="eppcom:clIDType">
+                <attribute name="avail" type="boolean"
+                    use="required"/>
+            </extension>
+        </simpleContent>
+    </complexType>
+    
+	<!-- <create> response elements -->
+	<complexType name="creDataType">
+		<sequence>
+			<element name="id" type="eppcom:clIDType"/>
+			<element name="crDate" type="dateTime"/>
+		</sequence>
+	</complexType>
+
+    <!-- <info> response elements. -->
+    <complexType name="infDataType">
+        <sequence>
+            <element name="id" type="eppcom:clIDType" />
+			<element name="roid" type="eppcom:roidType"/>
+			<element name="status" type="contact:statusType" maxOccurs="5"/>
+            <element name="tradingName" type="reseller:tradingNameType" />
+            <element name="url" type="anyURI" minOccurs="0" />
+            <element name="email" type="reseller:emailType" minOccurs="0" />
+            <element name="voice" type="contact:e164Type" minOccurs="0" />
+			<element name="address" type="contact:addrType" />
+			<element name="clID" type="eppcom:clIDType"/>
+			<element name="crID" type="eppcom:clIDType"/>
+			<element name="crDate" type="dateTime"/>
+			<element name="upID" type="eppcom:clIDType" minOccurs="0"/>
+			<element name="upDate" type="dateTime" minOccurs="0"/>
+        </sequence>
+    </complexType>
+
+    <!-- Common child elements. -->
+	<!-- Child element of command requiring only one identifier -->
+    <complexType name="referenceType">
+		<simpleContent>
+            <extension base = "eppcom:clIDType">
+        </extension>
+        </simpleContent>
+    </complexType>
+    
+    <simpleType name="tradingNameType">
+        <restriction base="token">
+        	<minLength value="1"/>
+            <maxLength value="255"/>
+        </restriction>
+    </simpleType>
+
+    <simpleType name="emailType">
+        <restriction base="token">
+            <maxLength value="255"/>
+        </restriction>
+    </simpleType>
+        
+   <!--
+   Status is a combination of attributes and an optional human-readable
+   message that may be expressed in languages other than English.
+   -->
+    <complexType name="statusType">
+      <simpleContent>
+        <extension base="normalizedString">
+          <attribute name="s" type="reseller:statusValueType" use="required"/>
+          <attribute name="lang" type="language" default="en"/>
+        </extension>
+      </simpleContent>
+    </complexType>
+
+    <simpleType name="statusValueType">
+      <restriction base="token">
+        <enumeration value="clientDeleteProhibited"/>
+        <enumeration value="clientUpdateProhibited"/>
+        <enumeration value="linked"/>
+        <enumeration value="ok"/>
+        <enumeration value="pendingCreate"/>
+        <enumeration value="pendingDelete"/>
+        <enumeration value="pendingUpdate"/>
+        <enumeration value="serverDeleteProhibited"/>
+        <enumeration value="serverUpdateProhibited"/>
+      </restriction>
+    </simpleType>
+
+    	
+    <!-- End of schema. -->
+</schema>
+

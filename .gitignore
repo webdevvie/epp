@@ -1,5 +1,5 @@
 vendor
 .idea
-Examples/config.php
+sample-code/config.php
 build
 bin

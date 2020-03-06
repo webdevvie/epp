@@ -10,7 +10,7 @@
         }
     ],
     "require": {
-        "php": ">=5.6.0",
+        "php": ">=7.2",
         "guzzlehttp/guzzle": "~6",
         "jms/serializer": "^1.10",
         "webdevvie/nestis": "^1.0"
@@ -22,7 +22,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Webdevvie\\Epp\\": ""
+            "Webdevvie\\Epp\\": "src"
         }
     },
     "autoload-dev": {

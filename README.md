@@ -78,6 +78,8 @@ Those with ✔️ have been done.
         - Info
 
 
+- Automatic Serialization/deserialization tests for every object
+
 Why
 ---
 Why build another EPP library? I wanted to create something neat and clean for the future. 

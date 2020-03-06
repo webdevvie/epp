@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+	Created: 15-08-2013
+	Version: 0.5 Pending approval
+	Author(s): Theo Leloux, Rik Ribbers, Edwin Godefrooij, Marc Groeneweg
+	Copyright: SIDN 2013 
+ -->
+<schema targetNamespace="http://rxsd.domain-registry.nl/sidn-ext-epp-reseller-1.0"
+    xmlns:resellerExt="http://rxsd.domain-registry.nl/sidn-ext-epp-reseller-1.0"
+    xmlns:reseller="http://rxsd.domain-registry.nl/sidn-reseller-1.0"
+    xmlns:eppcom="urn:ietf:params:xml:ns:eppcom-1.0"
+    xmlns="http://www.w3.org/2001/XMLSchema"
+    elementFormDefault="qualified"
+    version="2013-10-23">
+
+	<!-- Import common element types. -->
+	<import namespace="urn:ietf:params:xml:ns:eppcom-1.0" schemaLocation="eppcom-1.0.xsd"/>
+	<import namespace="http://rxsd.domain-registry.nl/sidn-reseller-1.0" schemaLocation="sidn-reseller-1.0.xsd"/>
+
+	<annotation>
+		<documentation>
+	        Extensible Provisioning Protocol v1.0 schema for SIDN resellers.
+		</documentation>
+	</annotation>
+
+    <!-- Elements used to extend existing EPP commands with a reference to a reseller object -->
+	<element name="create-reference" type="resellerExt:createUpdateRefType"/>
+	<element name="update" type="resellerExt:referenceUpdateType"/>
+	<element name="infData" type="resellerExt:createUpdateRefType"/>
+
+
+
+	<complexType name="createUpdateRefType">
+		<sequence>
+			<element name="id" type="reseller:referenceType" maxOccurs="1" minOccurs="0" />
+		</sequence>
+	</complexType>
+
+
+	<complexType name="referenceUpdateType">
+		<sequence>
+			<element name="rem" type="resellerExt:createUpdateRefType" minOccurs="0" />
+			<element name="add" type="resellerExt:createUpdateRefType" minOccurs="0" />
+		</sequence>
+	</complexType>
+    	
+    <!-- End of schema. -->
+</schema>
+

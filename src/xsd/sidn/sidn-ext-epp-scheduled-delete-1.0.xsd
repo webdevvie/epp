@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+	Created: 30-07-2019
+	Version: 1.0
+	Author(s): Michiel Graat
+	Copyright: SIDN 2019
+ -->
+<schema targetNamespace="http://rxsd.domain-registry.nl/sidn-ext-epp-scheduled-delete-1.0"
+    xmlns:scheduledDelete="http://rxsd.domain-registry.nl/sidn-ext-epp-scheduled-delete-1.0"
+    xmlns="http://www.w3.org/2001/XMLSchema"
+    elementFormDefault="qualified"
+    version="2019-07-30">
+
+	<annotation>
+		<documentation>
+	        Extensible Provisioning Protocol v1.0 schema for EPP scheduled delete.
+		</documentation>
+	</annotation>
+	
+	<element name="update" type="scheduledDelete:updateType"/>
+
+    <complexType name="updateType">
+    	<sequence>
+    		<element name="operation" type="scheduledDelete:domainUpdateOperationType"/>
+    		<element name="date" type="date" minOccurs="0"/>
+    	</sequence>
+    </complexType>
+    
+    <simpleType name="domainUpdateOperationType">
+    	<restriction base="token">
+    		<enumeration value="setDate"/>
+    		<enumeration value="setDateToEndOfSubscriptionPeriod"/>
+    		<enumeration value="cancel"/>
+    	</restriction>
+    </simpleType>
+        	
+    <!-- End of schema. -->
+</schema>
+

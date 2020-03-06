@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.metaregistrar.com/epp/common-1.0"
+        xmlns:common="http://www.metaregistrar.com/epp/common-1.0"
+        elementFormDefault="qualified">
+
+    <complexType name="currencyType">
+        <sequence>
+            <element name="name" type="common:currencyName"/>
+            <element name="amount" type="double"/>
+        </sequence>
+    </complexType>
+    <simpleType name="currencyName">
+        <restriction base="string">
+            <pattern value="[A-Z]{3}"/>
+        </restriction>
+    </simpleType>
+</schema>

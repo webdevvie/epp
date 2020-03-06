@@ -1,0 +1,18 @@
+<bindings xmlns="http://java.sun.com/xml/ns/jaxb"
+		  xmlns:xs="http://www.w3.org/2001/XMLSchema"
+		  version="2.1">
+	<bindings schemaLocation="signedMark-1.0.xsd" version="1.0">
+	<!--	 rename the value element
+		<bindings node="//xs:complexType[@name='signedMarkType']">
+			<bindings node=".//xs:attribute[@name='id']">
+				<property name="idAttribute"/>
+			</bindings>
+		</bindings>-->
+		<bindings node="//xs:complexType[@name='signedMarkType']">
+			<bindings node=".//xs:attribute[@name='id']">
+				<property name="idAttribute"/>
+			</bindings>
+		</bindings>
+
+	</bindings>
+</bindings>

@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" 
+         xmlns:sidn="http://rxsd.domain-registry.nl/sidn-ext-epp-1.0"
+         xmlns:epp="urn:ietf:params:xml:ns:epp-1.0"
+		 xmlns:domain="urn:ietf:params:xml:ns:domain-1.0"
+         xmlns:eppcom="urn:ietf:params:xml:ns:eppcom-1.0" 
+         targetNamespace="http://rxsd.domain-registry.nl/sidn-ext-epp-1.0" 
+         elementFormDefault="qualified" 
+         attributeFormDefault="unqualified"
+         version="2019-07-30">
+  <annotation>
+    <documentation>Extensible Provisioning Protocol v1.0 schema .NL extensions</documentation>
+  </annotation>
+  
+  <import namespace="urn:ietf:params:xml:ns:eppcom-1.0"
+          schemaLocation="eppcom-1.0.xsd"/>
+  <import namespace="urn:ietf:params:xml:ns:epp-1.0"
+          schemaLocation="epp-1.0.xsd"/>
+  <import namespace="urn:ietf:params:xml:ns:domain-1.0"
+          schemaLocation="domain-1.0.xsd"/>
+
+  <!-- Extensions on existing commands -->
+  <element name="ext" type="sidn:extType"/>
+  <complexType name="extType">
+    <choice>
+      <element name="create" type="sidn:createType"/>
+      <element name="update" type="sidn:updateType"/>
+      <element name="infData" type="sidn:createType"/>
+      <element name="trnData" type="sidn:transferType"/>      
+      <element name="response" type="sidn:responseType"/>
+    </choice>
+  </complexType>
+  <complexType name="createType">
+    <choice>
+      <element name="contact" type="sidn:contactType"/>
+      <element name="domain" type="sidn:domainType"/>
+      <element name="host" type="sidn:hostType"/>
+    </choice>
+  </complexType>
+  <complexType name="updateType">
+    <choice>
+      <element name="contact" type="sidn:contactType"/>
+      <element name="domain" type="sidn:domainType"/>
+    </choice>
+  </complexType>
+  <complexType name="transferType">
+    <sequence>
+      <element name="pw" type="eppcom:pwAuthInfoType" minOccurs="0"/>
+      <element name="domainname" type="eppcom:labelType" minOccurs="0"/>
+      <element name="requestor" type="string" minOccurs="0"/>
+      <element name="requestDate" type="dateTime" minOccurs="0"/>
+      <element name="supplyDate" type="dateTime" minOccurs="0"/>
+    </sequence>
+  </complexType>
+  <complexType name="responseType">
+    <sequence>
+      <element name="msg" type="sidn:msgType" minOccurs="0" maxOccurs="unbounded"/>
+    </sequence>
+  </complexType>
+  <complexType name="contactType">
+    <sequence>
+      <element name="legalForm" minOccurs="0" type="string"/>
+      <element name="legalFormRegNo" minOccurs="0" type="string"/>
+      <element name="limited" minOccurs="0" type="boolean"/>
+    </sequence>
+  </complexType>
+  <complexType name="domainType">
+    <sequence>
+      <element name="optOut" type="boolean"/>
+      <element name="limited" minOccurs="0" type="boolean"/>
+	  <element name="period" type="domain:periodType" minOccurs="0" />
+	  <element name="scheduledDeleteDate" type="dateTime" nillable="true"/>
+    </sequence>
+  </complexType>
+  <complexType name="hostType">
+    <sequence>
+      <element name="limited" minOccurs="0" type="boolean"/>
+    </sequence>
+  </complexType>
+  <complexType name="msgType">
+    <simpleContent>
+      <extension base="normalizedString">
+        <attribute name="code" use="required"/>
+        <attribute name="field"/>
+      </extension>
+    </simpleContent>
+  </complexType>
+
+  <!-- Command extension -->
+  <element name="command" type="sidn:commandType"/>
+  <complexType name="commandType">
+    <sequence>
+      <choice>
+        <element name="domainCancelDelete" type="sidn:domainCancelDeleteType"/>
+      </choice>
+      <element name="clTRID" type="epp:trIDStringType" minOccurs="0"/>
+    </sequence>
+  </complexType>
+  <complexType name="domainCancelDeleteType">
+    <sequence>
+      <element name="name" type="eppcom:labelType"/>
+      <element name="period" type="domain:periodType" minOccurs="0"/>      
+    </sequence>
+  </complexType>
+
+  <!-- Special element for PollResponse -->
+  <element name="pollData" type="sidn:pollDataType"/>
+  
+  <complexType name="pollDataType">
+   <sequence>
+     <element name="command" type="string"/>
+     <element name="data" type="epp:responseType"/>
+   </sequence>
+  </complexType>
+
+</schema>
