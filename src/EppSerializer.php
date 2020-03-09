@@ -69,11 +69,11 @@ class EppSerializer implements EppSerializerInterface
             $cl = $responseClass;
         }
         try {
+
             $out = $this->serializer->deserialize(
                 $xml,
                 $cl,
-                'xml',
-                DeserializationContext::create()->setSerializeNull(false)
+                'xml'
             );
         } catch (\Exception $e) {
             throw $e;

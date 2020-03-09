@@ -13,7 +13,7 @@
     ],
     "require": {
         "php": ">=7.1",
-        "jms/serializer": "^1.10",
+        "jms/serializer": "^3.3",
         "webdevvie/nestis": "^1.0"
     },
     "require-dev": {
