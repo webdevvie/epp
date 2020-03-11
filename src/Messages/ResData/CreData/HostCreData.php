@@ -28,8 +28,8 @@ class HostCreData
     protected $name;
 
     /**
-     * @var \DateTime
-     * @Type("DateTime")
+     * @var string|null
+     * @Type("string")
      * @SerializedName("crDate")
      * @XmlElement(namespace="urn:ietf:params:xml:ns:host-1.0")
      * @expose
@@ -55,20 +55,21 @@ class HostCreData
     }
 
     /**
-     * @return \DateTime
+     * @return string|null
      */
-    public function getCrDate()
+    public function getCrDate(): ?string
     {
         return $this->crDate;
     }
 
     /**
-     * @param \DateTime|null $crDate
+     * @param string|null $crDate
      * @return HostCreData
      */
-    public function setCrDate($crDate)
+    public function setCrDate(?string $crDate): HostCreData
     {
         $this->crDate = $crDate;
         return $this;
     }
+
 }

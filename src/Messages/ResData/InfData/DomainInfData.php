@@ -114,8 +114,8 @@ class DomainInfData extends AbstractCommandMessage
     protected $crId;
 
     /**
-     * @var \DateTime
-     * @Type("DateTime")
+     * @var string|null
+     * @Type("string")
      * @SerializedName("crDate")
      * @XmlElement(namespace="urn:ietf:params:xml:ns:domain-1.0")
      * @expose
@@ -133,8 +133,8 @@ class DomainInfData extends AbstractCommandMessage
     protected $upId;
 
     /**
-     * @var \DateTime
-     * @Type("DateTime")
+     * @var string|null
+     * @Type("string")
      * @SerializedName("upDate")
      * @XmlElement(namespace="urn:ietf:params:xml:ns:domain-1.0")
      * @expose
@@ -142,8 +142,8 @@ class DomainInfData extends AbstractCommandMessage
     protected $upDate;
 
     /**
-     * @var \DateTime
-     * @Type("DateTime")
+     * @var string|null
+     * @Type("string")
      * @SerializedName("exDate")
      * @XmlElement(namespace="urn:ietf:params:xml:ns:domain-1.0")
      * @expose
@@ -178,23 +178,7 @@ class DomainInfData extends AbstractCommandMessage
         return $this;
     }
 
-    /**
-     * @return \DateTime
-     */
-    public function getCrDate()
-    {
-        return $this->crDate;
-    }
 
-    /**
-     * @param \DateTime $crDate
-     * @return DomainInfData
-     */
-    public function setCrDate(\DateTime $crDate)
-    {
-        $this->crDate = $crDate;
-        return $this;
-    }
 
     /**
      * @return string
@@ -214,41 +198,6 @@ class DomainInfData extends AbstractCommandMessage
         return $this;
     }
 
-    /**
-     * @return \DateTime
-     */
-    public function getUpDate()
-    {
-        return $this->upDate;
-    }
-
-    /**
-     * @param \DateTime $upDate
-     * @return DomainInfData
-     */
-    public function setUpDate(\DateTime $upDate)
-    {
-        $this->upDate = $upDate;
-        return $this;
-    }
-
-    /**
-     * @return \DateTime
-     */
-    public function getExDate()
-    {
-        return $this->exDate;
-    }
-
-    /**
-     * @param \DateTime $exDate
-     * @return DomainInfData
-     */
-    public function setExDate(\DateTime $exDate)
-    {
-        $this->exDate = $exDate;
-        return $this;
-    }
 
     /**
      * @return Ns
@@ -411,4 +360,59 @@ class DomainInfData extends AbstractCommandMessage
         $this->upId = $upId;
         return $this;
     }
+
+    /**
+     * @return string|null
+     */
+    public function getCrDate()
+    {
+        return $this->crDate;
+    }
+
+    /**
+     * @param string|null $crDate
+     * @return DomainInfData
+     */
+    public function setCrDate(string $crDate): DomainInfData
+    {
+        $this->crDate = $crDate;
+        return $this;
+    }
+
+    /**
+     * @return string|null
+     */
+    public function getUpDate()
+    {
+        return $this->upDate;
+    }
+
+    /**
+     * @param string|null $upDate
+     * @return DomainInfData
+     */
+    public function setUpDate(string $upDate): DomainInfData
+    {
+        $this->upDate = $upDate;
+        return $this;
+    }
+
+    /**
+     * @return string|null
+     */
+    public function getExDate()
+    {
+        return $this->exDate;
+    }
+
+    /**
+     * @param string|null $exDate
+     * @return DomainInfData
+     */
+    public function setExDate(string $exDate): DomainInfData
+    {
+        $this->exDate = $exDate;
+        return $this;
+    }
+
 }

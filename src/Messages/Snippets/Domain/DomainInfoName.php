@@ -1,4 +1,5 @@
 <?php
+
 namespace Webdevvie\Epp\Messages\Snippets\Domain;
 
 use JMS\Serializer\Annotation\ExclusionPolicy;
@@ -21,6 +22,11 @@ use Webdevvie\Epp\Messages\Command\AbstractCommandMessage;
  */
 class DomainInfoName extends AbstractCommandMessage
 {
+    const HOSTS_ALL = 'all';
+    const HOSTS_NONE = 'none';
+    const HOSTS_SUB = 'sub';
+    const HOSTS_DEL = 'del';
+
     /**
      * @var string
      * @Type("string")
