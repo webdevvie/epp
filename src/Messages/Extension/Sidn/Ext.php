@@ -9,6 +9,7 @@ use JMS\Serializer\Annotation\Type;
 use JMS\Serializer\Annotation\XmlElement;
 use JMS\Serializer\Annotation\XmlNamespace;
 use Webdevvie\Epp\Messages\Extension\Sidn\ExtEpp\Response;
+use Webdevvie\Epp\Messages\Extension\Sidn\ExtEpp\InfData;
 
 /**
  * @ExclusionPolicy("all")
@@ -18,7 +19,16 @@ use Webdevvie\Epp\Messages\Extension\Sidn\ExtEpp\Response;
 class Ext
 {
     /**
-     * @var Response
+     * @var InfData|null
+     * @Type("Webdevvie\Epp\Messages\Extension\Sidn\ExtEpp\InfData")
+     * @SerializedName("infData")
+     * @XmlElement(namespace="http://rxsd.domain-registry.nl/sidn-ext-epp-1.0")
+     * @Expose
+     */
+    protected $infData;
+
+    /**
+     * @var Response|null
      * @Type("Webdevvie\Epp\Messages\Extension\Sidn\ExtEpp\Response")
      * @SerializedName("response")
      * @XmlElement(namespace="http://rxsd.domain-registry.nl/sidn-ext-epp-1.0")
@@ -27,20 +37,40 @@ class Ext
     protected $response;
 
     /**
-     * @return Response
+     * @return InfData|null
      */
-    public function getResponse(): Response
+    public function getInfData(): ?InfData
+    {
+        return $this->infData;
+    }
+
+    /**
+     * @param InfData|null $infData
+     * @return Ext
+     */
+    public function setInfData(?InfData $infData): Ext
+    {
+        $this->infData = $infData;
+        return $this;
+    }
+
+    /**
+     * @return Response|null
+     */
+    public function getResponse(): ?Response
     {
         return $this->response;
     }
 
     /**
-     * @param Response $response
+     * @param Response|null $response
      * @return Ext
      */
-    public function setResponse(Response $response): Ext
+    public function setResponse(?Response $response): Ext
     {
         $this->response = $response;
         return $this;
     }
+
+
 }

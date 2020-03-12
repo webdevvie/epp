@@ -81,8 +81,8 @@ class HostInfData extends AbstractCommandMessage
     protected $crId;
 
     /**
-     * @var string|null
-     * @Type("string")
+     * @var \DateTime
+     * @Type("DateTime")
      * @SerializedName("crDate")
      * @XmlElement(cdata=false, namespace="urn:ietf:params:xml:ns:host-1.0")
      * @expose
@@ -153,24 +153,22 @@ class HostInfData extends AbstractCommandMessage
     }
 
     /**
-     * @return string|null
+     * @return \DateTime
      */
-    public function getCrDate(): ?string
+    public function getCrDate()
     {
         return $this->crDate;
     }
 
     /**
-     * @param string|null $crDate
+     * @param \DateTime|null $crDate
      * @return HostInfData
      */
-    public function setCrDate(?string $crDate): HostInfData
+    public function setCrDate($crDate)
     {
         $this->crDate = $crDate;
         return $this;
     }
-
-
 
     /**
      * @return string

@@ -29,8 +29,8 @@ class DomainRenData extends AbstractCommandMessage
     protected $name;
 
     /**
-     * @var string|null
-     * @Type("string")
+     * @var \DateTime
+     * @Type("DateTime")
      * @SerializedName("exDate")
      * @XmlElement(namespace="urn:ietf:params:xml:ns:domain-1.0")
      * @expose
@@ -56,22 +56,20 @@ class DomainRenData extends AbstractCommandMessage
     }
 
     /**
-     * @return string|null
+     * @return \DateTime
      */
-    public function getExDate(): ?string
+    public function getExDate()
     {
         return $this->exDate;
     }
 
     /**
-     * @param string|null $exDate
+     * @param \DateTime $exDate
      * @return DomainRenData
      */
-    public function setExDate(?string $exDate): DomainRenData
+    public function setExDate(\DateTime $exDate)
     {
         $this->exDate = $exDate;
         return $this;
     }
-
-
 }

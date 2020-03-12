@@ -4,10 +4,12 @@ namespace Webdevvie\Epp\Messages\Extension\Sidn\ExtEpp;
 
 use JMS\Serializer\Annotation\ExclusionPolicy;
 use JMS\Serializer\Annotation\Expose;
+use JMS\Serializer\Annotation\SerializedName;
 use JMS\Serializer\Annotation\Type;
-use JMS\Serializer\Annotation\XmlAttribute;
+use JMS\Serializer\Annotation\XmlElement;
 use JMS\Serializer\Annotation\XmlNamespace;
 use JMS\Serializer\Annotation\XmlValue;
+use JMS\Serializer\Annotation\XmlAttribute;
 
 /**
  * @ExclusionPolicy("all")

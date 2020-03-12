@@ -49,8 +49,8 @@ class DomainTrnData extends AbstractCommandMessage
     protected $reID;
 
     /**
-     * @var string|null
-     * @Type("string")
+     * @var \DateTime
+     * @Type("DateTime")
      * @SerializedName("reDate")
      * @XmlElement(namespace="urn:ietf:params:xml:ns:domain-1.0")
      * @expose
@@ -68,8 +68,8 @@ class DomainTrnData extends AbstractCommandMessage
     protected $acID;
 
     /**
-     * @var string|null
-     * @Type("string")
+     * @var \DateTime
+     * @Type("DateTime")
      * @SerializedName("acDate")
      * @XmlElement(namespace="urn:ietf:params:xml:ns:domain-1.0")
      * @expose
@@ -77,8 +77,8 @@ class DomainTrnData extends AbstractCommandMessage
     protected $acDate;
 
     /**
-     * @var string|null
-     * @Type("string")
+     * @var \DateTime
+     * @Type("DateTime")
      * @SerializedName("exDate")
      * @XmlElement(namespace="urn:ietf:params:xml:ns:domain-1.0")
      * @expose
@@ -140,24 +140,22 @@ class DomainTrnData extends AbstractCommandMessage
     }
 
     /**
-     * @return string|null
+     * @return \DateTime
      */
-    public function getReDate(): ?string
+    public function getReDate()
     {
         return $this->reDate;
     }
 
     /**
-     * @param string|null $reDate
+     * @param \DateTime $reDate
      * @return DomainTrnData
      */
-    public function setReDate(?string $reDate): DomainTrnData
+    public function setReDate(\DateTime $reDate)
     {
         $this->reDate = $reDate;
         return $this;
     }
-
-
 
     /**
      * @return string
@@ -178,39 +176,38 @@ class DomainTrnData extends AbstractCommandMessage
     }
 
     /**
-     * @return string|null
+     * @return \DateTime
      */
-    public function getAcDate(): ?string
+    public function getAcDate()
     {
         return $this->acDate;
     }
 
     /**
-     * @param string|null $acDate
+     * @param \DateTime $acDate
      * @return DomainTrnData
      */
-    public function setAcDate(?string $acDate): DomainTrnData
+    public function setAcDate(\DateTime $acDate)
     {
         $this->acDate = $acDate;
         return $this;
     }
 
     /**
-     * @return string|null
+     * @return \DateTime
      */
-    public function getExDate(): ?string
+    public function getExDate()
     {
         return $this->exDate;
     }
 
     /**
-     * @param string|null $exDate
+     * @param \DateTime $exDate
      * @return DomainTrnData
      */
-    public function setExDate(?string $exDate): DomainTrnData
+    public function setExDate(\DateTime $exDate)
     {
         $this->exDate = $exDate;
         return $this;
     }
-
 }

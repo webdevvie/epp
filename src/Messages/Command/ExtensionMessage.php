@@ -17,6 +17,7 @@ use Webdevvie\Epp\Messages\Extension\SecDns\SecDnsCreate;
 use Webdevvie\Epp\Messages\Extension\SecDns\SecDnsInfData;
 use Webdevvie\Epp\Messages\Extension\SecDns\SecDnsUpdate;
 use Webdevvie\Epp\Messages\Extension\Sidn\Ext as SidnExtEpp;
+use Webdevvie\Epp\Messages\Extension\Sidn\ResellerExt\InfData as SidnResellerExtInfData;
 
 /**
  * Class Command
@@ -106,13 +107,22 @@ class ExtensionMessage extends AbstractCommandMessage
     protected $metaregistrarContactInfData;
 
     /**
-     * @var SidnExtEpp
+     * @var SidnExtEpp|null
      * @Type("Webdevvie\Epp\Messages\Extension\Sidn\Ext")
      * @SerializedName("ext")
      * @XmlElement(namespace="http://rxsd.domain-registry.nl/sidn-ext-epp-1.0")
      * @Expose
      */
     protected $sidnExt;
+
+    /**
+     * @var SidnResellerExtInfData|null
+     * @Type("Webdevvie\Epp\Messages\Extension\Sidn\ResellerExt\InfData")
+     * @SerializedName("infData")
+     * @XmlElement(namespace="http://rxsd.domain-registry.nl/sidn-ext-epp-reseller-1.0")
+     * @Expose
+     */
+    protected $sidnResellerExtInfData;
 
     /**
      * @return SecDnsCreate
@@ -277,22 +287,39 @@ class ExtensionMessage extends AbstractCommandMessage
     }
 
     /**
-     * @return SidnExtEpp
+     * @return SidnExtEpp|null
      */
-    public function getSidnExt(): SidnExtEpp
+    public function getSidnExt(): ?SidnExtEpp
     {
         return $this->sidnExt;
     }
 
     /**
-     * @param SidnExtEpp $sidnExt
+     * @param SidnExtEpp|null $sidnExt
      * @return ExtensionMessage
      */
-    public function setSidnExt(SidnExtEpp $sidnExt): ExtensionMessage
+    public function setSidnExt(?SidnExtEpp $sidnExt): ExtensionMessage
     {
         $this->sidnExt = $sidnExt;
         return $this;
     }
 
+    /**
+     * @return SidnResellerExtInfData|null
+     */
+    public function getSidnResellerExtInfData(): ?SidnResellerExtInfData
+    {
+        return $this->sidnResellerExtInfData;
+    }
+
+    /**
+     * @param SidnResellerExtInfData|null $sidnResellerExtInfData
+     * @return ExtensionMessage
+     */
+    public function setSidnResellerExtInfData(?SidnResellerExtInfData $sidnResellerExtInfData): ExtensionMessage
+    {
+        $this->sidnResellerExtInfData = $sidnResellerExtInfData;
+        return $this;
+    }
 
 }

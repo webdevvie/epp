@@ -123,8 +123,8 @@ class ContactInfData extends AbstractCommandMessage
     protected $crId;
 
     /**
-     * @var string|null
-     * @Type("string")
+     * @var \DateTime
+     * @Type("DateTime")
      * @SerializedName("crDate")
      * @XmlElement(namespace="urn:ietf:params:xml:ns:contact-1.0")
      * @expose
@@ -142,8 +142,8 @@ class ContactInfData extends AbstractCommandMessage
     protected $upId;
 
     /**
-     * @var string|null
-     * @Type("string")
+     * @var \DateTime
+     * @Type("DateTime")
      * @SerializedName("upDate")
      * @XmlElement(namespace="urn:ietf:params:xml:ns:contact-1.0")
      * @expose
@@ -308,42 +308,40 @@ class ContactInfData extends AbstractCommandMessage
     }
 
     /**
-     * @return string|null
+     * @return \DateTime
      */
-    public function getCrDate(): ?string
+    public function getCrDate()
     {
         return $this->crDate;
     }
 
     /**
-     * @param string|null $crDate
+     * @param \DateTime $crDate
      * @return ContactInfData
      */
-    public function setCrDate(?string $crDate): ContactInfData
+    public function setCrDate(\DateTime $crDate)
     {
         $this->crDate = $crDate;
         return $this;
     }
 
     /**
-     * @return string|null
+     * @return \DateTime
      */
-    public function getUpDate(): ?string
+    public function getUpDate()
     {
         return $this->upDate;
     }
 
     /**
-     * @param string|null $upDate
+     * @param \DateTime $upDate
      * @return ContactInfData
      */
-    public function setUpDate(?string $upDate): ContactInfData
+    public function setUpDate(\DateTime $upDate)
     {
         $this->upDate = $upDate;
         return $this;
     }
-
-
 
     /**
      * @return string

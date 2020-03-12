@@ -28,8 +28,8 @@ class ContactCreData
     protected $id;
 
     /**
-     * @var string|null
-     * @Type("string")
+     * @var \DateTime
+     * @Type("DateTime")
      * @SerializedName("crDate")
      * @XmlElement(namespace="urn:ietf:params:xml:ns:contact-1.0")
      * @expose
@@ -55,22 +55,20 @@ class ContactCreData
     }
 
     /**
-     * @return string|null
+     * @return \DateTime
      */
-    public function getCrDate(): ?string
+    public function getCrDate()
     {
         return $this->crDate;
     }
 
     /**
-     * @param string|null $crDate
+     * @param \DateTime $crDate
      * @return ContactCreData
      */
-    public function setCrDate(?string $crDate): ContactCreData
+    public function setCrDate(\DateTime $crDate)
     {
         $this->crDate = $crDate;
         return $this;
     }
-
-
 }

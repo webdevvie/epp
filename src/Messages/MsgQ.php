@@ -19,8 +19,8 @@ use Webdevvie\Epp\Messages\MsgQ\Message;
 class MsgQ extends AbstractCommandMessage
 {
     /**
-     * @var string|null
-     * @Type("string")
+     * @var \DateTime
+     * @Type("DateTime")
      * @SerializedName("qDate")
      *
      *
@@ -55,7 +55,23 @@ class MsgQ extends AbstractCommandMessage
      */
     protected $id = 0;
 
+    /**
+     * @return \DateTime
+     */
+    public function getQDate()
+    {
+        return $this->qDate;
+    }
 
+    /**
+     * @param \DateTime|null $qDate
+     * @return MsgQ
+     */
+    public function setQDate($qDate)
+    {
+        $this->qDate = $qDate;
+        return $this;
+    }
 
     /**
      * @return Message
@@ -109,24 +125,6 @@ class MsgQ extends AbstractCommandMessage
     public function setId($id)
     {
         $this->id = $id;
-        return $this;
-    }
-
-    /**
-     * @return string|null
-     */
-    public function getQDate(): ?string
-    {
-        return $this->qDate;
-    }
-
-    /**
-     * @param string|null $qDate
-     * @return MsgQ
-     */
-    public function setQDate(?string $qDate): MsgQ
-    {
-        $this->qDate = $qDate;
         return $this;
     }
 }
