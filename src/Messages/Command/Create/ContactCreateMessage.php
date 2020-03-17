@@ -30,7 +30,7 @@ class ContactCreateMessage extends AbstractCommandMessage
      *
      * @Expose
      */
-    protected $id = '';
+    protected $id = null;
     /**
      * @var PostalInfo
      * @Type("Webdevvie\Epp\Messages\Snippets\Contact\PostalInfo")

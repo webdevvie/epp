@@ -28,8 +28,8 @@ class DomainCreData
     protected $name;
 
     /**
-     * @var \DateTime
-     * @Type("DateTime")
+     * @var string|null
+     * @Type("string")
      * @SerializedName("crDate")
      * @XmlElement(namespace="urn:ietf:params:xml:ns:domain-1.0")
      * @expose
@@ -37,8 +37,8 @@ class DomainCreData
     protected $crDate;
 
     /**
-     * @var \DateTime
-     * @Type("DateTime")
+     * @var string|null
+     * @Type("string")
      * @SerializedName("exDate")
      * @XmlElement(namespace="urn:ietf:params:xml:ns:domain-1.0")
      * @expose
@@ -64,38 +64,40 @@ class DomainCreData
     }
 
     /**
-     * @return \DateTime
+     * @return string|null
      */
-    public function getCrDate()
+    public function getCrDate(): ?string
     {
         return $this->crDate;
     }
 
     /**
-     * @param \DateTime $crDate
+     * @param string|null $crDate
      * @return DomainCreData
      */
-    public function setCrDate(\DateTime $crDate)
+    public function setCrDate(?string $crDate): DomainCreData
     {
         $this->crDate = $crDate;
         return $this;
     }
 
     /**
-     * @return \DateTime
+     * @return string|null
      */
-    public function getExDate()
+    public function getExDate(): ?string
     {
         return $this->exDate;
     }
 
     /**
-     * @param \DateTime $exDate
+     * @param string|null $exDate
      * @return DomainCreData
      */
-    public function setExDate(\DateTime $exDate)
+    public function setExDate(?string $exDate): DomainCreData
     {
         $this->exDate = $exDate;
         return $this;
     }
+
+  
 }

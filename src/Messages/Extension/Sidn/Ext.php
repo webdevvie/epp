@@ -10,6 +10,7 @@ use JMS\Serializer\Annotation\XmlElement;
 use JMS\Serializer\Annotation\XmlNamespace;
 use Webdevvie\Epp\Messages\Extension\Sidn\ExtEpp\Response;
 use Webdevvie\Epp\Messages\Extension\Sidn\ExtEpp\InfData;
+use Webdevvie\Epp\Messages\Extension\Sidn\ExtEpp\Create;
 
 /**
  * @ExclusionPolicy("all")
@@ -26,6 +27,15 @@ class Ext
      * @Expose
      */
     protected $infData;
+
+    /**
+     * @var Create|null
+     * @Type("Webdevvie\Epp\Messages\Extension\Sidn\ExtEpp\Create")
+     * @SerializedName("create")
+     * @XmlElement(namespace="http://rxsd.domain-registry.nl/sidn-ext-epp-1.0")
+     * @Expose
+     */
+    protected $create;
 
     /**
      * @var Response|null
@@ -69,6 +79,24 @@ class Ext
     public function setResponse(?Response $response): Ext
     {
         $this->response = $response;
+        return $this;
+    }
+
+    /**
+     * @return Create|null
+     */
+    public function getCreate(): ?Create
+    {
+        return $this->create;
+    }
+
+    /**
+     * @param Create|null $create
+     * @return Ext
+     */
+    public function setCreate(?Create $create): Ext
+    {
+        $this->create = $create;
         return $this;
     }
 

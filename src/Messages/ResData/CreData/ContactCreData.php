@@ -28,8 +28,8 @@ class ContactCreData
     protected $id;
 
     /**
-     * @var \DateTime
-     * @Type("DateTime")
+     * @var string
+     * @Type("string")
      * @SerializedName("crDate")
      * @XmlElement(namespace="urn:ietf:params:xml:ns:contact-1.0")
      * @expose

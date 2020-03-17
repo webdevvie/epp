@@ -81,14 +81,23 @@ class HostInfData extends AbstractCommandMessage
     protected $crId;
 
     /**
-     * @var \DateTime
-     * @Type("DateTime")
+     * @var string
+     * @Type("string")
      * @SerializedName("crDate")
      * @XmlElement(cdata=false, namespace="urn:ietf:params:xml:ns:host-1.0")
      * @expose
      */
     protected $crDate;
 
+    /**
+     * @var string
+     * @Type("string")
+     * @SerializedName("upDate")
+     * @XmlElement(cdata=false, namespace="urn:ietf:params:xml:ns:host-1.0")
+     * @expose
+     */
+    protected $upDate;
+    
     /**
      * @param Addr $ip
      * @return void
@@ -203,6 +212,42 @@ class HostInfData extends AbstractCommandMessage
     public function setCrId($crId)
     {
         $this->crId = $crId;
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getUpDate(): string
+    {
+        return $this->upDate;
+    }
+
+    /**
+     * @param string $upDate
+     * @return HostInfData
+     */
+    public function setUpDate(string $upDate): HostInfData
+    {
+        $this->upDate = $upDate;
+        return $this;
+    }
+
+    /**
+     * @return Addr[]
+     */
+    public function getAddr(): array
+    {
+        return $this->addr;
+    }
+
+    /**
+     * @param Addr[] $addr
+     * @return HostInfData
+     */
+    public function setAddr(array $addr): HostInfData
+    {
+        $this->addr = $addr;
         return $this;
     }
 }

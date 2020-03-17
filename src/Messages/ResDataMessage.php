@@ -72,7 +72,7 @@ class ResDataMessage
      *
      * @Expose
      */
-    protected $creData;
+    protected $contactCreData;
 
     /**
      * @var DomainCreData
@@ -164,6 +164,7 @@ class ResDataMessage
      */
     protected $contactInfData;
 
+
     /**
      * @var HostInfData
      * @Type("Webdevvie\Epp\Messages\ResData\InfData\HostInfData")
@@ -212,23 +213,7 @@ class ResDataMessage
         return $this;
     }
 
-    /**
-     * @return ContactCreData
-     */
-    public function getCreData()
-    {
-        return $this->creData;
-    }
 
-    /**
-     * @param ContactCreData $creData
-     * @return ResDataMessage
-     */
-    public function setCreData(ContactCreData $creData)
-    {
-        $this->creData = $creData;
-        return $this;
-    }
 
     /**
      * @return HostCreData
@@ -479,6 +464,24 @@ class ResDataMessage
     public function setSslRenData(SSLRenData $sslRenData)
     {
         $this->sslRenData = $sslRenData;
+        return $this;
+    }
+
+    /**
+     * @return ContactCreData
+     */
+    public function getContactCreData(): ContactCreData
+    {
+        return $this->contactCreData;
+    }
+
+    /**
+     * @param ContactCreData $contactCreData
+     * @return ResDataMessage
+     */
+    public function setContactCreData(ContactCreData $contactCreData): ResDataMessage
+    {
+        $this->contactCreData = $contactCreData;
         return $this;
     }
 }
