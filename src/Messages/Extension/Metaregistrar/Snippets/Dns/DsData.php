@@ -13,7 +13,7 @@ use Webdevvie\Epp\Messages\Command\AbstractCommandMessage;
  * Class Command
  * @ExclusionPolicy("all")
  * @XmlNamespace(uri="urn:ietf:params:xml:ns:epp-1.0")
- * @XmlNamespace(uri="urn:ietf:params:xml:ns:secDNS-1.1", prefix="secDNS")
+ * @XmlNamespace(uri="http://www.metaregistrar.com/epp/dns-ext-1.0", prefix="dns-ext")
  */
 class DsData extends AbstractCommandMessage
 {
@@ -21,7 +21,7 @@ class DsData extends AbstractCommandMessage
      * @var string
      * @Type("string")
      * @SerializedName("keyTag")
-     * @XmlElement(namespace="urn:ietf:params:xml:ns:secDNS-1.1")
+     * @XmlElement(namespace="http://www.metaregistrar.com/epp/dns-ext-1.0")
      * @Expose
      */
     protected $keytag;
@@ -30,7 +30,7 @@ class DsData extends AbstractCommandMessage
      * @var string
      * @Type("string")
      * @SerializedName("alg")
-     * @XmlElement(namespace="urn:ietf:params:xml:ns:secDNS-1.1")
+     * @XmlElement(namespace="http://www.metaregistrar.com/epp/dns-ext-1.0")
      * @Expose
      */
     protected $alg;
@@ -39,7 +39,7 @@ class DsData extends AbstractCommandMessage
      * @var string
      * @Type("string")
      * @SerializedName("digestType")
-     * @XmlElement(namespace="urn:ietf:params:xml:ns:secDNS-1.1")
+     * @XmlElement(namespace="http://www.metaregistrar.com/epp/dns-ext-1.0")
      * @Expose
      */
     protected $digestType;
@@ -48,7 +48,7 @@ class DsData extends AbstractCommandMessage
      * @var string
      * @Type("string")
      * @SerializedName("digest")
-     * @XmlElement(namespace="urn:ietf:params:xml:ns:secDNS-1.1")
+     * @XmlElement(namespace="http://www.metaregistrar.com/epp/dns-ext-1.0")
      * @Expose
      */
     protected $digest;
@@ -57,7 +57,7 @@ class DsData extends AbstractCommandMessage
      * @var KeyData
      * @Type("Webdevvie\Epp\Messages\Extension\Metaregistrar\Snippets\Dns\KeyData")
      * @SerializedName("keyData")
-     * @XmlElement(namespace="urn:ietf:params:xml:ns:secDNS-1.1")
+     * @XmlElement(namespace="http://www.metaregistrar.com/epp/dns-ext-1.0")
      * @Expose
      */
     protected $keyData;

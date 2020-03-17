@@ -13,7 +13,7 @@ use Webdevvie\Epp\Messages\Command\AbstractCommandMessage;
  * Class Command
  * @ExclusionPolicy("all")
  * @XmlNamespace(uri="urn:ietf:params:xml:ns:epp-1.0")
- * @XmlNamespace(uri="urn:ietf:params:xml:ns:secDNS-1.1", prefix="secDNS")
+ * @XmlNamespace(uri="http://www.metaregistrar.com/epp/dns-ext-1.0", prefix="dns-ext")
  */
 class KeyData extends AbstractCommandMessage
 {
@@ -21,7 +21,7 @@ class KeyData extends AbstractCommandMessage
      * @var string
      * @Type("string")
      * @SerializedName("flags")
-     * @XmlElement(namespace="urn:ietf:params:xml:ns:secDNS-1.1")
+     * @XmlElement(namespace="http://www.metaregistrar.com/epp/dns-ext-1.0")
      * @Expose
      */
     protected $flags;
@@ -30,7 +30,7 @@ class KeyData extends AbstractCommandMessage
      * @var string
      * @Type("string")
      * @SerializedName("protocol")
-     * @XmlElement(namespace="urn:ietf:params:xml:ns:secDNS-1.1")
+     * @XmlElement(namespace="http://www.metaregistrar.com/epp/dns-ext-1.0")
      * @Expose
      */
     protected $protocol;
@@ -39,7 +39,7 @@ class KeyData extends AbstractCommandMessage
      * @var string
      * @Type("string")
      * @SerializedName("alg")
-     * @XmlElement(namespace="urn:ietf:params:xml:ns:secDNS-1.1")
+     * @XmlElement(namespace="http://www.metaregistrar.com/epp/dns-ext-1.0")
      * @Expose
      */
     protected $alg;
@@ -48,7 +48,7 @@ class KeyData extends AbstractCommandMessage
      * @var string
      * @Type("string")
      * @SerializedName("pubKey")
-     * @XmlElement(namespace="urn:ietf:params:xml:ns:secDNS-1.1")
+     * @XmlElement(namespace="http://www.metaregistrar.com/epp/dns-ext-1.0")
      * @Expose
      */
     protected $pubKey;

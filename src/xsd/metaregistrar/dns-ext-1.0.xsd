@@ -115,7 +115,7 @@
             <element name="name" type="eppcom:labelType"/>
             <element name="content" type="dns-ext:contentType" minOccurs="0" maxOccurs="unbounded"/>
             <element name="keyData" type="dns-ext:keyDataType" minOccurs="0" maxOccurs="unbounded"/>
-            <element name="dsData" type="dns-ext:keyDataType" minOccurs="0" maxOccurs="unbounded"/>
+            <element name="dsData" type="dns-ext:dsDataType" minOccurs="0" maxOccurs="unbounded"/>
 
         </sequence>
     </complexType>

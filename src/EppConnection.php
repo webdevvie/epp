@@ -12,7 +12,9 @@ use Webdevvie\Epp\Messages\Command\Logout\LogoutMessage;
 use Webdevvie\Epp\Messages\CommandMessage;
 use Webdevvie\Epp\Messages\EppMessage;
 use Webdevvie\Epp\Messages\Greeting;
+use Webdevvie\Epp\Messages\GreetingMessage;
 use Webdevvie\Epp\Messages\Hello;
+use Webdevvie\Epp\Messages\HelloMessage;
 use Webdevvie\Epp\Simple\SimpleEppCommand;
 use Webdevvie\Epp\Simple\SimpleEppResponse;
 
@@ -219,11 +221,11 @@ class EppConnection extends AbstractConnection
             throw new ConnectionException("cannot send hello when not connected", 1);
         }
         $eppMessage = new EppMessage();
-        $hello = new Hello();
+        $hello = new HelloMessage();
         $eppMessage->setHello($hello);
         $response = $this->writeAndWaitForResponse($eppMessage);
         $greeting = $this->nestis->getNestedItem('greeting', $response);
-        if (!($greeting instanceof Greeting)) {
+        if (!($greeting instanceof GreetingMessage)) {
             throw new ConnectionException("No greeting as a response to hello", 1);
         }
         return true;

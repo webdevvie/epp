@@ -43,7 +43,7 @@ class Content
 
     /**
      * @var integer
-     * @Type("integer")
+     * @Type("string")
      * @SerializedName("ttl")
      * @XmlElement(namespace="http://www.metaregistrar.com/epp/dns-ext-1.0")
      * @Expose
@@ -61,7 +61,7 @@ class Content
 
     /**
      * @var integer
-     * @Type("integer")
+     * @Type("string")
      * @SerializedName("priority")
      * @XmlElement(namespace="http://www.metaregistrar.com/epp/dns-ext-1.0")
      * @Expose
