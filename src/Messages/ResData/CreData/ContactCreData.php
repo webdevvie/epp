@@ -55,7 +55,7 @@ class ContactCreData
     }
 
     /**
-     * @return \DateTime
+     * @return string
      */
     public function getCrDate()
     {
@@ -63,10 +63,10 @@ class ContactCreData
     }
 
     /**
-     * @param \DateTime $crDate
+     * @param string $crDate
      * @return ContactCreData
      */
-    public function setCrDate(\DateTime $crDate)
+    public function setCrDate( $crDate)
     {
         $this->crDate = $crDate;
         return $this;

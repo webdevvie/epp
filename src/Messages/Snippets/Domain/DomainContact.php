@@ -1,4 +1,5 @@
 <?php
+
 namespace Webdevvie\Epp\Messages\Snippets\Domain;
 
 use JMS\Serializer\Annotation\ExclusionPolicy;
@@ -19,6 +20,10 @@ use JMS\Serializer\Annotation\XmlValue;
  */
 class DomainContact
 {
+    const ROLE_ADMIN = 'admin';
+    const ROLE_TECH = 'tech';
+    const ROLE_BILLING = 'billing';
+
     /**
      * @var string
      * @Type("string")

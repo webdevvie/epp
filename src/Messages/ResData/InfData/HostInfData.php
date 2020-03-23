@@ -218,7 +218,7 @@ class HostInfData extends AbstractCommandMessage
     /**
      * @return string
      */
-    public function getUpDate(): string
+    public function getUpDate(): ?string
     {
         return $this->upDate;
     }
