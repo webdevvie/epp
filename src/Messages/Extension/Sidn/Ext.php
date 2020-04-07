@@ -99,6 +99,4 @@ class Ext
         $this->create = $create;
         return $this;
     }
-
-
 }

@@ -32,7 +32,15 @@ class Add
      */
     protected $dsData = [];
 
-
+    /**
+     * @param SecDnsKeyData $keyData
+     * @return $this
+     */
+    public function addKeyData(SecDnsKeyData $keyData)
+    {
+        $this->keyData[]=$keyData;
+        return $this;
+    }
     /**
      * @return SecDnsKeyData[]
      */

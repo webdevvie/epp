@@ -18,7 +18,7 @@ use Webdevvie\Epp\Messages\Extension\SecDns\SecDnsInfData;
 use Webdevvie\Epp\Messages\Extension\SecDns\SecDnsUpdate;
 use Webdevvie\Epp\Messages\Extension\Sidn\Ext as SidnExtEpp;
 use Webdevvie\Epp\Messages\Extension\Sidn\ResellerExt\InfData as SidnResellerExtInfData;
-
+use Webdevvie\Epp\Messages\Extension\Sidn\Command as SidnCommand;
 /**
  * Class Command
  * @ExclusionPolicy("all")
@@ -114,6 +114,15 @@ class ExtensionMessage extends AbstractCommandMessage
      * @Expose
      */
     protected $sidnExt;
+
+    /**
+     * @var SidnCommand|null
+     * @Type("Webdevvie\Epp\Messages\Extension\Sidn\Command")
+     * @SerializedName("command")
+     * @XmlElement(namespace="http://rxsd.domain-registry.nl/sidn-ext-epp-1.0")
+     * @Expose
+     */
+    protected $sidnCommand;
 
     /**
      * @var SidnResellerExtInfData|null
@@ -322,4 +331,21 @@ class ExtensionMessage extends AbstractCommandMessage
         return $this;
     }
 
+    /**
+     * @return SidnCommand|null
+     */
+    public function getSidnCommand(): ?SidnCommand
+    {
+        return $this->sidnCommand;
+    }
+
+    /**
+     * @param SidnCommand|null $sidnCommand
+     * @return ExtensionMessage
+     */
+    public function setSidnCommand(?SidnCommand $sidnCommand): ExtensionMessage
+    {
+        $this->sidnCommand = $sidnCommand;
+        return $this;
+    }
 }

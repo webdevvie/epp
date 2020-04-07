@@ -9,6 +9,7 @@ use JMS\Serializer\Annotation\Type;
 use JMS\Serializer\Annotation\XmlNamespace;
 use JMS\Serializer\Annotation\XmlRoot;
 use Webdevvie\Epp\EppMessageInterface;
+use Webdevvie\Epp\Messages\Command\ExtensionMessage;
 
 /**
  * Class Domain
@@ -70,6 +71,15 @@ class EppMessage extends AbstractEppMessage implements EppMessageInterface
     protected $response;
 
     /**
+     * @var ExtensionMessage
+     * @Type("Webdevvie\Epp\Messages\Command\ExtensionMessage")
+     * @SerializedName("extension")
+     *
+     * @Expose
+     */
+    protected $extension;
+
+    /**
      * @param HelloMessage $hello
      * @return EppMessage
      */
@@ -116,7 +126,7 @@ class EppMessage extends AbstractEppMessage implements EppMessageInterface
     }
 
     /**
-     * @return RootExtensionMessage
+     * @return ExtensionMessage
      */
     public function getExtension()
     {
@@ -124,10 +134,10 @@ class EppMessage extends AbstractEppMessage implements EppMessageInterface
     }
 
     /**
-     * @param RootExtensionMessage $extension
+     * @param ExtensionMessage $extension
      * @return EppMessage
      */
-    public function setExtension(RootExtensionMessage $extension)
+    public function setExtension(ExtensionMessage $extension)
     {
         $this->extension = $extension;
         return $this;
