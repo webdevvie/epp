@@ -29,6 +29,7 @@ class Chg extends AbstractCommandMessage
      * @Expose
      */
     protected $postalInfo;
+
     /**
      * @var string
      * @Type("string")
@@ -69,7 +70,15 @@ class Chg extends AbstractCommandMessage
      */
     protected $authInfo;
 
-
+    /**
+     * @var Disclose|null
+     * @Type("Webdevvie\Epp\Messages\Snippets\Contact\Disclose")
+     * @SerializedName("disclose")
+     * @XmlElement(namespace="urn:ietf:params:xml:ns:contact-1.0")
+     *
+     * @Expose
+     */
+    protected $disclose;
 
     /**
      * @return string
@@ -158,6 +167,24 @@ class Chg extends AbstractCommandMessage
     public function setAuthInfo(AuthInfo $authInfo)
     {
         $this->authInfo = $authInfo;
+        return $this;
+    }
+
+    /**
+     * @return Disclose|null
+     */
+    public function getDisclose(): ?Disclose
+    {
+        return $this->disclose;
+    }
+
+    /**
+     * @param Disclose|null $disclose
+     * @return Chg
+     */
+    public function setDisclose(?Disclose $disclose): Chg
+    {
+        $this->disclose = $disclose;
         return $this;
     }
 }

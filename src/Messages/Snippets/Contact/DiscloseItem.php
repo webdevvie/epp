@@ -1,4 +1,5 @@
 <?php
+
 namespace Webdevvie\Epp\Messages\Snippets\Contact;
 
 use JMS\Serializer\Annotation\ExclusionPolicy;
@@ -6,6 +7,7 @@ use JMS\Serializer\Annotation\Expose;
 use JMS\Serializer\Annotation\Type;
 use JMS\Serializer\Annotation\XmlAttribute;
 use JMS\Serializer\Annotation\XmlNamespace;
+use JMS\Serializer\Annotation\SerializedName;
 
 /**
  * Class Status
@@ -20,7 +22,8 @@ class DiscloseItem
     /**
      * @var string
      * @Type("string")
-     * @XmlAttribute("type", namespace="urn:ietf:params:xml:ns:contact-1.0")
+     * @XmlAttribute()
+     * @SerializedName("type")
      *
      * @Expose
      */

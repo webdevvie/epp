@@ -1,4 +1,5 @@
 <?php
+
 namespace Webdevvie\Epp\Messages\Snippets\Contact;
 
 use JMS\Serializer\Annotation\ExclusionPolicy;
@@ -7,6 +8,7 @@ use JMS\Serializer\Annotation\Type;
 use JMS\Serializer\Annotation\XmlAttribute;
 use JMS\Serializer\Annotation\XmlList;
 use JMS\Serializer\Annotation\XmlNamespace;
+use JMS\Serializer\Annotation\SerializedName;
 use Webdevvie\Epp\Messages\Command\AbstractCommandMessage;
 
 /**
@@ -22,23 +24,27 @@ class Disclose extends AbstractCommandMessage
     /**
      * @var string
      * @Type("string")
-     * @XmlAttribute("flag", namespace="urn:ietf:params:xml:ns:contact-1.0")
+     * @XmlAttribute()
+     * @SerializedName("flag")
+     * @Expose
      */
     protected $flag;
+
     /**
      * @var DiscloseItem[]
      * @Type("array<Webdevvie\Epp\Messages\Snippets\Contact\DiscloseItem>")
      * @XmlList(inline=true, entry="name", namespace="urn:ietf:params:xml:ns:contact-1.0")
      * @Expose
      */
-    protected $name=[];
+    protected $name = [];
+
     /**
      * @var DiscloseItem[]
      * @Type("array<Webdevvie\Epp\Messages\Snippets\Contact\DiscloseItem>")
      * @XmlList(inline=true, entry="org", namespace="urn:ietf:params:xml:ns:contact-1.0")
      * @Expose
      */
-    protected $org=[];
+    protected $org = [];
 
     /**
      * @var DiscloseItem[]
@@ -46,7 +52,7 @@ class Disclose extends AbstractCommandMessage
      * @XmlList(inline=true, entry="addr", namespace="urn:ietf:params:xml:ns:contact-1.0")
      * @Expose
      */
-    protected $addr=[];
+    protected $addr = [];
 
     /**
      * @return string

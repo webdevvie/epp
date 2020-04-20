@@ -17,7 +17,7 @@ use Webdevvie\Epp\Messages\Extension\Sidn\ExtEpp\InfData\Contact;
  * @XmlNamespace(uri="urn:ietf:params:xml:ns:epp-1.0")
  * @XmlNamespace(uri="http://rxsd.domain-registry.nl/sidn-ext-epp-1.0", prefix="sidn-ext-epp")
  */
-class Create
+class Update
 {
     /**
      * @var Contact|null
@@ -48,9 +48,9 @@ class Create
 
     /**
      * @param Domain|null $domain
-     * @return Create
+     * @return Update
      */
-    public function setDomain(?Domain $domain): Create
+    public function setDomain(?Domain $domain): Update
     {
         $this->domain = $domain;
         return $this;
@@ -66,9 +66,9 @@ class Create
 
     /**
      * @param Contact|null $contact
-     * @return Create
+     * @return Update
      */
-    public function setContact(?Contact $contact): Create
+    public function setContact(?Contact $contact): Update
     {
         $this->contact = $contact;
         return $this;
