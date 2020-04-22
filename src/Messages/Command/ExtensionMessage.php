@@ -19,6 +19,8 @@ use Webdevvie\Epp\Messages\Extension\SecDns\SecDnsUpdate;
 use Webdevvie\Epp\Messages\Extension\Sidn\Ext as SidnExtEpp;
 use Webdevvie\Epp\Messages\Extension\Sidn\ResellerExt\InfData as SidnResellerExtInfData;
 use Webdevvie\Epp\Messages\Extension\Sidn\Command as SidnCommand;
+use Webdevvie\Epp\Messages\Extension\Sidn\ScheduledDeleteUpdate;
+
 /**
  * Class Command
  * @ExclusionPolicy("all")
@@ -123,6 +125,14 @@ class ExtensionMessage extends AbstractCommandMessage
      * @Expose
      */
     protected $sidnCommand;
+    /**
+     * @var ScheduledDeleteUpdate|null
+     * @Type("Webdevvie\Epp\Messages\Extension\Sidn\ScheduledDeleteUpdate")
+     * @SerializedName("update")
+     * @XmlElement(namespace="http://rxsd.domain-registry.nl/sidn-ext-epp-scheduled-delete-1.0")
+     * @Expose
+     */
+    protected $sidnScheduledDeleteUpdate;
 
     /**
      * @var SidnResellerExtInfData|null
@@ -346,6 +356,24 @@ class ExtensionMessage extends AbstractCommandMessage
     public function setSidnCommand(?SidnCommand $sidnCommand): ExtensionMessage
     {
         $this->sidnCommand = $sidnCommand;
+        return $this;
+    }
+
+    /**
+     * @return ScheduledDeleteUpdate|null
+     */
+    public function getSidnScheduledDeleteUpdate(): ?ScheduledDeleteUpdate
+    {
+        return $this->sidnScheduledDeleteUpdate;
+    }
+
+    /**
+     * @param ScheduledDeleteUpdate|null $sidnScheduledDeleteUpdate
+     * @return ExtensionMessage
+     */
+    public function setSidnScheduledDeleteUpdate(?ScheduledDeleteUpdate $sidnScheduledDeleteUpdate): ExtensionMessage
+    {
+        $this->sidnScheduledDeleteUpdate = $sidnScheduledDeleteUpdate;
         return $this;
     }
 }
