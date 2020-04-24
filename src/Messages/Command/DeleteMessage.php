@@ -14,6 +14,7 @@ use Webdevvie\Epp\Messages\Command\Delete\DnsDeleteMessage;
 use Webdevvie\Epp\Messages\Command\Delete\DomainDeleteMessage;
 use Webdevvie\Epp\Messages\Command\Delete\HostDeleteMessage;
 use Webdevvie\Epp\Messages\Command\Delete\SSLDeleteMessage;
+use Webdevvie\Epp\Messages\Extension\Sidn\Command\ResellerDelete as SidnResellerDelete;
 
 /**
  * Class Command
@@ -78,6 +79,15 @@ class DeleteMessage extends AbstractEppMessage
      */
     protected $metaregistrarSslDelete;
 
+    /**
+     * @var SidnResellerDelete|null
+     * @Type("Webdevvie\Epp\Messages\Extension\Sidn\Command\ResellerDelete")
+     * @SerializedName("delete")
+     * @XmlElement(namespace="http://rxsd.domain-registry.nl/sidn-reseller-1.0")
+     *
+     * @Expose
+     */
+    protected $sidnResellerDelete;
 
     /**
      * @return ContactDeleteMessage
@@ -166,6 +176,24 @@ class DeleteMessage extends AbstractEppMessage
     public function setMetaregistrarSslDelete(SSLDeleteMessage $metaregistrarSslDelete): DeleteMessage
     {
         $this->metaregistrarSslDelete = $metaregistrarSslDelete;
+        return $this;
+    }
+
+    /**
+     * @return SidnResellerDelete|null
+     */
+    public function getSidnResellerDelete(): ?SidnResellerDelete
+    {
+        return $this->sidnResellerDelete;
+    }
+
+    /**
+     * @param SidnResellerDelete|null $sidnResellerDelete
+     * @return DeleteMessage
+     */
+    public function setSidnResellerDelete(?SidnResellerDelete $sidnResellerDelete): DeleteMessage
+    {
+        $this->sidnResellerDelete = $sidnResellerDelete;
         return $this;
     }
 }

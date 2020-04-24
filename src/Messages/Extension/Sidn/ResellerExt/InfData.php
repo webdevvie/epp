@@ -41,5 +41,4 @@ class InfData
         $this->id = $id;
         return $this;
     }
-
 }

@@ -29,6 +29,7 @@ use Webdevvie\Epp\Messages\Command\ExtensionMessage;
  * @XmlNamespace(uri="http://www.metaregistrar.com/epp/command-ext-contact-1.0", prefix="command-ext-contact")
  * @XmlNamespace(uri="http://rxsd.domain-registry.nl/sidn-ext-epp-1.0", prefix="sidn-ext-epp")
  * @XmlNamespace(uri="http://rxsd.domain-registry.nl/sidn-ext-epp-reseller-1.0", prefix="resellerExt")
+ * @XmlNamespace(uri="http://rxsd.domain-registry.nl/sidn-reseller-1.0", prefix="reseller")
  * @XmlNamespace(uri="http://rxsd.domain-registry.nl/sidn-ext-epp-scheduled-delete-1.0", prefix="scheduledDelete")
  * @ExclusionPolicy("all")
  * @XmlRoot("epp")

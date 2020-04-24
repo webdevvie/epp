@@ -13,6 +13,7 @@ use Webdevvie\Epp\Messages\Extension\Metaregistrar\ResData\CreData\SSLCreData;
 use Webdevvie\Epp\Messages\Extension\Metaregistrar\ResData\InfData\DnsInfData;
 use Webdevvie\Epp\Messages\Extension\Metaregistrar\ResData\InfData\SSLInfData;
 use Webdevvie\Epp\Messages\Extension\Metaregistrar\ResData\RenData\SSLRenData;
+use Webdevvie\Epp\Messages\Extension\Sidn\Reseller\InfData as SidnResellerInfData;
 use Webdevvie\Epp\Messages\ResData\ChkData\ContactCheckDataMessage;
 use Webdevvie\Epp\Messages\ResData\ChkData\DomainCheckDataMessage;
 use Webdevvie\Epp\Messages\ResData\ChkData\HostCheckDataMessage;
@@ -164,7 +165,6 @@ class ResDataMessage
      */
     protected $contactInfData;
 
-
     /**
      * @var HostInfData
      * @Type("Webdevvie\Epp\Messages\ResData\InfData\HostInfData")
@@ -184,6 +184,16 @@ class ResDataMessage
      * @Expose
      */
     protected $dnsInfData;
+
+    /**
+     * @var SidnResellerInfData
+     * @Type("Webdevvie\Epp\Messages\Extension\Sidn\Reseller\InfData")
+     * @SerializedName("infData")
+     * @XmlElement(namespace="http://rxsd.domain-registry.nl/sidn-reseller-1.0")
+     *
+     * @Expose
+     */
+    protected $sidnResellerInfData;
 
     /**
      * @var DomainTrnData
@@ -212,8 +222,6 @@ class ResDataMessage
         $this->domainInfData = $domainInfData;
         return $this;
     }
-
-
 
     /**
      * @return HostCreData
@@ -482,6 +490,24 @@ class ResDataMessage
     public function setContactCreData(ContactCreData $contactCreData): ResDataMessage
     {
         $this->contactCreData = $contactCreData;
+        return $this;
+    }
+
+    /**
+     * @return SidnResellerInfData
+     */
+    public function getSidnResellerInfData(): SidnResellerInfData
+    {
+        return $this->sidnResellerInfData;
+    }
+
+    /**
+     * @param SidnResellerInfData $sidnResellerInfData
+     * @return ResDataMessage
+     */
+    public function setSidnResellerInfData(SidnResellerInfData $sidnResellerInfData): ResDataMessage
+    {
+        $this->sidnResellerInfData = $sidnResellerInfData;
         return $this;
     }
 }

@@ -1,4 +1,5 @@
 <?php
+
 namespace Webdevvie\Epp\Messages\Command;
 
 use JMS\Serializer\Annotation\ExclusionPolicy;
@@ -13,6 +14,7 @@ use Webdevvie\Epp\Messages\Command\Info\DomainInfoMessage;
 use Webdevvie\Epp\Messages\Command\Info\HostInfoMessage;
 use Webdevvie\Epp\Messages\Extension\Metaregistrar\Command\Info\DnsInfoMessage;
 use Webdevvie\Epp\Messages\Extension\Metaregistrar\Command\Info\SSLInfoMessage;
+use Webdevvie\Epp\Messages\Extension\Sidn\Command\ResellerInfo as SidnResellerInfo;
 
 /**
  * Class Command
@@ -55,6 +57,16 @@ class InfoMessage extends AbstractEppMessage
     protected $hostInfo;
 
     /**
+     * @var SidnResellerInfo|null
+     * @Type("Webdevvie\Epp\Messages\Extension\Sidn\Command\ResellerInfo")
+     * @SerializedName("info")
+     * @XmlElement(namespace="http://rxsd.domain-registry.nl/sidn-reseller-1.0")
+     *
+     * @Expose
+     */
+    protected $sidnResellerInfo;
+
+    /**
      * @var DnsInfoMessage
      * @Type("Webdevvie\Epp\Messages\Command\Info\DnsInfoMessage")
      * @SerializedName("info")
@@ -63,6 +75,7 @@ class InfoMessage extends AbstractEppMessage
      * @Expose
      */
     protected $dnsInfo;
+
     /**
      * @var SSLInfoMessage
      * @Type("Webdevvie\Epp\Messages\Command\Info\SSLInfoMessage")
@@ -162,4 +175,24 @@ class InfoMessage extends AbstractEppMessage
         $this->sslInfo = $sslInfo;
         return $this;
     }
+
+    /**
+     * @return SidnResellerInfo|null
+     */
+    public function getSidnResellerInfo(): ?SidnResellerInfo
+    {
+        return $this->sidnResellerInfo;
+    }
+
+    /**
+     * @param SidnResellerInfo|null $sidnResellerInfo
+     * @return InfoMessage
+     */
+    public function setSidnResellerInfo(?SidnResellerInfo $sidnResellerInfo): InfoMessage
+    {
+        $this->sidnResellerInfo = $sidnResellerInfo;
+        return $this;
+    }
+
+
 }

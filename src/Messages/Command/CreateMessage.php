@@ -14,6 +14,7 @@ use Webdevvie\Epp\Messages\Command\Create\DnsCreateMessage;
 use Webdevvie\Epp\Messages\Command\Create\DomainCreateMessage;
 use Webdevvie\Epp\Messages\Command\Create\HostCreateMessage;
 use Webdevvie\Epp\Messages\Command\Create\SSLCreateMessage;
+use Webdevvie\Epp\Messages\Extension\Sidn\Command\ResellerCreate as SidnResellerCreate;
 
 /**
  * Class Command
@@ -77,6 +78,16 @@ class CreateMessage extends AbstractEppMessage
      * @Expose
      */
     protected $metaregistrarSslCreate;
+
+    /**
+     * @var SidnResellerCreate|null
+     * @Type("Webdevvie\Epp\Messages\Extension\Sidn\Command\ResellerCreate")
+     * @SerializedName("create")
+     * @XmlElement(namespace="http://rxsd.domain-registry.nl/sidn-reseller-1.0")
+     *
+     * @Expose
+     */
+    protected $sidnResellerCreate;
 
     /**
      * @return ContactCreateMessage
@@ -165,6 +176,24 @@ class CreateMessage extends AbstractEppMessage
     public function setMetaregistrarSslCreate(SSLCreateMessage $metaregistrarSslCreate): CreateMessage
     {
         $this->metaregistrarSslCreate = $metaregistrarSslCreate;
+        return $this;
+    }
+
+    /**
+     * @return SidnResellerCreate|null
+     */
+    public function getSidnResellerCreate(): ?SidnResellerCreate
+    {
+        return $this->sidnResellerCreate;
+    }
+
+    /**
+     * @param SidnResellerCreate|null $sidnResellerCreate
+     * @return CreateMessage
+     */
+    public function setSidnResellerCreate(?SidnResellerCreate $sidnResellerCreate): CreateMessage
+    {
+        $this->sidnResellerCreate = $sidnResellerCreate;
         return $this;
     }
 }
