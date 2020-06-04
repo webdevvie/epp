@@ -19,16 +19,16 @@ use JMS\Serializer\Annotation\XmlAttribute;
 class Msg
 {
     /**
-     * @var integer
-     * @Type("integer")
+     * @var string|null
+     * @Type("string")
      * @XmlAttribute()
      *
      * @Expose
      */
-    protected $code;
+    protected $code='';
 
     /**
-     * @var string
+     * @var string|null
      * @Type("string")
      * @XmlAttribute()
      *
@@ -37,7 +37,7 @@ class Msg
     protected $field;
 
     /**
-     * @var string
+     * @var string|null
      * @Type("string")
      * @XmlValue()
      *
@@ -46,21 +46,58 @@ class Msg
     protected $msg;
 
     /**
-     * @return int
+     * @return string|null
      */
-    public function getCode(): int
+    public function getCode(): ?string
     {
         return $this->code;
     }
 
     /**
-     * @param int $code
-     * @return Response
+     * @param string|null $code
+     * @return Msg
      */
-    public function setCode(int $code): Response
+    public function setCode(?string $code): Msg
     {
         $this->code = $code;
         return $this;
     }
+
+    /**
+     * @return string|null
+     */
+    public function getField(): ?string
+    {
+        return $this->field;
+    }
+
+    /**
+     * @param string|null $field
+     * @return Msg
+     */
+    public function setField(?string $field): Msg
+    {
+        $this->field = $field;
+        return $this;
+    }
+
+    /**
+     * @return string|null
+     */
+    public function getMsg(): ?string
+    {
+        return $this->msg;
+    }
+
+    /**
+     * @param string|null $msg
+     * @return Msg
+     */
+    public function setMsg(?string $msg): Msg
+    {
+        $this->msg = $msg;
+        return $this;
+    }
+
 
 }

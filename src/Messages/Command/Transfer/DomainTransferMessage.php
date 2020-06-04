@@ -1,4 +1,5 @@
 <?php
+
 namespace Webdevvie\Epp\Messages\Command\Transfer;
 
 use JMS\Serializer\Annotation\ExclusionPolicy;
@@ -32,17 +33,7 @@ class DomainTransferMessage extends AbstractCommandMessage
     protected $name;
 
     /**
-     * @var AuthInfo
-     * @Type("Webdevvie\Epp\Messages\Snippets\Domain\AuthInfo")
-     * @SerializedName("authInfo")
-     * @XmlElement(namespace="urn:ietf:params:xml:ns:domain-1.0")
-     *
-     * @Expose
-     */
-    protected $authInfo;
-
-    /**
-     * @var Period
+     * @var Period|null
      * @Type("Webdevvie\Epp\Messages\Snippets\Domain\Period")
      * @SerializedName("period")
      * @XmlElement(namespace="urn:ietf:params:xml:ns:domain-1.0")
@@ -51,6 +42,15 @@ class DomainTransferMessage extends AbstractCommandMessage
      */
     protected $period;
 
+    /**
+     * @var AuthInfo
+     * @Type("Webdevvie\Epp\Messages\Snippets\Domain\AuthInfo")
+     * @SerializedName("authInfo")
+     * @XmlElement(namespace="urn:ietf:params:xml:ns:domain-1.0")
+     *
+     * @Expose
+     */
+    protected $authInfo;
 
     /**
      * @return string
@@ -79,12 +79,35 @@ class DomainTransferMessage extends AbstractCommandMessage
     }
 
     /**
-     * @param AuthInfo $authInfo
+     * @param AuthInfo|string $authInfo
      * @return DomainTransferMessage
      */
-    public function setAuthInfo(AuthInfo $authInfo)
+    public function setAuthInfo($authInfo)
     {
+        if (is_string($authInfo)) {
+            $this->authInfo = new AuthInfo();
+            $this->authInfo->setPw($authInfo);
+            return $this;
+        }
         $this->authInfo = $authInfo;
+        return $this;
+    }
+
+    /**
+     * @return Period|null
+     */
+    public function getPeriod(): ?Period
+    {
+        return $this->period;
+    }
+
+    /**
+     * @param Period|null $period
+     * @return DomainTransferMessage
+     */
+    public function setPeriod(?Period $period): DomainTransferMessage
+    {
+        $this->period = $period;
         return $this;
     }
 }

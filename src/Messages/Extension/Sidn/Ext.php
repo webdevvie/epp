@@ -12,6 +12,7 @@ use Webdevvie\Epp\Messages\Extension\Sidn\ExtEpp\Response;
 use Webdevvie\Epp\Messages\Extension\Sidn\ExtEpp\InfData;
 use Webdevvie\Epp\Messages\Extension\Sidn\ExtEpp\Create;
 use Webdevvie\Epp\Messages\Extension\Sidn\ExtEpp\Update;
+use Webdevvie\Epp\Messages\Extension\Sidn\ExtEpp\TrnData;
 
 /**
  * @ExclusionPolicy("all")
@@ -45,6 +46,14 @@ class Ext
      * @Expose
      */
     protected $update;
+    /**
+     * @var TrnData|null
+     * @Type("Webdevvie\Epp\Messages\Extension\Sidn\ExtEpp\TrnData")
+     * @SerializedName("trnData")
+     * @XmlElement(namespace="http://rxsd.domain-registry.nl/sidn-ext-epp-1.0")
+     * @Expose
+     */
+    protected $trnData;
     
     /**
      * @var Response|null
@@ -124,6 +133,24 @@ class Ext
     public function setUpdate(?Update $update): Ext
     {
         $this->update = $update;
+        return $this;
+    }
+
+    /**
+     * @return TrnData|null
+     */
+    public function getTrnData(): ?TrnData
+    {
+        return $this->trnData;
+    }
+
+    /**
+     * @param TrnData|null $trnData
+     * @return Ext
+     */
+    public function setTrnData(?TrnData $trnData): Ext
+    {
+        $this->trnData = $trnData;
         return $this;
     }
 }

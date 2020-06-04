@@ -1,6 +1,7 @@
 <?php
 namespace Webdevvie\Epp\Messages\MsgQ;
 
+use JMS\Serializer\Annotation as Serializer;
 use JMS\Serializer\Annotation\ExclusionPolicy;
 use JMS\Serializer\Annotation\Expose;
 use JMS\Serializer\Annotation\SerializedName;
@@ -8,6 +9,7 @@ use JMS\Serializer\Annotation\Type;
 use JMS\Serializer\Annotation\XmlAttribute;
 use JMS\Serializer\Annotation\XmlElement;
 use JMS\Serializer\Annotation\XmlNamespace;
+use JMS\Serializer\Annotation\XmlValue;
 
 /**
  * Class Command
@@ -31,7 +33,7 @@ class Message
      * @Type("string")
      * @SerializedName("msg")
      * @XmlElement(namespace="urn:ietf:params:xml:ns:epp-1.0")
-     *
+     * @XmlValue
      * @Expose
      */
     protected $msg;

@@ -19,6 +19,8 @@ use Webdevvie\Epp\Messages\AbstractEppMessage;
  */
 class PollMessage extends AbstractEppMessage
 {
+    const OP_REQ = 'req';
+    const OP_ACK = 'ack';
     /**
      * @var string
      * @Type("string")

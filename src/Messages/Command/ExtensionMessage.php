@@ -20,6 +20,7 @@ use Webdevvie\Epp\Messages\Extension\Sidn\Ext as SidnExtEpp;
 use Webdevvie\Epp\Messages\Extension\Sidn\ResellerExt\InfData as SidnResellerExtInfData;
 use Webdevvie\Epp\Messages\Extension\Sidn\Command as SidnCommand;
 use Webdevvie\Epp\Messages\Extension\Sidn\ScheduledDeleteUpdate;
+use Webdevvie\Epp\Messages\Extension\Sidn\ResellerExt\Update as SidnResellerExtUpdate;
 
 /**
  * Class Command
@@ -118,6 +119,15 @@ class ExtensionMessage extends AbstractCommandMessage
     protected $sidnExt;
 
     /**
+     * @var SidnResellerExtUpdate|null
+     * @Type("Webdevvie\Epp\Messages\Extension\Sidn\ResellerExt\Update")
+     * @SerializedName("update")
+     * @XmlElement(namespace="http://rxsd.domain-registry.nl/sidn-ext-epp-reseller-1.0")
+     * @Expose
+     */
+    protected $sidnResellerExtUpdate;
+
+    /**
      * @var SidnCommand|null
      * @Type("Webdevvie\Epp\Messages\Extension\Sidn\Command")
      * @SerializedName("command")
@@ -125,6 +135,7 @@ class ExtensionMessage extends AbstractCommandMessage
      * @Expose
      */
     protected $sidnCommand;
+
     /**
      * @var ScheduledDeleteUpdate|null
      * @Type("Webdevvie\Epp\Messages\Extension\Sidn\ScheduledDeleteUpdate")
@@ -374,6 +385,24 @@ class ExtensionMessage extends AbstractCommandMessage
     public function setSidnScheduledDeleteUpdate(?ScheduledDeleteUpdate $sidnScheduledDeleteUpdate): ExtensionMessage
     {
         $this->sidnScheduledDeleteUpdate = $sidnScheduledDeleteUpdate;
+        return $this;
+    }
+
+    /**
+     * @return SidnResellerExtUpdate|null
+     */
+    public function getSidnResellerExtUpdate(): ?SidnResellerExtUpdate
+    {
+        return $this->sidnResellerExtUpdate;
+    }
+
+    /**
+     * @param SidnResellerExtUpdate|null $sidnResellerExtUpdate
+     * @return ExtensionMessage
+     */
+    public function setSidnResellerExtUpdate(?SidnResellerExtUpdate $sidnResellerExtUpdate): ExtensionMessage
+    {
+        $this->sidnResellerExtUpdate = $sidnResellerExtUpdate;
         return $this;
     }
 }

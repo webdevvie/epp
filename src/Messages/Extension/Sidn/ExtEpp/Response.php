@@ -28,23 +28,33 @@ class Response
      * @XmlList(inline=true, entry="msg", namespace="http://rxsd.domain-registry.nl/sidn-ext-epp-1.0")
      * @Expose
      */
-    protected $msg;
+    protected $msg=[];
 
     /**
-     * @return string
+     * @return Msg[]
      */
-    public function getMsg(): string
+    public function getMsg(): array
     {
         return $this->msg;
     }
 
     /**
-     * @param string $msg
+     * @param Msg[] $msg
      * @return Response
      */
-    public function setMsg(string $msg): Response
+    public function setMsg(array $msg): Response
     {
         $this->msg = $msg;
+        return $this;
+    }
+
+    /**
+     * @param Msg $msg
+     * @return Response
+     */
+    public function addMsg(Msg $msg): Response
+    {
+        $this->msg[] = $msg;
         return $this;
     }
 }

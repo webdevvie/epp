@@ -13,7 +13,9 @@ use Webdevvie\Epp\Messages\Extension\Metaregistrar\ResData\CreData\SSLCreData;
 use Webdevvie\Epp\Messages\Extension\Metaregistrar\ResData\InfData\DnsInfData;
 use Webdevvie\Epp\Messages\Extension\Metaregistrar\ResData\InfData\SSLInfData;
 use Webdevvie\Epp\Messages\Extension\Metaregistrar\ResData\RenData\SSLRenData;
+use Webdevvie\Epp\Messages\Extension\Sidn\ExtEpp\PollData as SidnExtPollData;
 use Webdevvie\Epp\Messages\Extension\Sidn\Reseller\InfData as SidnResellerInfData;
+use Webdevvie\Epp\Messages\Extension\Sidn\RegistryContactsDelete\RegistryContactsDeleteData;
 use Webdevvie\Epp\Messages\ResData\ChkData\ContactCheckDataMessage;
 use Webdevvie\Epp\Messages\ResData\ChkData\DomainCheckDataMessage;
 use Webdevvie\Epp\Messages\ResData\ChkData\HostCheckDataMessage;
@@ -204,6 +206,26 @@ class ResDataMessage
      * @Expose
      */
     protected $domainTrnData;
+
+    /**
+     * @var SidnExtPollData|null
+     * @Type("Webdevvie\Epp\Messages\Extension\Sidn\ExtEpp\PollData")
+     * @SerializedName("pollData")
+     * @XmlElement(namespace="http://rxsd.domain-registry.nl/sidn-ext-epp-1.0")
+     *
+     * @Expose
+     */
+    protected $sidnExtPollData = null;
+
+    /**
+     * @var RegistryContactsDeleteData|null
+     * @Type("Webdevvie\Epp\Messages\Extension\Sidn\RegistryContactsDelete\RegistryContactsDeleteData")
+     * @SerializedName("registryContactsDeleteData")
+     * @XmlElement(namespace="http://rxsd.domain-registry.nl/sidn-ext-epp-registry-contacts-delete-1.0")
+     *
+     * @Expose
+     */
+    protected $sidnRegistryContactsDeleteData = null;
 
     /**
      * @return DomainInfData
@@ -476,9 +498,9 @@ class ResDataMessage
     }
 
     /**
-     * @return ContactCreData
+     * @return ContactCreData|null
      */
-    public function getContactCreData(): ContactCreData
+    public function getContactCreData(): ?ContactCreData
     {
         return $this->contactCreData;
     }
@@ -494,9 +516,9 @@ class ResDataMessage
     }
 
     /**
-     * @return SidnResellerInfData
+     * @return SidnResellerInfData|null
      */
-    public function getSidnResellerInfData(): SidnResellerInfData
+    public function getSidnResellerInfData(): ?SidnResellerInfData
     {
         return $this->sidnResellerInfData;
     }
@@ -508,6 +530,42 @@ class ResDataMessage
     public function setSidnResellerInfData(SidnResellerInfData $sidnResellerInfData): ResDataMessage
     {
         $this->sidnResellerInfData = $sidnResellerInfData;
+        return $this;
+    }
+
+    /**
+     * @return SidnExtPollData|null
+     */
+    public function getSidnExtPollData(): ?SidnExtPollData
+    {
+        return $this->sidnExtPollData;
+    }
+
+    /**
+     * @param SidnExtPollData $sidnExtPollData
+     * @return ResDataMessage
+     */
+    public function setSidnExtPollData(SidnExtPollData $sidnExtPollData): ResDataMessage
+    {
+        $this->sidnExtPollData = $sidnExtPollData;
+        return $this;
+    }
+
+    /**
+     * @return RegistryContactsDeleteData|null
+     */
+    public function getSidnRegistryContactsDeleteData(): ?RegistryContactsDeleteData
+    {
+        return $this->sidnRegistryContactsDeleteData;
+    }
+
+    /**
+     * @param RegistryContactsDeleteData|null $sidnRegistryContactsDeleteData
+     * @return ResDataMessage
+     */
+    public function setSidnRegistryContactsDeleteData(?RegistryContactsDeleteData $sidnRegistryContactsDeleteData): ResDataMessage
+    {
+        $this->sidnRegistryContactsDeleteData = $sidnRegistryContactsDeleteData;
         return $this;
     }
 }

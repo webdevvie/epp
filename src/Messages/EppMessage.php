@@ -31,6 +31,7 @@ use Webdevvie\Epp\Messages\Command\ExtensionMessage;
  * @XmlNamespace(uri="http://rxsd.domain-registry.nl/sidn-ext-epp-reseller-1.0", prefix="resellerExt")
  * @XmlNamespace(uri="http://rxsd.domain-registry.nl/sidn-reseller-1.0", prefix="reseller")
  * @XmlNamespace(uri="http://rxsd.domain-registry.nl/sidn-ext-epp-scheduled-delete-1.0", prefix="scheduledDelete")
+ * @XmlNamespace(uri="http://rxsd.domain-registry.nl/sidn-ext-epp-registry-contacts-delete-1.0", prefix="sidn")
  * @ExclusionPolicy("all")
  * @XmlRoot("epp")
  */
@@ -81,6 +82,10 @@ class EppMessage extends AbstractEppMessage implements EppMessageInterface
      */
     protected $extension;
 
+    /**
+     * @var string
+     */
+    protected $rawXml='';
     /**
      * @param HelloMessage $hello
      * @return EppMessage

@@ -1,4 +1,5 @@
 <?php
+
 namespace Webdevvie\Epp\Messages\Command;
 
 use JMS\Serializer\Annotation\ExclusionPolicy;
@@ -12,6 +13,7 @@ use Webdevvie\Epp\Messages\Command\Update\ContactUpdateMessage;
 use Webdevvie\Epp\Messages\Command\Update\DomainUpdateMessage;
 use Webdevvie\Epp\Messages\Command\Update\HostUpdateMessage;
 use Webdevvie\Epp\Messages\Extension\Metaregistrar\Command\Update\DnsUpdateMessage;
+use Webdevvie\Epp\Messages\Extension\Sidn\Command\ResellerUpdate as SidnResellerUpdate;
 
 /**
  * Class Command
@@ -57,13 +59,23 @@ class UpdateMessage extends AbstractEppMessage
 
     /**
      * @var DnsUpdateMessage
-     * @Type("Webdevvie\Epp\Messages\Command\Update\DnsUpdateMessage")
+     * @Type("Webdevvie\Epp\Messages\Extension\Metaregistrar\Command\Update\DnsUpdateMessage")
      * @SerializedName("update")
      * @XmlElement(namespace="http://www.metaregistrar.com/epp/dns-ext-1.0")
      *
      * @Expose
      */
     protected $metaregistrarDnsUpdate;
+
+    /**
+     * @var SidnResellerUpdate
+     * @Type("Webdevvie\Epp\Messages\Extension\Sidn\Command\ResellerUpdate")
+     * @SerializedName("update")
+     * @XmlElement(namespace="http://rxsd.domain-registry.nl/sidn-reseller-1.0")
+     *
+     * @Expose
+     */
+    protected $sidnResellerUpdate;
 
     /**
      * @return ContactUpdateMessage
@@ -134,6 +146,24 @@ class UpdateMessage extends AbstractEppMessage
     public function setMetaregistrarDnsUpdate(DnsUpdateMessage $metaregistrarDnsUpdate): UpdateMessage
     {
         $this->metaregistrarDnsUpdate = $metaregistrarDnsUpdate;
+        return $this;
+    }
+
+    /**
+     * @return SidnResellerUpdate
+     */
+    public function getSidnResellerUpdate(): SidnResellerUpdate
+    {
+        return $this->sidnResellerUpdate;
+    }
+
+    /**
+     * @param SidnResellerUpdate $sidnResellerUpdate
+     * @return UpdateMessage
+     */
+    public function setSidnResellerUpdate(SidnResellerUpdate $sidnResellerUpdate): UpdateMessage
+    {
+        $this->sidnResellerUpdate = $sidnResellerUpdate;
         return $this;
     }
 }
