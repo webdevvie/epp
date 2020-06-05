@@ -60,7 +60,11 @@ class ContactCreate extends SimpleEppCommand
             ->setAddr($addr);
         $contactInfo->setEmail($email);
         $contactInfo->setVoice($voice);
-        $contactInfo->setFax($fax);
+        if(!empty($fax))
+        {
+            $contactInfo->setFax($fax);
+        }
+
         $contactInfo->setPostalInfo($pi);
         if ($authPw != '') {
             $authInfo = new AuthInfo();

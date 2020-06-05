@@ -21,6 +21,7 @@ use Webdevvie\Epp\Messages\Extension\Sidn\ResellerExt\InfData as SidnResellerExt
 use Webdevvie\Epp\Messages\Extension\Sidn\Command as SidnCommand;
 use Webdevvie\Epp\Messages\Extension\Sidn\ScheduledDeleteUpdate;
 use Webdevvie\Epp\Messages\Extension\Sidn\ResellerExt\Update as SidnResellerExtUpdate;
+use Webdevvie\Epp\Messages\Extension\Sidn\ResellerExt\Create as SidnResellerExtCreate;
 
 /**
  * Class Command
@@ -126,7 +127,14 @@ class ExtensionMessage extends AbstractCommandMessage
      * @Expose
      */
     protected $sidnResellerExtUpdate;
-
+    /**
+     * @var SidnResellerExtCreate|null
+     * @Type("Webdevvie\Epp\Messages\Extension\Sidn\ResellerExt\Create")
+     * @SerializedName("create-reference")
+     * @XmlElement(namespace="http://rxsd.domain-registry.nl/sidn-ext-epp-reseller-1.0")
+     * @Expose
+     */
+    protected $sidnResellerExtCreate;
     /**
      * @var SidnCommand|null
      * @Type("Webdevvie\Epp\Messages\Extension\Sidn\Command")
@@ -403,6 +411,24 @@ class ExtensionMessage extends AbstractCommandMessage
     public function setSidnResellerExtUpdate(?SidnResellerExtUpdate $sidnResellerExtUpdate): ExtensionMessage
     {
         $this->sidnResellerExtUpdate = $sidnResellerExtUpdate;
+        return $this;
+    }
+
+    /**
+     * @return SidnResellerExtCreate|null
+     */
+    public function getSidnResellerExtCreate(): ?SidnResellerExtCreate
+    {
+        return $this->sidnResellerExtCreate;
+    }
+
+    /**
+     * @param SidnResellerExtCreate|null $sidnResellerExtCreate
+     * @return ExtensionMessage
+     */
+    public function setSidnResellerExtCreate(?SidnResellerExtCreate $sidnResellerExtCreate): ExtensionMessage
+    {
+        $this->sidnResellerExtCreate = $sidnResellerExtCreate;
         return $this;
     }
 }
