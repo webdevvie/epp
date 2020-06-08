@@ -103,6 +103,11 @@ class EppConnection extends AbstractConnection
     protected $debugger = false;
 
     /**
+     * @var boolean|callable
+     */
+    protected $logger = false;
+
+    /**
      * @var string[]
      */
     protected $objURI = [
@@ -158,6 +163,24 @@ class EppConnection extends AbstractConnection
     }
 
     /**
+     * @return boolean|callable
+     */
+    public function getLogger()
+    {
+        return $this->logger;
+    }
+
+    /**
+     * @param boolean|callable $logger
+     * @return EppConnection
+     */
+    public function setLogger($logger)
+    {
+        $this->logger = $logger;
+        return $this;
+    }
+
+    /**
      * @return EppMessage
      */
     public function getWelcomeMessage()
@@ -173,6 +196,18 @@ class EppConnection extends AbstractConnection
     {
         if (is_callable($this->debugger)) {
             $debugger = $this->debugger;
+            $debugger($msg);
+        }
+    }
+
+    /**
+     * @param string $msg
+     * @return void
+     */
+    public function log($msg)
+    {
+        if (is_callable($this->logger)) {
+            $debugger = $this->logger;
             $debugger($msg);
         }
     }
@@ -328,6 +363,7 @@ class EppConnection extends AbstractConnection
         }
         $xml = $this->serializeMessage($eppMessage);
         $this->debug("Sending:" . $xml);
+        $this->log("OUT: " . $xml);
         return $this->connection->write($xml);
     }
 
@@ -359,9 +395,11 @@ class EppConnection extends AbstractConnection
         $xmlResponse = $this->connection->read(false, (is_null($timeout) ? $this->timeout : $timeout));
         if ($xmlResponse === false) {
             //timeout probably
+            $this->log("IN: FALSE");
             throw new ConnectionException('Request read error', 2);
         }
         $this->debug($xmlResponse);
+        $this->log("IN: " . $xmlResponse);
         $response = $this->deserializeMessage($xmlResponse, $responseClass);
         if (is_object($response) && !is_null($responseClass) && is_callable([$response, 'setNestis'])) {
             $response->setNestis($this->nestis);
