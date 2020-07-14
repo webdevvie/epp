@@ -1,5 +1,5 @@
 <?php
-
+$newPassword = 'fillmeforpasswordchangeforreal';
 $username = 'fillme';
 $password = 'fillme';
 //add ssl:// to the address to connect to an ssl connection

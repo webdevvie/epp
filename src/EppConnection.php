@@ -342,6 +342,53 @@ class EppConnection extends AbstractConnection
             throw new LoginException($resultMsg, $resultCode);
         }
     }
+    /**
+     * @return boolean
+     * @throws LoginException
+     */
+    public function loginPasswordChange($newPassword)
+    {
+        if (!$this->isConnected()) {
+            $this->connect();
+        }
+        $login = new LoginMessage();
+        $eppMessage = new EppMessage();
+        $command = new CommandMessage();
+        $command->setLogin($login);
+        $login->setNewPW($newPassword);
+        $eppMessage->setCommand($command);
+        $login->setClID($this->username);
+        $login->setPw($this->password);
+        $svcs = new Svcs();
+        $options = new Options();
+        if (!$this->mimicServerGreeting || is_null($this->welcomeMessage)) {
+            $options->setLang($this->lang);
+            $options->setVersion($this->version);
+            if (count($this->extURI) > 0) {
+                $ext = new SvcExtension();
+                $ext->setExtURI($this->extURI);
+                $svcs->setSvcExtension($ext);
+            }
+            $svcs->setObjURI($this->objURI);
+        } else {
+            $greeting = $this->welcomeMessage->getGreeting();
+            $options->setLang($greeting->getSvcMenu()->getLang());
+            $options->setVersion($greeting->getSvcMenu()->getVersion());
+            $svcs->setSvcExtension($greeting->getSvcMenu()->getSvcExtension());
+            $svcs->setObjURI($greeting->getSvcMenu()->getObjURI());
+        }
+        $login->setSvcs($svcs);
+        $login->setOptions($options);
+        $response = $this->writeAndWaitForResponse($eppMessage);
+        $resultCode = $this->nestis->getNestedItem('response/result/code', $response);
+        if ($resultCode == 1000) {
+            //login successful
+            return true;
+        } else {
+            $resultMsg = $this->nestis->getNestedItem('response/result/msg', $response);
+            throw new LoginException($resultMsg, $resultCode);
+        }
+    }
 
     /**
      * @param EppMessageInterface $eppMessage
