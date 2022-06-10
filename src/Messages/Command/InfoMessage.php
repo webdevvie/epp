@@ -193,6 +193,4 @@ class InfoMessage extends AbstractEppMessage
         $this->sidnResellerInfo = $sidnResellerInfo;
         return $this;
     }
-
-
 }

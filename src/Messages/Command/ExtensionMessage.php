@@ -16,12 +16,12 @@ use Webdevvie\Epp\Messages\Extension\Rgp\Update;
 use Webdevvie\Epp\Messages\Extension\SecDns\SecDnsCreate;
 use Webdevvie\Epp\Messages\Extension\SecDns\SecDnsInfData;
 use Webdevvie\Epp\Messages\Extension\SecDns\SecDnsUpdate;
-use Webdevvie\Epp\Messages\Extension\Sidn\Ext as SidnExtEpp;
-use Webdevvie\Epp\Messages\Extension\Sidn\ResellerExt\InfData as SidnResellerExtInfData;
 use Webdevvie\Epp\Messages\Extension\Sidn\Command as SidnCommand;
-use Webdevvie\Epp\Messages\Extension\Sidn\ScheduledDeleteUpdate;
-use Webdevvie\Epp\Messages\Extension\Sidn\ResellerExt\Update as SidnResellerExtUpdate;
+use Webdevvie\Epp\Messages\Extension\Sidn\Ext as SidnExtEpp;
 use Webdevvie\Epp\Messages\Extension\Sidn\ResellerExt\Create as SidnResellerExtCreate;
+use Webdevvie\Epp\Messages\Extension\Sidn\ResellerExt\InfData as SidnResellerExtInfData;
+use Webdevvie\Epp\Messages\Extension\Sidn\ResellerExt\Update as SidnResellerExtUpdate;
+use Webdevvie\Epp\Messages\Extension\Sidn\ScheduledDeleteUpdate;
 
 /**
  * Class Command

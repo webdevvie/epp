@@ -6,10 +6,7 @@ use JMS\Serializer\Annotation\ExclusionPolicy;
 use JMS\Serializer\Annotation\XmlRoot;
 use Webdevvie\Epp\Messages\Command\Check\HostCheckMessage;
 use Webdevvie\Epp\Messages\Command\CheckMessage;
-use Webdevvie\Epp\Messages\Command\Info\HostInfoMessage;
-use Webdevvie\Epp\Messages\Command\InfoMessage;
 use Webdevvie\Epp\Messages\CommandMessage;
-use Webdevvie\Epp\Messages\Snippets\Domain\DomainInfoName;
 use Webdevvie\Epp\Simple\SimpleEppCommand;
 
 /**
@@ -29,7 +26,7 @@ class HostCheck extends SimpleEppCommand
      * HostInfo constructor.
      * @param string[] $hostnames
      */
-    public function __construct($hostnames)
+    public function __construct(array $hostnames)
     {
         $command = new CommandMessage();
         $check = new CheckMessage();

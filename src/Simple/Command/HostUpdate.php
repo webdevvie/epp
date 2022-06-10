@@ -4,8 +4,6 @@ namespace Webdevvie\Epp\Simple\Command;
 
 use JMS\Serializer\Annotation\ExclusionPolicy;
 use JMS\Serializer\Annotation\XmlRoot;
-use Webdevvie\Epp\Messages\Command\Create\HostCreateMessage;
-use Webdevvie\Epp\Messages\Command\CreateMessage;
 use Webdevvie\Epp\Messages\Command\Update\HostUpdateMessage;
 use Webdevvie\Epp\Messages\Command\UpdateMessage;
 use Webdevvie\Epp\Messages\CommandMessage;
@@ -28,6 +26,14 @@ class HostUpdate extends SimpleEppCommand
      */
     public $mappedResponse = 'Webdevvie\Epp\Simple\Response\HostInfo';
 
+    /**
+     * @param string         $name
+     * @param array          $ipv4Add
+     * @param array          $ipv6Add
+     * @param array          $ipv4Rem
+     * @param array          $ipv6Rem
+     * @param string|boolean $newName
+     */
     public function __construct(
         $name,
         array $ipv4Add = [],
@@ -45,7 +51,7 @@ class HostUpdate extends SimpleEppCommand
         $add = new Add();
         $rem = new Rem();
         $addrsAdd = [];
-        $addrsRem= [];
+        $addrsRem = [];
         foreach ($ipv4Add as $ip) {
             $addr = new Addr();
             $addr->setIpAddress($ip);
@@ -70,18 +76,15 @@ class HostUpdate extends SimpleEppCommand
             $addr->setIp('v6');
             $addrsRem[] = $addr;
         }
-        if(count($addrsAdd)>0)
-        {
+        if (count($addrsAdd) > 0) {
             $add->setAddr($addrsAdd);
             $hostUpdate->setAdd($add);
         }
-        if(count($addrsRem)>0)
-        {
+        if (count($addrsRem) > 0) {
             $rem->setAddr($addrsRem);
             $hostUpdate->setRem($rem);
         }
-        if(is_string($newName))
-        {
+        if (is_string($newName)) {
             $chg = new Chg();
             $chg->setName($newName);
             $hostUpdate->setChg($chg);

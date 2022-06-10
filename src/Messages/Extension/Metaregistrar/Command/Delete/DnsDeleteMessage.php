@@ -31,7 +31,6 @@ class DnsDeleteMessage extends AbstractCommandMessage
     protected $name;
 
 
-
     /**
      * @return string
      */

@@ -6,7 +6,6 @@ use JMS\Serializer\Annotation\ExclusionPolicy;
 use JMS\Serializer\Annotation\XmlRoot;
 use Webdevvie\Epp\Messages\Command\PollMessage;
 use Webdevvie\Epp\Messages\CommandMessage;
-use Webdevvie\Epp\Messages\Snippets\Domain\DomainInfoName;
 use Webdevvie\Epp\Simple\SimpleEppCommand;
 
 /**
@@ -24,7 +23,7 @@ class PollAck extends SimpleEppCommand
 
     /**
      * PollAck constructor.
-     * @param $msgId
+     * @param string $msgId
      */
     public function __construct($msgId)
     {

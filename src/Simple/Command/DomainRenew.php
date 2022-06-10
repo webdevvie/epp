@@ -4,8 +4,8 @@ namespace Webdevvie\Epp\Simple\Command;
 
 use JMS\Serializer\Annotation\ExclusionPolicy;
 use JMS\Serializer\Annotation\XmlRoot;
-use Webdevvie\Epp\Messages\Command\RenewMessage;
 use Webdevvie\Epp\Messages\Command\Renew\DomainRenewMessage;
+use Webdevvie\Epp\Messages\Command\RenewMessage;
 use Webdevvie\Epp\Messages\CommandMessage;
 use Webdevvie\Epp\Messages\Snippets\Domain\DomainRenewName;
 use Webdevvie\Epp\Messages\Snippets\Domain\Period;

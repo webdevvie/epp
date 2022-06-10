@@ -1,4 +1,5 @@
 <?php
+
 namespace Webdevvie\Epp\Messages\ResData\TrnData;
 
 use JMS\Serializer\Annotation\ExclusionPolicy;
@@ -211,5 +212,4 @@ class DomainTrnData extends AbstractCommandMessage
         $this->exDate = $exDate;
         return $this;
     }
-
 }

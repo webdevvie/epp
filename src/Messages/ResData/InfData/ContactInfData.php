@@ -210,7 +210,7 @@ class ContactInfData extends AbstractCommandMessage
      */
     public function setEmail($email)
     {
-        if ($email=='') {
+        if ($email == '') {
             $email = 'unknown@yourdomainprovider.net';
         }
         $this->email = $email;

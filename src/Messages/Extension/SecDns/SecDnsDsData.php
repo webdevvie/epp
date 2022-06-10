@@ -1,4 +1,5 @@
 <?php
+
 namespace Webdevvie\Epp\Messages\Extension\SecDns;
 
 use JMS\Serializer\Annotation\ExclusionPolicy;

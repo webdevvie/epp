@@ -1,4 +1,5 @@
 <?php
+
 namespace Webdevvie\Epp\Messages\Command\Update;
 
 use JMS\Serializer\Annotation\ExclusionPolicy;
@@ -31,7 +32,6 @@ class HostUpdateMessage extends AbstractCommandMessage
      * @Expose
      */
     protected $name;
-
 
 
     /**

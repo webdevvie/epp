@@ -82,6 +82,7 @@ class DomainCD
      * @Expose
      */
     protected $premiumPriceMessage = null;
+
     /**
      * @return integer
      */

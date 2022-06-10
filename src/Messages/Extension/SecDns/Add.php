@@ -38,9 +38,10 @@ class Add
      */
     public function addKeyData(SecDnsKeyData $keyData)
     {
-        $this->keyData[]=$keyData;
+        $this->keyData[] = $keyData;
         return $this;
     }
+
     /**
      * @return SecDnsKeyData[]
      */

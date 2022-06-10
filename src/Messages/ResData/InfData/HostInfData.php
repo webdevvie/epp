@@ -97,7 +97,7 @@ class HostInfData extends AbstractCommandMessage
      * @expose
      */
     protected $upDate;
-    
+
     /**
      * @param Addr $ip
      * @return void

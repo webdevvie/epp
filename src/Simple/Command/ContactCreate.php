@@ -6,14 +6,10 @@ use JMS\Serializer\Annotation\ExclusionPolicy;
 use JMS\Serializer\Annotation\XmlRoot;
 use Webdevvie\Epp\Messages\Command\Create\ContactCreateMessage;
 use Webdevvie\Epp\Messages\Command\CreateMessage;
-use Webdevvie\Epp\Messages\Command\Info\ContactInfoMessage;
-use Webdevvie\Epp\Messages\Command\Info\DomainInfoMessage;
-use Webdevvie\Epp\Messages\Command\InfoMessage;
 use Webdevvie\Epp\Messages\CommandMessage;
 use Webdevvie\Epp\Messages\Snippets\Contact\Addr;
 use Webdevvie\Epp\Messages\Snippets\Contact\AuthInfo;
 use Webdevvie\Epp\Messages\Snippets\Contact\PostalInfo;
-use Webdevvie\Epp\Messages\Snippets\Domain\DomainInfoName;
 use Webdevvie\Epp\Simple\SimpleEppCommand;
 
 /**
@@ -29,6 +25,20 @@ class ContactCreate extends SimpleEppCommand
      */
     public $mappedResponse = 'Webdevvie\Epp\Simple\Response\ContactInfo';
 
+    /**
+     * @param string $id
+     * @param string $name
+     * @param string $email
+     * @param array  $address
+     * @param string $postalCode
+     * @param string $city
+     * @param string $countryCode
+     * @param string $voice
+     * @param string $organization
+     * @param string $state
+     * @param string $fax
+     * @param string $authPw
+     */
     public function __construct(
         $id,
         $name,
@@ -60,8 +70,7 @@ class ContactCreate extends SimpleEppCommand
             ->setAddr($addr);
         $contactInfo->setEmail($email);
         $contactInfo->setVoice($voice);
-        if(!empty($fax))
-        {
+        if (!empty($fax)) {
             $contactInfo->setFax($fax);
         }
 

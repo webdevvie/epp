@@ -1,7 +1,7 @@
 <?php
+
 namespace Webdevvie\Epp\Messages\MsgQ;
 
-use JMS\Serializer\Annotation as Serializer;
 use JMS\Serializer\Annotation\ExclusionPolicy;
 use JMS\Serializer\Annotation\Expose;
 use JMS\Serializer\Annotation\SerializedName;
@@ -22,7 +22,6 @@ class Message
      * @var string
      * @Type("string")
      * @XmlAttribute("lang")
-     * @XmlElement(namespace="urn:ietf:params:xml:ns:epp-1.0")
      *
      * @Expose
      */

@@ -6,7 +6,6 @@ use JMS\Serializer\Annotation\ExclusionPolicy;
 use JMS\Serializer\Annotation\XmlRoot;
 use Webdevvie\Epp\Messages\Command\PollMessage;
 use Webdevvie\Epp\Messages\CommandMessage;
-use Webdevvie\Epp\Messages\Snippets\Domain\DomainInfoName;
 use Webdevvie\Epp\Simple\SimpleEppCommand;
 
 /**
@@ -23,8 +22,7 @@ class PollRequest extends SimpleEppCommand
     public $mappedResponse = 'Webdevvie\Epp\Messages\EppMessage';
 
     /**
-     * HostInfo constructor.
-     * @param string $hostname
+     * constructor
      */
     public function __construct()
     {

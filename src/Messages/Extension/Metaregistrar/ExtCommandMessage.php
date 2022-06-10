@@ -1,4 +1,5 @@
 <?php
+
 namespace Webdevvie\Epp\Messages\Extension\Metaregistrar;
 
 use JMS\Serializer\Annotation\ExclusionPolicy;

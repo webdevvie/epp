@@ -4,19 +4,11 @@ namespace Webdevvie\Epp\Simple\Command;
 
 use JMS\Serializer\Annotation\ExclusionPolicy;
 use JMS\Serializer\Annotation\XmlRoot;
-use Webdevvie\Epp\Messages\Command\Create\ContactCreateMessage;
 use Webdevvie\Epp\Messages\Command\CreateMessage;
-use Webdevvie\Epp\Messages\Command\Info\ContactInfoMessage;
-use Webdevvie\Epp\Messages\Command\Info\DomainInfoMessage;
-use Webdevvie\Epp\Messages\Command\InfoMessage;
 use Webdevvie\Epp\Messages\CommandMessage;
-use Webdevvie\Epp\Messages\Extension\Sidn\Reseller\ResellerAddress;
-use Webdevvie\Epp\Messages\Snippets\Contact\Addr;
-use Webdevvie\Epp\Messages\Snippets\Contact\AuthInfo;
-use Webdevvie\Epp\Messages\Snippets\Contact\PostalInfo;
-use Webdevvie\Epp\Messages\Snippets\Domain\DomainInfoName;
-use Webdevvie\Epp\Simple\SimpleEppCommand;
 use Webdevvie\Epp\Messages\Extension\Sidn\Command\ResellerCreate;
+use Webdevvie\Epp\Messages\Extension\Sidn\Reseller\ResellerAddress;
+use Webdevvie\Epp\Simple\SimpleEppCommand;
 
 /**
  * Class DomainCheck
@@ -31,6 +23,17 @@ class SidnResellerCreate extends SimpleEppCommand
      */
     public $mappedResponse = 'Webdevvie\Epp\Messages\EppMessage';
 
+    /**
+     * @param string $id
+     * @param string $organization
+     * @param string $website
+     * @param string $email
+     * @param array  $address
+     * @param string $postalCode
+     * @param string $city
+     * @param string $countryCode
+     * @param string $voice
+     */
     public function __construct(
         $id,
         $organization,

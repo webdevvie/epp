@@ -1,4 +1,5 @@
 <?php
+
 namespace Webdevvie\Epp\Messages\ResData\CreData;
 
 use JMS\Serializer\Annotation\ExclusionPolicy;
@@ -98,6 +99,4 @@ class DomainCreData
         $this->exDate = $exDate;
         return $this;
     }
-
-  
 }

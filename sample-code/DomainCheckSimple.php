@@ -14,10 +14,9 @@ if ($connection->connect()) {
          * @var \Webdevvie\Epp\Simple\Response\DomainCheck $response
          */
         if ($response->getResponseCode() == 1000) {
-            echo "\n\nResults: \n", json_encode($response->getCheckResults(),JSON_PRETTY_PRINT);
-        }
-        else{
-            echo "\nERROR: ".$response->getResponseMessage()."\n";
+            echo "\n\nResults: \n", json_encode($response->getCheckResults(), JSON_PRETTY_PRINT);
+        } else {
+            echo "\nERROR: " . $response->getResponseMessage() . "\n";
         }
 
         echo "\nLogging out";

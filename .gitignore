@@ -6,3 +6,4 @@ bin
 composer.lock
 sample-code/DomainCreateForTransferBulk.php
 sample-code/DomainTransfer.php
+.phpunit.result.cache

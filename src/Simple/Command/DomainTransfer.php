@@ -6,15 +6,8 @@ use JMS\Serializer\Annotation\ExclusionPolicy;
 use JMS\Serializer\Annotation\XmlRoot;
 use Webdevvie\Epp\Messages\Command\Transfer\DomainTransferMessage;
 use Webdevvie\Epp\Messages\Command\TransferMessage;
-use Webdevvie\Epp\Messages\Snippets\Domain\DomainContact;
-use Webdevvie\Epp\Messages\Command\Create\DomainCreateMessage;
-use Webdevvie\Epp\Messages\Command\Create\HostCreateMessage;
-use Webdevvie\Epp\Messages\Command\CreateMessage;
 use Webdevvie\Epp\Messages\CommandMessage;
-use Webdevvie\Epp\Messages\Snippets\Domain\AuthInfo;
-use Webdevvie\Epp\Messages\Snippets\Domain\Ns;
 use Webdevvie\Epp\Messages\Snippets\Domain\Period;
-use Webdevvie\Epp\Messages\Snippets\Host\Addr;
 use Webdevvie\Epp\Simple\SimpleEppCommand;
 
 /**
@@ -32,10 +25,10 @@ class DomainTransfer extends SimpleEppCommand
 
     /**
      * DomainTransfer constructor.
-     * @param string $name
-     * @param string $authCode
-     * @param integer    $period
-     * @param string $periodUnit
+     * @param string  $name
+     * @param string  $authCode
+     * @param integer $period
+     * @param string  $periodUnit
      */
     public function __construct(
         $name,

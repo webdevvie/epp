@@ -1,4 +1,5 @@
 <?php
+
 namespace Webdevvie\Epp\Messages\Snippets;
 
 use JMS\Serializer\Annotation\ExclusionPolicy;
@@ -15,7 +16,7 @@ use JMS\Serializer\Annotation\XmlNamespace;
 class DcpStatementRecipient
 {
     /**
-     * @var DcpStatementRecipientOurs
+     * @var DcpStatementRecipientOurs|null
      * @Type("Webdevvie\Epp\Messages\Snippets\DcpStatementRecipientOurs")
      * @SerializedName("ours")
      *
@@ -23,7 +24,7 @@ class DcpStatementRecipient
      */
     protected $ours;
     /**
-     * @var DcpStatementRecipientPublic
+     * @var DcpStatementRecipientPublic|null
      * @Type("Webdevvie\Epp\Messages\Snippets\DcpStatementRecipientPublic")
      * @SerializedName("public")
      *
@@ -32,20 +33,38 @@ class DcpStatementRecipient
     protected $public;
 
     /**
-     * @return DcpStatementRecipientOurs
+     * @return DcpStatementRecipientOurs|null
      */
-    public function getOurs()
+    public function getOurs(): ?DcpStatementRecipientOurs
     {
         return $this->ours;
     }
 
     /**
-     * @param DcpStatementRecipientOurs $ours
+     * @param DcpStatementRecipientOurs|null $ours
      * @return DcpStatementRecipient
      */
-    public function setOurs($ours)
+    public function setOurs(?DcpStatementRecipientOurs $ours): DcpStatementRecipient
     {
         $this->ours = $ours;
+        return $this;
+    }
+
+    /**
+     * @return DcpStatementRecipientPublic|null
+     */
+    public function getPublic(): ?DcpStatementRecipientPublic
+    {
+        return $this->public;
+    }
+
+    /**
+     * @param DcpStatementRecipientPublic|null $public
+     * @return DcpStatementRecipient
+     */
+    public function setPublic(?DcpStatementRecipientPublic $public): DcpStatementRecipient
+    {
+        $this->public = $public;
         return $this;
     }
 }

@@ -15,5 +15,5 @@ use Webdevvie\Epp\Simple\SimpleEppResponse;
  */
 class ContactInfo extends SimpleEppResponse
 {
-    
+
 }

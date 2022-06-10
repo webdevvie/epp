@@ -42,4 +42,3 @@ class Create
         return $this;
     }
 }
-    

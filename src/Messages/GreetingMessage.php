@@ -1,4 +1,5 @@
 <?php
+
 namespace Webdevvie\Epp\Messages;
 
 use JMS\Serializer\Annotation\ExclusionPolicy;
@@ -33,7 +34,7 @@ class GreetingMessage
      */
     protected $svDate;
     /**
-     * @var SvcMenu
+     * @var SvcMenu|null
      * @Type("Webdevvie\Epp\Messages\Snippets\SvcMenu")
      * @SerializedName("svcMenu")
      *
@@ -41,7 +42,7 @@ class GreetingMessage
      */
     protected $svcMenu;
     /**
-     * @var Dcp
+     * @var Dcp|null
      * @Type("Webdevvie\Epp\Messages\Snippets\Dcp")
      * @SerializedName("dcp")
      *
@@ -86,36 +87,36 @@ class GreetingMessage
     }
 
     /**
-     * @return SvcMenu
+     * @return SvcMenu|null
      */
-    public function getSvcMenu()
+    public function getSvcMenu(): ?SvcMenu
     {
         return $this->svcMenu;
     }
 
     /**
-     * @param SvcMenu $svcMenu
+     * @param SvcMenu|null $svcMenu
      * @return GreetingMessage
      */
-    public function setSvcMenu($svcMenu)
+    public function setSvcMenu(?SvcMenu $svcMenu): GreetingMessage
     {
         $this->svcMenu = $svcMenu;
         return $this;
     }
 
     /**
-     * @return Dcp
+     * @return Dcp|null
      */
-    public function getDpc()
+    public function getDpc(): ?Dcp
     {
         return $this->dpc;
     }
 
     /**
-     * @param Dcp $dpc
+     * @param Dcp|null $dpc
      * @return GreetingMessage
      */
-    public function setDpc($dpc)
+    public function setDpc(?Dcp $dpc): GreetingMessage
     {
         $this->dpc = $dpc;
         return $this;

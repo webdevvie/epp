@@ -1,4 +1,5 @@
 <?php
+
 namespace Webdevvie\Epp\Messages\Extension\Metaregistrar\Snippets\SSL;
 
 use JMS\Serializer\Annotation\ExclusionPolicy;
@@ -101,7 +102,7 @@ class Approver
      * @XmlList(inline = true, entry = "street",namespace="http://www.metaregistrar.com/epp/ssl-1.0")
      * @Expose
      */
-    protected $street=[];
+    protected $street = [];
 
     /**
      * @var string
@@ -121,7 +122,6 @@ class Approver
      * @Expose
      */
     protected $city;
-
 
 
     /**

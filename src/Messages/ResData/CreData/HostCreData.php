@@ -1,4 +1,5 @@
 <?php
+
 namespace Webdevvie\Epp\Messages\ResData\CreData;
 
 use JMS\Serializer\Annotation\ExclusionPolicy;
@@ -71,5 +72,4 @@ class HostCreData
         $this->crDate = $crDate;
         return $this;
     }
-
 }

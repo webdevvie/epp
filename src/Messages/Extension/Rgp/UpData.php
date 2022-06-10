@@ -1,4 +1,5 @@
 <?php
+
 namespace Webdevvie\Epp\Messages\Extension\Rgp;
 
 use JMS\Serializer\Annotation\ExclusionPolicy;

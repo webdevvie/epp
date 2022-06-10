@@ -6,9 +6,8 @@ use JMS\Serializer\Annotation\ExclusionPolicy;
 use JMS\Serializer\Annotation\Expose;
 use JMS\Serializer\Annotation\SerializedName;
 use JMS\Serializer\Annotation\Type;
-use JMS\Serializer\Annotation\XmlElement;
-use JMS\Serializer\Annotation\XmlNamespace;
 use JMS\Serializer\Annotation\XmlList;
+use JMS\Serializer\Annotation\XmlNamespace;
 
 /**
  * @ExclusionPolicy("all")
@@ -21,7 +20,8 @@ class RegistryContactsDeleteData
      * @var string[]
      * @Type("array<string>")
      * @SerializedName("id")
-     * @XmlList(inline = true, entry = "id",namespace="http://rxsd.domain-registry.nl/sidn-ext-epp-registry-contacts-delete-1.0")
+     * @XmlList(inline = true, entry = "id",
+     *     namespace="http://rxsd.domain-registry.nl/sidn-ext-epp-registry-contacts-delete-1.0")
      * @Expose
      */
     protected $id = [];

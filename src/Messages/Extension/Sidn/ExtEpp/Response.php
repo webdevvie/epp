@@ -7,8 +7,8 @@ use JMS\Serializer\Annotation\Expose;
 use JMS\Serializer\Annotation\SerializedName;
 use JMS\Serializer\Annotation\Type;
 use JMS\Serializer\Annotation\XmlElement;
-use JMS\Serializer\Annotation\XmlNamespace;
 use JMS\Serializer\Annotation\XmlList;
+use JMS\Serializer\Annotation\XmlNamespace;
 
 /**
  * Class Dns
@@ -28,7 +28,7 @@ class Response
      * @XmlList(inline=true, entry="msg", namespace="http://rxsd.domain-registry.nl/sidn-ext-epp-1.0")
      * @Expose
      */
-    protected $msg=[];
+    protected $msg = [];
 
     /**
      * @return Msg[]

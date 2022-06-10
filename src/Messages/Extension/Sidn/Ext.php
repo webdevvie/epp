@@ -8,11 +8,11 @@ use JMS\Serializer\Annotation\SerializedName;
 use JMS\Serializer\Annotation\Type;
 use JMS\Serializer\Annotation\XmlElement;
 use JMS\Serializer\Annotation\XmlNamespace;
-use Webdevvie\Epp\Messages\Extension\Sidn\ExtEpp\Response;
-use Webdevvie\Epp\Messages\Extension\Sidn\ExtEpp\InfData;
 use Webdevvie\Epp\Messages\Extension\Sidn\ExtEpp\Create;
-use Webdevvie\Epp\Messages\Extension\Sidn\ExtEpp\Update;
+use Webdevvie\Epp\Messages\Extension\Sidn\ExtEpp\InfData;
+use Webdevvie\Epp\Messages\Extension\Sidn\ExtEpp\Response;
 use Webdevvie\Epp\Messages\Extension\Sidn\ExtEpp\TrnData;
+use Webdevvie\Epp\Messages\Extension\Sidn\ExtEpp\Update;
 
 /**
  * @ExclusionPolicy("all")
@@ -54,7 +54,7 @@ class Ext
      * @Expose
      */
     protected $trnData;
-    
+
     /**
      * @var Response|null
      * @Type("Webdevvie\Epp\Messages\Extension\Sidn\ExtEpp\Response")

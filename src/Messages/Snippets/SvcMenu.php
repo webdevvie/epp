@@ -1,4 +1,5 @@
 <?php
+
 namespace Webdevvie\Epp\Messages\Snippets;
 
 use JMS\Serializer\Annotation\ExclusionPolicy;
@@ -98,7 +99,7 @@ class SvcMenu
      * @param string[] $objURI
      * @return SvcMenu
      */
-    public function setObjURI($objURI)
+    public function setObjURI(array $objURI)
     {
         $this->objURI = $objURI;
         return $this;
@@ -107,16 +108,16 @@ class SvcMenu
     /**
      * @return SvcExtension
      */
-    public function getSvcExtension()
+    public function getSvcExtension(): ?SvcExtension
     {
         return $this->svcExtension;
     }
 
     /**
-     * @param SvcExtension $svcExtension
+     * @param SvcExtension|null $svcExtension
      * @return SvcMenu
      */
-    public function setSvcExtension($svcExtension)
+    public function setSvcExtension(?SvcExtension $svcExtension)
     {
         $this->svcExtension = $svcExtension;
         return $this;

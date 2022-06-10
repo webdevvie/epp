@@ -15,5 +15,5 @@ use Webdevvie\Epp\Simple\SimpleEppResponse;
  */
 class HostInfo extends SimpleEppResponse
 {
-    
+
 }

@@ -1,4 +1,5 @@
 <?php
+
 namespace Webdevvie\Epp\Messages;
 
 use JMS\Serializer\Annotation\ExclusionPolicy;
@@ -48,7 +49,6 @@ class ResponseMessage
      * @Expose
      */
     protected $extension;
-
 
 
     /**
@@ -153,7 +153,7 @@ class ResponseMessage
      */
     public function clearResData()
     {
-        $this->resData=null;
+        $this->resData = null;
     }
 
     /**

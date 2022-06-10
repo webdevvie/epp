@@ -14,8 +14,8 @@ use Webdevvie\Epp\Messages\Extension\Metaregistrar\ResData\InfData\DnsInfData;
 use Webdevvie\Epp\Messages\Extension\Metaregistrar\ResData\InfData\SSLInfData;
 use Webdevvie\Epp\Messages\Extension\Metaregistrar\ResData\RenData\SSLRenData;
 use Webdevvie\Epp\Messages\Extension\Sidn\ExtEpp\PollData as SidnExtPollData;
-use Webdevvie\Epp\Messages\Extension\Sidn\Reseller\InfData as SidnResellerInfData;
 use Webdevvie\Epp\Messages\Extension\Sidn\RegistryContactsDelete\RegistryContactsDeleteData;
+use Webdevvie\Epp\Messages\Extension\Sidn\Reseller\InfData as SidnResellerInfData;
 use Webdevvie\Epp\Messages\ResData\ChkData\ContactCheckDataMessage;
 use Webdevvie\Epp\Messages\ResData\ChkData\DomainCheckDataMessage;
 use Webdevvie\Epp\Messages\ResData\ChkData\HostCheckDataMessage;
@@ -563,8 +563,9 @@ class ResDataMessage
      * @param RegistryContactsDeleteData|null $sidnRegistryContactsDeleteData
      * @return ResDataMessage
      */
-    public function setSidnRegistryContactsDeleteData(?RegistryContactsDeleteData $sidnRegistryContactsDeleteData): ResDataMessage
-    {
+    public function setSidnRegistryContactsDeleteData(
+        ?RegistryContactsDeleteData $sidnRegistryContactsDeleteData
+    ): ResDataMessage {
         $this->sidnRegistryContactsDeleteData = $sidnRegistryContactsDeleteData;
         return $this;
     }

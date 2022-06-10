@@ -179,7 +179,6 @@ class DomainInfData extends AbstractCommandMessage
     }
 
 
-
     /**
      * @return string
      */
@@ -414,5 +413,4 @@ class DomainInfData extends AbstractCommandMessage
         $this->exDate = $exDate;
         return $this;
     }
-
 }

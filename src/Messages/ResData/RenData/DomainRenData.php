@@ -1,4 +1,5 @@
 <?php
+
 namespace Webdevvie\Epp\Messages\ResData\RenData;
 
 use JMS\Serializer\Annotation\ExclusionPolicy;
@@ -72,6 +73,4 @@ class DomainRenData extends AbstractCommandMessage
         $this->exDate = $exDate;
         return $this;
     }
-
- 
 }

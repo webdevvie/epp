@@ -6,12 +6,9 @@ use JMS\Serializer\Annotation\ExclusionPolicy;
 use JMS\Serializer\Annotation\Expose;
 use JMS\Serializer\Annotation\SerializedName;
 use JMS\Serializer\Annotation\Type;
-use JMS\Serializer\Annotation\XmlElement;
-use JMS\Serializer\Annotation\XmlNamespace;
 use JMS\Serializer\Annotation\XmlAttribute;
+use JMS\Serializer\Annotation\XmlNamespace;
 use JMS\Serializer\Annotation\XmlValue;
-use Webdevvie\Epp\Messages\Extension\Sidn\ExtEpp\Response;
-
 
 /**
  * @ExclusionPolicy("all")
@@ -57,7 +54,7 @@ class Period
     }
 
     /**
-     * @return int|null
+     * @return integer|null
      */
     public function getAmount(): ?int
     {
@@ -65,7 +62,7 @@ class Period
     }
 
     /**
-     * @param int|null $amount
+     * @param integer|null $amount
      * @return Period
      */
     public function setAmount(?int $amount): Period
@@ -73,6 +70,4 @@ class Period
         $this->amount = $amount;
         return $this;
     }
-
-
 }

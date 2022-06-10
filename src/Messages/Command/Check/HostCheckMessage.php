@@ -1,4 +1,5 @@
 <?php
+
 namespace Webdevvie\Epp\Messages\Command\Check;
 
 use JMS\Serializer\Annotation\ExclusionPolicy;

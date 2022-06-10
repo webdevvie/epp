@@ -37,6 +37,7 @@ class Id
     {
         $this->id = $id;
     }
+
     /**
      * @return string
      */

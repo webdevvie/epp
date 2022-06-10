@@ -4,15 +4,13 @@ namespace Webdevvie\Epp\Simple\Command;
 
 use JMS\Serializer\Annotation\ExclusionPolicy;
 use JMS\Serializer\Annotation\XmlRoot;
-use Webdevvie\Epp\Messages\Snippets\Domain\DomainContact;
 use Webdevvie\Epp\Messages\Command\Create\DomainCreateMessage;
-use Webdevvie\Epp\Messages\Command\Create\HostCreateMessage;
 use Webdevvie\Epp\Messages\Command\CreateMessage;
 use Webdevvie\Epp\Messages\CommandMessage;
 use Webdevvie\Epp\Messages\Snippets\Domain\AuthInfo;
+use Webdevvie\Epp\Messages\Snippets\Domain\DomainContact;
 use Webdevvie\Epp\Messages\Snippets\Domain\Ns;
 use Webdevvie\Epp\Messages\Snippets\Domain\Period;
-use Webdevvie\Epp\Messages\Snippets\Host\Addr;
 use Webdevvie\Epp\Simple\SimpleEppCommand;
 
 /**
@@ -28,6 +26,16 @@ class DomainCreate extends SimpleEppCommand
      */
     public $mappedResponse = 'Webdevvie\Epp\Simple\Response\DomainInfo';
 
+    /**
+     * @param string  $name
+     * @param string  $registrant
+     * @param string  $nameservers
+     * @param array   $adminContacts
+     * @param array   $techContacts
+     * @param array   $billingContacts
+     * @param integer $period
+     * @param string  $authCode
+     */
     public function __construct(
         $name,
         $registrant,

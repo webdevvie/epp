@@ -342,7 +342,9 @@ class EppConnection extends AbstractConnection
             throw new LoginException($resultMsg, $resultCode);
         }
     }
+
     /**
+     * @param string $newPassword
      * @return boolean
      * @throws LoginException
      */

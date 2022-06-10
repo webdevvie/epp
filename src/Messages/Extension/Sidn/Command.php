@@ -8,9 +8,6 @@ use JMS\Serializer\Annotation\SerializedName;
 use JMS\Serializer\Annotation\Type;
 use JMS\Serializer\Annotation\XmlElement;
 use JMS\Serializer\Annotation\XmlNamespace;
-use Webdevvie\Epp\Messages\Extension\Sidn\ExtEpp\Response;
-use Webdevvie\Epp\Messages\Extension\Sidn\ExtEpp\InfData;
-use Webdevvie\Epp\Messages\Extension\Sidn\ExtEpp\Create;
 use Webdevvie\Epp\Messages\Extension\Sidn\Command\DomainCancelDelete;
 
 /**
@@ -38,18 +35,18 @@ class Command
     protected $clTRID;
 
     /**
-     * @return \Webdevvie\Epp\Messages\Extension\Sidn\Command\DomainCancelDelete|null
+     * @return DomainCancelDelete|null
      */
-    public function getDomainCancelDelete(): ?\Webdevvie\Epp\Messages\Extension\Sidn\Command\DomainCancelDelete
+    public function getDomainCancelDelete(): ?DomainCancelDelete
     {
         return $this->domainCancelDelete;
     }
 
     /**
-     * @param \Webdevvie\Epp\Messages\Extension\Sidn\Command\DomainCancelDelete|null $domainCancelDelete
+     * @param DomainCancelDelete|null $domainCancelDelete
      * @return Command
      */
-    public function setDomainCancelDelete(?\Webdevvie\Epp\Messages\Extension\Sidn\Command\DomainCancelDelete $domainCancelDelete): Command
+    public function setDomainCancelDelete(?DomainCancelDelete $domainCancelDelete): Command
     {
         $this->domainCancelDelete = $domainCancelDelete;
         return $this;

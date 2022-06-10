@@ -8,7 +8,6 @@ use JMS\Serializer\Annotation\SerializedName;
 use JMS\Serializer\Annotation\Type;
 use JMS\Serializer\Annotation\XmlElement;
 use JMS\Serializer\Annotation\XmlNamespace;
-use Webdevvie\Epp\Messages\Extension\Sidn\ExtEpp\Response;
 
 /**
  * @ExclusionPolicy("all")
@@ -54,7 +53,7 @@ class Domain
     protected $scheduledDeleteDate = null;
 
     /**
-     * @return bool
+     * @return boolean
      */
     public function isOptOut(): bool
     {
@@ -62,7 +61,7 @@ class Domain
     }
 
     /**
-     * @param bool $optOut
+     * @param boolean $optOut
      * @return Domain
      */
     public function setOptOut(bool $optOut): Domain
@@ -72,7 +71,7 @@ class Domain
     }
 
     /**
-     * @return bool|null
+     * @return boolean|null
      */
     public function getLimited(): ?bool
     {
@@ -80,7 +79,7 @@ class Domain
     }
 
     /**
-     * @param bool|null $limited
+     * @param boolean|null $limited
      * @return Domain
      */
     public function setLimited(?bool $limited): Domain

@@ -41,7 +41,7 @@ class DomainInfoName extends AbstractCommandMessage
      * @var string
      * @Type("string")
      * @XmlAttribute()
-     * @SerializedName("hosts", namespace="urn:ietf:params:xml:ns:domain-1.0")
+     * @SerializedName("hosts")
      *
      * @Expose
      */

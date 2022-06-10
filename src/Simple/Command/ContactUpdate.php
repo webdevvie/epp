@@ -6,15 +6,8 @@ use JMS\Serializer\Annotation\ExclusionPolicy;
 use JMS\Serializer\Annotation\XmlRoot;
 use Webdevvie\Epp\Messages\Command\Update\ContactUpdateMessage;
 use Webdevvie\Epp\Messages\Command\UpdateMessage;
-use Webdevvie\Epp\Messages\Command\Info\ContactInfoMessage;
-use Webdevvie\Epp\Messages\Command\Info\DomainInfoMessage;
-use Webdevvie\Epp\Messages\Command\InfoMessage;
 use Webdevvie\Epp\Messages\CommandMessage;
-use Webdevvie\Epp\Messages\Snippets\Contact\Addr;
-use Webdevvie\Epp\Messages\Snippets\Contact\AuthInfo;
 use Webdevvie\Epp\Messages\Snippets\Contact\Chg;
-use Webdevvie\Epp\Messages\Snippets\Contact\PostalInfo;
-use Webdevvie\Epp\Messages\Snippets\Domain\DomainInfoName;
 use Webdevvie\Epp\Simple\SimpleEppCommand;
 
 /**
@@ -30,6 +23,9 @@ class ContactUpdate extends SimpleEppCommand
      */
     public $mappedResponse = 'Webdevvie\Epp\Simple\Response\ContactInfo';
 
+    /**
+     * @param string $id
+     */
     public function __construct(
         $id
     ) {

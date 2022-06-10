@@ -23,7 +23,7 @@ use Webdevvie\Epp\Messages\Snippets\Contact\PostalInfo;
 class ContactCreateMessage extends AbstractCommandMessage
 {
     /**
-     * @var string
+     * @var string|null
      * @Type("string")
      * @SerializedName("id")
      * @XmlElement(namespace="urn:ietf:params:xml:ns:contact-1.0")
@@ -32,7 +32,7 @@ class ContactCreateMessage extends AbstractCommandMessage
      */
     protected $id = null;
     /**
-     * @var PostalInfo
+     * @var PostalInfo|null
      * @Type("Webdevvie\Epp\Messages\Snippets\Contact\PostalInfo")
      * @SerializedName("postalInfo")
      * @XmlElement(namespace="urn:ietf:params:xml:ns:contact-1.0")
@@ -71,7 +71,7 @@ class ContactCreateMessage extends AbstractCommandMessage
     protected $email;
 
     /**
-     * @var AuthInfo
+     * @var AuthInfo|null
      * @Type("Webdevvie\Epp\Messages\Snippets\Contact\AuthInfo")
      * @SerializedName("authInfo")
      * @XmlElement(namespace="urn:ietf:params:xml:ns:contact-1.0")
@@ -174,7 +174,7 @@ class ContactCreateMessage extends AbstractCommandMessage
     /**
      * @return AuthInfo
      */
-    public function getAuthInfo()
+    public function getAuthInfo(): ?AuthInfo
     {
         return $this->authInfo;
     }
@@ -183,7 +183,7 @@ class ContactCreateMessage extends AbstractCommandMessage
      * @param AuthInfo $authInfo
      * @return ContactCreateMessage
      */
-    public function setAuthInfo(AuthInfo $authInfo)
+    public function setAuthInfo(?AuthInfo $authInfo)
     {
         $this->authInfo = $authInfo;
         return $this;

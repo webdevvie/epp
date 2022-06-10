@@ -1,4 +1,5 @@
 <?php
+
 namespace Webdevvie\Epp\Messages\Command\Login;
 
 use JMS\Serializer\Annotation\ExclusionPolicy;
@@ -18,7 +19,7 @@ use Webdevvie\Epp\Messages\Command\AbstractCommandMessage;
 class LoginMessage extends AbstractCommandMessage
 {
     /**
-     * @var string
+     * @var string|null
      * @Type("string")
      * @SerializedName("clID")
      *
@@ -27,7 +28,7 @@ class LoginMessage extends AbstractCommandMessage
     protected $clID;
 
     /**
-     * @var string
+     * @var string|null
      * @Type("string")
      * @SerializedName("pw")
      *
@@ -36,7 +37,7 @@ class LoginMessage extends AbstractCommandMessage
     protected $pw;
 
     /**
-     * @var string
+     * @var string|null
      * @Type("string")
      * @SerializedName("newPW")
      *
@@ -45,14 +46,14 @@ class LoginMessage extends AbstractCommandMessage
     protected $newPW;
 
     /**
-     * @var Options[]
+     * @var Options[]|null
      * @Type("Webdevvie\Epp\Messages\Command\Login\Options")
      * @Expose
      */
     protected $options;
 
     /**
-     * @var Svcs
+     * @var Svcs|null
      * @Type("Webdevvie\Epp\Messages\Command\Login\Svcs")
      * @SerializedName("svcs")
      *
@@ -60,92 +61,91 @@ class LoginMessage extends AbstractCommandMessage
      */
     protected $svcs;
 
-
     /**
-     * @return string
+     * @return string|null
      */
-    public function getClID()
+    public function getClID(): ?string
     {
         return $this->clID;
     }
 
     /**
-     * @return string
-     */
-    public function getPw()
-    {
-        return $this->pw;
-    }
-
-    /**
-     * @return array
-     */
-    public function getOptions()
-    {
-        return $this->options;
-    }
-
-    /**
-     * @return Svcs
-     */
-    public function getSvcs()
-    {
-        return $this->svcs;
-    }
-
-    /**
-     * @return string
-     */
-    public function getNewPW()
-    {
-        return $this->newPW;
-    }
-
-    /**
-     * @param string $clID
+     * @param string|null $clID
      * @return LoginMessage
      */
-    public function setClID($clID)
+    public function setClID(?string $clID): LoginMessage
     {
         $this->clID = $clID;
         return $this;
     }
 
     /**
-     * @param string $pw
+     * @return string|null
+     */
+    public function getPw(): ?string
+    {
+        return $this->pw;
+    }
+
+    /**
+     * @param string|null $pw
      * @return LoginMessage
      */
-    public function setPw($pw)
+    public function setPw(?string $pw): LoginMessage
     {
         $this->pw = $pw;
         return $this;
     }
 
     /**
-     * @param string $newPW
+     * @return string|null
+     */
+    public function getNewPW(): ?string
+    {
+        return $this->newPW;
+    }
+
+    /**
+     * @param string|null $newPW
      * @return LoginMessage
      */
-    public function setNewPW($newPW)
+    public function setNewPW(?string $newPW): LoginMessage
     {
         $this->newPW = $newPW;
         return $this;
     }
 
     /**
-     * @param Options[] $options
+     * @return Options[]|null
+     */
+    public function getOptions(): ?array
+    {
+        return $this->options;
+    }
+
+    /**
+     * @param Options[]|null $options
      * @return LoginMessage
      */
-    public function setOptions($options)
+    public function setOptions(?array $options): LoginMessage
     {
         $this->options = $options;
         return $this;
     }
 
     /**
-     * @param Svcs $svcs
+     * @return Svcs|null
+     */
+    public function getSvcs(): ?Svcs
+    {
+        return $this->svcs;
+    }
+
+    /**
+     * @param Svcs|null $svcs
      * @return LoginMessage
      */
-    public function setSvcs($svcs)
+    public function setSvcs(?Svcs $svcs): LoginMessage
     {
         $this->svcs = $svcs;
         return $this;

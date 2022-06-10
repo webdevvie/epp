@@ -1,4 +1,5 @@
 <?php
+
 namespace Webdevvie\Epp\Messages\Snippets;
 
 use JMS\Serializer\Annotation\ExclusionPolicy;
@@ -15,7 +16,7 @@ use JMS\Serializer\Annotation\XmlNamespace;
 class DcpStatementRetention
 {
     /**
-     * @var DcpStatementRetentionStated
+     * @var DcpStatementRetentionStated|null
      * @Type("Webdevvie\Epp\Messages\Snippets\DcpStatementRecipientOurs")
      * @SerializedName("stated")
      *
@@ -24,18 +25,18 @@ class DcpStatementRetention
     protected $stated;
 
     /**
-     * @return DcpStatementRetentionStated
+     * @return DcpStatementRetentionStated|null
      */
-    public function getStated()
+    public function getStated(): ?DcpStatementRetentionStated
     {
         return $this->stated;
     }
 
     /**
-     * @param DcpStatementRetentionStated $stated
+     * @param DcpStatementRetentionStated|null $stated
      * @return DcpStatementRetention
      */
-    public function setStated($stated)
+    public function setStated(?DcpStatementRetentionStated $stated): DcpStatementRetention
     {
         $this->stated = $stated;
         return $this;

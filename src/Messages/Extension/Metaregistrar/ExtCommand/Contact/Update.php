@@ -1,4 +1,5 @@
 <?php
+
 namespace Webdevvie\Epp\Messages\Extension\Metaregistrar\ExtCommand\Contact;
 
 use JMS\Serializer\Annotation\ExclusionPolicy;
@@ -21,7 +22,7 @@ class Update
      * @XmlList(inline=true, entry="property", namespace="http://www.metaregistrar.com/epp/command-ext-contact-1.0")
      * @Expose
      */
-    protected $property=[];
+    protected $property = [];
 
 
     /**

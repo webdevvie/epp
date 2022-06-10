@@ -1,4 +1,5 @@
 <?php
+
 namespace Webdevvie\Epp\Messages\Extension\Metaregistrar\Snippets\Dns;
 
 use JMS\Serializer\Annotation\ExclusionPolicy;

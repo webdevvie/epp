@@ -121,7 +121,7 @@ class SubUpdate extends AbstractCommandMessage
     {
         $el = $this->appendNSNodeWithValueAndAttributes($dom, $parentNode, $ns, 'subUpdate');
         foreach ($this->getFlatProperties() as $prop => $val) {
-            if (is_null($val)||$val =='') {
+            if (is_null($val) || $val == '') {
                 continue;
             }
             $this->appendNSNodeWithValueAndAttributes($dom, $el, $ns, $prop, $val);

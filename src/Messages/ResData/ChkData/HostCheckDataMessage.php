@@ -23,7 +23,7 @@ class HostCheckDataMessage
      * @XmlList(inline=true, entry="cd", namespace="urn:ietf:params:xml:ns:host-1.0")
      * @Expose
      */
-    protected $hostCd=[];
+    protected $hostCd = [];
 
     /**
      * @return HostCD[]

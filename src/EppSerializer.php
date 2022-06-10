@@ -4,7 +4,6 @@ namespace Webdevvie\Epp;
 
 use JMS\Serializer\Annotation\ExclusionPolicy;
 use JMS\Serializer\Annotation\Expose;
-use JMS\Serializer\Annotation\PostDeserialize;
 use JMS\Serializer\Annotation\SerializedName;
 use JMS\Serializer\Annotation\Type;
 use JMS\Serializer\Annotation\XmlAttribute;
@@ -21,6 +20,9 @@ use Webdevvie\Epp\Exception\DeserializationException;
 use Webdevvie\Epp\Exception\SerializationException;
 use Webdevvie\Nestis\Nestis;
 
+/**
+ * Epp Serializer
+ */
 class EppSerializer implements EppSerializerInterface
 {
     /**
@@ -45,7 +47,6 @@ class EppSerializer implements EppSerializerInterface
         new Expose();
         new XmlNamespace();
         new XmlRoot();
-        new PostDeserialize();
         new XmlElement();
         new XmlList();
         new XmlAttribute();
@@ -61,6 +62,7 @@ class EppSerializer implements EppSerializerInterface
      * @param string|null $responseClass
      * @return null|EppMessageInterface
      * @throws DeserializationException
+     * @throws \Exception
      */
     public function deserialize($xml, $responseClass = null)
     {
@@ -69,7 +71,6 @@ class EppSerializer implements EppSerializerInterface
             $cl = $responseClass;
         }
         try {
-
             $out = $this->serializer->deserialize(
                 $xml,
                 $cl,

@@ -1,4 +1,5 @@
 <?php
+
 namespace Webdevvie\Epp\Messages\Snippets;
 
 use JMS\Serializer\Annotation\ExclusionPolicy;
@@ -15,7 +16,7 @@ use JMS\Serializer\Annotation\XmlNamespace;
 class DcpStatementPurpose
 {
     /**
-     * @var DcpStatementPurposeAdmin
+     * @var DcpStatementPurposeAdmin|null
      * @Type("Webdevvie\Epp\Messages\Snippets\DcpStatementPurposeAdmin")
      * @SerializedName("admin")
      *
@@ -23,7 +24,7 @@ class DcpStatementPurpose
      */
     protected $admin;
     /**
-     * @var DcpStatementPurposeProv
+     * @var DcpStatementPurposeProv|null
      * @Type("Webdevvie\Epp\Messages\Snippets\DcpStatementPurposeProv")
      * @SerializedName("prov")
      *
@@ -32,20 +33,38 @@ class DcpStatementPurpose
     protected $prov;
 
     /**
-     * @return DcpStatementPurposeAdmin
+     * @return DcpStatementPurposeAdmin|null
      */
-    public function getAdmin()
+    public function getAdmin(): ?DcpStatementPurposeAdmin
     {
         return $this->admin;
     }
 
     /**
-     * @param DcpStatementPurposeAdmin $admin
+     * @param DcpStatementPurposeAdmin|null $admin
      * @return DcpStatementPurpose
      */
-    public function setAdmin($admin)
+    public function setAdmin(?DcpStatementPurposeAdmin $admin): DcpStatementPurpose
     {
         $this->admin = $admin;
+        return $this;
+    }
+
+    /**
+     * @return DcpStatementPurposeProv|null
+     */
+    public function getProv(): ?DcpStatementPurposeProv
+    {
+        return $this->prov;
+    }
+
+    /**
+     * @param DcpStatementPurposeProv|null $prov
+     * @return DcpStatementPurpose
+     */
+    public function setProv(?DcpStatementPurposeProv $prov): DcpStatementPurpose
+    {
+        $this->prov = $prov;
         return $this;
     }
 }

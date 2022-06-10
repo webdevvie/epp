@@ -38,7 +38,7 @@ use Webdevvie\Epp\Messages\Command\ExtensionMessage;
 class EppMessage extends AbstractEppMessage implements EppMessageInterface
 {
     /**
-     * @var GreetingMessage
+     * @var GreetingMessage|null
      * @Type("Webdevvie\Epp\Messages\GreetingMessage")
      * @SerializedName("greeting")
      *
@@ -85,7 +85,8 @@ class EppMessage extends AbstractEppMessage implements EppMessageInterface
     /**
      * @var string
      */
-    protected $rawXml='';
+    protected $rawXml = '';
+
     /**
      * @param HelloMessage $hello
      * @return EppMessage
@@ -169,18 +170,18 @@ class EppMessage extends AbstractEppMessage implements EppMessageInterface
     }
 
     /**
-     * @return GreetingMessage
+     * @return GreetingMessage|null
      */
-    public function getGreeting()
+    public function getGreeting(): ?GreetingMessage
     {
         return $this->greeting;
     }
 
     /**
-     * @param GreetingMessage $greeting
+     * @param GreetingMessage|null $greeting
      * @return EppMessage
      */
-    public function setGreeting($greeting)
+    public function setGreeting(?GreetingMessage $greeting): EppMessage
     {
         $this->greeting = $greeting;
         return $this;

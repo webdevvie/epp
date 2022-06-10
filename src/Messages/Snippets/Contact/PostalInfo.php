@@ -1,4 +1,5 @@
 <?php
+
 namespace Webdevvie\Epp\Messages\Snippets\Contact;
 
 use JMS\Serializer\Annotation\ExclusionPolicy;

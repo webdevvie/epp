@@ -221,6 +221,7 @@ class RawEppConnection
      * @param integer $readSleepTimeIncrementorLimit
      * @param integer $incrementor1
      * @param integer $incrementor2
+     * @return void
      */
     public function setReadTimings(
         $enableReadSleep = true,

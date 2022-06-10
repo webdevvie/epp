@@ -6,11 +6,7 @@ use JMS\Serializer\Annotation\ExclusionPolicy;
 use JMS\Serializer\Annotation\XmlRoot;
 use Webdevvie\Epp\Messages\Command\Delete\ContactDeleteMessage;
 use Webdevvie\Epp\Messages\Command\DeleteMessage;
-use Webdevvie\Epp\Messages\Command\Info\ContactInfoMessage;
-use Webdevvie\Epp\Messages\Command\Info\DomainInfoMessage;
-use Webdevvie\Epp\Messages\Command\InfoMessage;
 use Webdevvie\Epp\Messages\CommandMessage;
-use Webdevvie\Epp\Messages\Snippets\Domain\DomainInfoName;
 use Webdevvie\Epp\Simple\SimpleEppCommand;
 
 /**

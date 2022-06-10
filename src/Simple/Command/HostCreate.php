@@ -23,6 +23,11 @@ class HostCreate extends SimpleEppCommand
      */
     public $mappedResponse = 'Webdevvie\Epp\Simple\Response\HostInfo';
 
+    /**
+     * @param string $name
+     * @param array  $ipv4
+     * @param array  $ipv6
+     */
     public function __construct(
         $name,
         array $ipv4 = [],

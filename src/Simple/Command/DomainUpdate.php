@@ -4,8 +4,8 @@ namespace Webdevvie\Epp\Simple\Command;
 
 use JMS\Serializer\Annotation\ExclusionPolicy;
 use JMS\Serializer\Annotation\XmlRoot;
-use Webdevvie\Epp\Messages\Command\UpdateMessage;
 use Webdevvie\Epp\Messages\Command\Update\DomainUpdateMessage;
+use Webdevvie\Epp\Messages\Command\UpdateMessage;
 use Webdevvie\Epp\Messages\CommandMessage;
 use Webdevvie\Epp\Messages\Snippets\Domain\DomainUpdateName;
 use Webdevvie\Epp\Simple\SimpleEppCommand;

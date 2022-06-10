@@ -1,4 +1,5 @@
 <?php
+
 namespace Webdevvie\Epp\Messages;
 
 use JMS\Serializer\Annotation\ExclusionPolicy;
@@ -33,7 +34,6 @@ class TrId
      * @Expose
      */
     protected $svTRID;
-
 
 
     /**

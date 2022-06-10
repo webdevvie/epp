@@ -8,7 +8,6 @@ use JMS\Serializer\Annotation\SerializedName;
 use JMS\Serializer\Annotation\Type;
 use JMS\Serializer\Annotation\XmlElement;
 use JMS\Serializer\Annotation\XmlNamespace;
-use Webdevvie\Epp\Messages\Extension\Sidn\Reseller\ResellerAddress;
 
 /**
  * @ExclusionPolicy("all")

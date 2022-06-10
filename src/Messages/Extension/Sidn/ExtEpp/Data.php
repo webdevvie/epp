@@ -8,7 +8,6 @@ use JMS\Serializer\Annotation\SerializedName;
 use JMS\Serializer\Annotation\Type;
 use JMS\Serializer\Annotation\XmlElement;
 use JMS\Serializer\Annotation\XmlNamespace;
-use JMS\Serializer\Annotation\XmlList;
 use Webdevvie\Epp\Messages\ResDataMessage;
 use Webdevvie\Epp\Messages\ResultMessage;
 use Webdevvie\Epp\Messages\TrId;

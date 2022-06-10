@@ -4,8 +4,8 @@ namespace Webdevvie\Epp\Simple\Command;
 
 use JMS\Serializer\Annotation\ExclusionPolicy;
 use JMS\Serializer\Annotation\XmlRoot;
-use Webdevvie\Epp\Messages\Command\DeleteMessage;
 use Webdevvie\Epp\Messages\Command\Delete\DomainDeleteMessage;
+use Webdevvie\Epp\Messages\Command\DeleteMessage;
 use Webdevvie\Epp\Messages\CommandMessage;
 use Webdevvie\Epp\Messages\Snippets\Domain\DomainDeleteName;
 use Webdevvie\Epp\Simple\SimpleEppCommand;

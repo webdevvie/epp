@@ -4,12 +4,9 @@ namespace Webdevvie\Epp\Simple\Command;
 
 use JMS\Serializer\Annotation\ExclusionPolicy;
 use JMS\Serializer\Annotation\XmlRoot;
-use Webdevvie\Epp\Messages\Command\Create\HostCreateMessage;
-use Webdevvie\Epp\Messages\Command\CreateMessage;
 use Webdevvie\Epp\Messages\Command\Delete\HostDeleteMessage;
 use Webdevvie\Epp\Messages\Command\DeleteMessage;
 use Webdevvie\Epp\Messages\CommandMessage;
-use Webdevvie\Epp\Messages\Snippets\Host\Addr;
 use Webdevvie\Epp\Simple\SimpleEppCommand;
 
 /**
@@ -25,6 +22,9 @@ class HostDelete extends SimpleEppCommand
      */
     public $mappedResponse = 'Webdevvie\Epp\Simple\Response\HostInfo';
 
+    /**
+     * @param string $name
+     */
     public function __construct(
         $name
     ) {

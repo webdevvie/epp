@@ -8,7 +8,6 @@ use JMS\Serializer\Annotation\SerializedName;
 use JMS\Serializer\Annotation\Type;
 use JMS\Serializer\Annotation\XmlElement;
 use JMS\Serializer\Annotation\XmlNamespace;
-use Webdevvie\Epp\Messages\Extension\Sidn\ExtEpp\Response;
 
 /**
  * @ExclusionPolicy("all")
@@ -81,7 +80,7 @@ class Contact
     }
 
     /**
-     * @return bool|null
+     * @return boolean|null
      */
     public function getLimited(): ?bool
     {
@@ -89,7 +88,7 @@ class Contact
     }
 
     /**
-     * @param bool|null $limited
+     * @param boolean|null $limited
      * @return Contact
      */
     public function setLimited(?bool $limited): Contact

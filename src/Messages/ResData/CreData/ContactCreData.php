@@ -1,4 +1,5 @@
 <?php
+
 namespace Webdevvie\Epp\Messages\ResData\CreData;
 
 use JMS\Serializer\Annotation\ExclusionPolicy;
@@ -66,7 +67,7 @@ class ContactCreData
      * @param string $crDate
      * @return ContactCreData
      */
-    public function setCrDate( $crDate)
+    public function setCrDate($crDate)
     {
         $this->crDate = $crDate;
         return $this;

@@ -3,8 +3,8 @@ include(__DIR__ . "/../vendor/autoload.php");
 include("config.php");
 
 use Webdevvie\Epp\EppConnection;
-use Webdevvie\Epp\Simple\Command\DomainCheck;
 use Webdevvie\Epp\Messages\EppMessage;
+use Webdevvie\Epp\Simple\Command\DomainCheck;
 
 $connection = new EppConnection($address, $port, $username, $password);
 $eppMessage = new EppMessage();

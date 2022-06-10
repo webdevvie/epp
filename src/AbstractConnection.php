@@ -31,7 +31,7 @@ abstract class AbstractConnection implements ConnectionInterface
     protected $autoDestruct = true;
 
     /**
-     *
+     * @var string
      */
     protected $cltridPrefix = 'wbd_';
 

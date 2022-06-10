@@ -1,4 +1,5 @@
 <?php
+
 namespace Webdevvie\Epp\Messages\Command\Info;
 
 use JMS\Serializer\Annotation\ExclusionPolicy;
@@ -29,6 +30,7 @@ class HostInfoMessage extends AbstractCommandMessage
      * @Expose
      */
     protected $name;
+
     /**
      * @return string
      */

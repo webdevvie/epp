@@ -15,5 +15,5 @@ use Webdevvie\Epp\Simple\SimpleEppResponse;
  */
 class DomainInfo extends SimpleEppResponse
 {
-    
+
 }

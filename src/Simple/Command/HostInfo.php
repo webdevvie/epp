@@ -7,7 +7,6 @@ use JMS\Serializer\Annotation\XmlRoot;
 use Webdevvie\Epp\Messages\Command\Info\HostInfoMessage;
 use Webdevvie\Epp\Messages\Command\InfoMessage;
 use Webdevvie\Epp\Messages\CommandMessage;
-use Webdevvie\Epp\Messages\Snippets\Domain\DomainInfoName;
 use Webdevvie\Epp\Simple\SimpleEppCommand;
 
 /**
