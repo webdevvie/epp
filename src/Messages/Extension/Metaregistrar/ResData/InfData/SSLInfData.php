@@ -1,6 +1,6 @@
 <?php
 
-namespace Webdevvie\Epp\Messages\ResData\InfData;
+namespace Webdevvie\Epp\Messages\Extension\Metaregistrar\ResData\InfData;
 
 use DateTime;
 use DateTimeZone;

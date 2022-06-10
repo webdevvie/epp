@@ -1,7 +1,7 @@
 {
     "name": "webdevvie/epp",
     "description": "An extendable PHP epp client",
-    "version": "0.2.0",
+    "version": "0.2.1",
     "type": "library",
     "license": "Apache-2.0",
     "keywords": [ "EPP","language","serialization" ],

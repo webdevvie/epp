@@ -1,6 +1,6 @@
 <?php
 
-namespace Webdevvie\Epp\Messages\ResData\RenData;
+namespace Webdevvie\Epp\Messages\Extension\Metaregistrar\ResData\RenData;
 
 use JMS\Serializer\Annotation\ExclusionPolicy;
 use JMS\Serializer\Annotation\XmlNamespace;

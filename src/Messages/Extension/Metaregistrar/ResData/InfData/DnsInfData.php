@@ -1,6 +1,6 @@
 <?php
 
-namespace Webdevvie\Epp\Messages\ResData\InfData;
+namespace Webdevvie\Epp\Messages\Extension\Metaregistrar\ResData\InfData;
 
 use JMS\Serializer\Annotation\ExclusionPolicy;
 use JMS\Serializer\Annotation\Expose;
@@ -13,7 +13,7 @@ use Webdevvie\Epp\Messages\Command\AbstractCommandMessage;
 use Webdevvie\Epp\Messages\Extension\Metaregistrar\Snippets\Dns\Content;
 use Webdevvie\Epp\Messages\Extension\Metaregistrar\Snippets\Dns\DsData;
 use Webdevvie\Epp\Messages\Extension\Metaregistrar\Snippets\Dns\KeyData;
-use Webdevvie\Epp\Messages\ResData\ChkData\DnsCD;
+use Webdevvie\Epp\Messages\Extension\Metaregistrar\ResData\ChkData\DnsCD;
 
 /**
  * Class Dns

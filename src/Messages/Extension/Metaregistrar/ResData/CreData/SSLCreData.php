@@ -1,6 +1,6 @@
 <?php
 
-namespace Webdevvie\Epp\Messages\ResData\CreData;
+namespace Webdevvie\Epp\Messages\Extension\Metaregistrar\ResData\CreData;
 
 use JMS\Serializer\Annotation\ExclusionPolicy;
 use JMS\Serializer\Annotation\XmlNamespace;
