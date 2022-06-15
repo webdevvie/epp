@@ -46,7 +46,7 @@ class LoginMessage extends AbstractCommandMessage
     protected $newPW;
 
     /**
-     * @var Options[]|null
+     * @var Options|null
      * @Type("Webdevvie\Epp\Messages\Command\Login\Options")
      * @Expose
      */
@@ -116,7 +116,7 @@ class LoginMessage extends AbstractCommandMessage
     }
 
     /**
-     * @return Options[]|null
+     * @return Options|null
      */
     public function getOptions(): ?array
     {
@@ -124,10 +124,10 @@ class LoginMessage extends AbstractCommandMessage
     }
 
     /**
-     * @param Options[]|null $options
+     * @param Options|null $options
      * @return LoginMessage
      */
-    public function setOptions(?array $options): LoginMessage
+    public function setOptions(?Options $options): LoginMessage
     {
         $this->options = $options;
         return $this;
