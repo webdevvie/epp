@@ -112,50 +112,6 @@ class SubUpdate extends AbstractCommandMessage
     protected $fileContents;
 
     /**
-     * @param \DOMDocument $dom
-     * @param \DOMNode     $parentNode
-     * @param string       $ns
-     * @return void
-     */
-    public function appendSelf(\DOMDocument $dom, \DOMNode $parentNode, $ns)
-    {
-        $el = $this->appendNSNodeWithValueAndAttributes($dom, $parentNode, $ns, 'subUpdate');
-        foreach ($this->getFlatProperties() as $prop => $val) {
-            if (is_null($val) || $val == '') {
-                continue;
-            }
-            $this->appendNSNodeWithValueAndAttributes($dom, $el, $ns, $prop, $val);
-        }
-    }
-
-    /**
-     * @param array $subMessage
-     * @return void
-     */
-    public function fillFromSubMessage(array $subMessage)
-    {
-
-        $map = [
-            "messageCode" => "message_code",
-            "message" => "message",
-            "type" => "type",
-            "name" => "domainName",
-            "dcvType" => "dcvType",
-            "dnsRecord" => "cname",
-            "dnsCnameValue" => "cnameValue",
-            "fileLocation" => "fileLocation",
-            "fileContents" => "fileContents",
-            "dcvEmail" => "emailAddr",
-        ];
-        foreach ($map as $k => $v) {
-            if (!isset($subMessage[$v]) || is_null($subMessage[$v])) {
-                continue;
-            }
-            $this->$k = $subMessage[$v];
-        }
-    }
-
-    /**
      * @return string
      */
     public function getMessageCode()

@@ -39,6 +39,7 @@
         <exclude name="Squiz.Commenting.FunctionComment.ThrowsNoFullStop"/>
         <exclude name="Squiz.Commenting.FunctionComment.SpacingBeforeParamType"/>
         <exclude name="Squiz.Commenting.FunctionComment.ScalarTypeHintMissing"/>
+        <exclude name="Squiz.Commenting.FunctionComment.TypeHintMissing"/>
         <exclude name="Squiz.Commenting.FunctionComment.TagNotAllowed"/>
     </rule>
     <rule ref="Squiz.Commenting.FunctionCommentThrowTag"/>

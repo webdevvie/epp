@@ -34,6 +34,10 @@ class EppSerializer implements EppSerializerInterface
      * @var string
      */
     protected $eppMessageClass = "Webdevvie\Epp\Messages\EppMessage";
+    /**
+     * @var Nestis
+     */
+    protected $nestis;
 
     /**
      * EppSerializer constructor.

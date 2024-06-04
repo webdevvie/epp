@@ -18,7 +18,6 @@ use Webdevvie\Epp\Messages\Extension\Sidn\Reseller\ResellerAddress;
 class ResellerUpdateChg
 {
 
-
     /**
      * @var string|null
      * @Type("string")
@@ -63,24 +62,6 @@ class ResellerUpdateChg
      * @Expose
      */
     protected $address;
-
-    /**
-     * @return string
-     */
-    public function getId(): string
-    {
-        return $this->id;
-    }
-
-    /**
-     * @param string $id
-     * @return ResellerUpdateChg
-     */
-    public function setId(string $id): ResellerUpdateChg
-    {
-        $this->id = $id;
-        return $this;
-    }
 
     /**
      * @return string|null

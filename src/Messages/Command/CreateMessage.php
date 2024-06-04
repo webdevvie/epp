@@ -10,10 +10,10 @@ use JMS\Serializer\Annotation\XmlElement;
 use JMS\Serializer\Annotation\XmlNamespace;
 use Webdevvie\Epp\Messages\AbstractEppMessage;
 use Webdevvie\Epp\Messages\Command\Create\ContactCreateMessage;
-use Webdevvie\Epp\Messages\Command\Create\DnsCreateMessage;
+use Webdevvie\Epp\Messages\Extension\Metaregistrar\Command\Create\DnsCreateMessage;
 use Webdevvie\Epp\Messages\Command\Create\DomainCreateMessage;
 use Webdevvie\Epp\Messages\Command\Create\HostCreateMessage;
-use Webdevvie\Epp\Messages\Command\Create\SSLCreateMessage;
+use Webdevvie\Epp\Messages\Extension\Metaregistrar\Command\Create\SSLCreateMessage;
 use Webdevvie\Epp\Messages\Extension\Sidn\Command\ResellerCreate as SidnResellerCreate;
 
 /**
@@ -61,7 +61,7 @@ class CreateMessage extends AbstractEppMessage
 
     /**
      * @var DnsCreateMessage
-     * @Type("Webdevvie\Epp\Messages\Command\Create\DnsCreateMessage")
+     * @Type("Webdevvie\Epp\Messages\Extension\Metaregistrar\Command\Create\DnsCreateMessage")
      * @SerializedName("create")
      * @XmlElement(namespace="http://www.metaregistrar.com/epp/dns-ext-1.0")
      *
@@ -71,7 +71,7 @@ class CreateMessage extends AbstractEppMessage
 
     /**
      * @var SSLCreateMessage
-     * @Type("Webdevvie\Epp\Messages\Command\Create\SSLCreateMessage")
+     * @Type("Webdevvie\Epp\Messages\Extension\Metaregistrar\Command\Create\SSLCreateMessage")
      * @SerializedName("create")
      * @XmlElement(namespace="http://www.metaregistrar.com/epp/ssl-1.0")
      *

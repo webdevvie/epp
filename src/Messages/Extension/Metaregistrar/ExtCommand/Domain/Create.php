@@ -28,6 +28,15 @@ class Create extends AbstractCommandMessage
     protected $autoRenew;
 
     /**
+     * @var integer
+     * @Type("integer")
+     * @SerializedName("autoRenewPeriod")
+     * @XmlElement(namespace="http://www.metaregistrar.com/epp/command-ext-domain-1.0")
+     * @Expose
+     */
+    private $autoRenewPeriod;
+
+    /**
      * @var string
      * @Type("string")
      * @SerializedName("privacy")
@@ -46,7 +55,7 @@ class Create extends AbstractCommandMessage
 
     /**
      * @param string $privacy
-     * @return Update
+     * @return Create
      */
     public function setPrivacy($privacy)
     {
@@ -64,7 +73,7 @@ class Create extends AbstractCommandMessage
 
     /**
      * @param string $autoRenewPeriod
-     * @return Update
+     * @return Create
      */
     public function setAutoRenewPeriod($autoRenewPeriod)
     {
@@ -82,7 +91,7 @@ class Create extends AbstractCommandMessage
 
     /**
      * @param string $autoRenew
-     * @return Update
+     * @return Create
      */
     public function setAutoRenew($autoRenew)
     {

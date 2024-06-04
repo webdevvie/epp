@@ -10,10 +10,10 @@ use JMS\Serializer\Annotation\XmlElement;
 use JMS\Serializer\Annotation\XmlNamespace;
 use Webdevvie\Epp\Messages\AbstractEppMessage;
 use Webdevvie\Epp\Messages\Command\Delete\ContactDeleteMessage;
-use Webdevvie\Epp\Messages\Command\Delete\DnsDeleteMessage;
+use Webdevvie\Epp\Messages\Extension\Metaregistrar\Command\Delete\DnsDeleteMessage;
 use Webdevvie\Epp\Messages\Command\Delete\DomainDeleteMessage;
 use Webdevvie\Epp\Messages\Command\Delete\HostDeleteMessage;
-use Webdevvie\Epp\Messages\Command\Delete\SSLDeleteMessage;
+use Webdevvie\Epp\Messages\Extension\Metaregistrar\Command\Delete\SSLDeleteMessage;
 use Webdevvie\Epp\Messages\Extension\Sidn\Command\ResellerDelete as SidnResellerDelete;
 
 /**
@@ -61,7 +61,7 @@ class DeleteMessage extends AbstractEppMessage
 
     /**
      * @var DnsDeleteMessage
-     * @Type("Webdevvie\Epp\Messages\Command\Delete\DnsDeleteMessage")
+     * @Type("Webdevvie\Epp\Messages\Extension\Metaregistrar\Command\Delete\DnsDeleteMessage")
      * @SerializedName("delete")
      * @XmlElement(namespace="http://www.metaregistrar.com/epp/dns-ext-1.0")
      *
@@ -71,7 +71,7 @@ class DeleteMessage extends AbstractEppMessage
 
     /**
      * @var SSLDeleteMessage
-     * @Type("Webdevvie\Epp\Messages\Command\Delete\SSLDeleteMessage")
+     * @Type("Webdevvie\Epp\Messages\Extension\Metaregistrar\Command\Delete\SSLDeleteMessage")
      * @SerializedName("delete")
      * @XmlElement(namespace="http://www.metaregistrar.com/epp/ssl-1.0")
      *

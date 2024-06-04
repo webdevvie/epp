@@ -104,6 +104,11 @@ class RawEppConnection
     private $readSleepTimeIncrementor2 = 100;
 
     /**
+     * @var boolean
+     */
+    protected $waitingForMessage;
+
+    /**
      * RawTcpConnection constructor.
      * @param string  $serverAddress
      * @param integer $port
@@ -306,7 +311,7 @@ class RawEppConnection
                 return false;
             }
             //We know the length of what to read, so lets read the stuff
-            if ((isset($length)) && ($length > 0)) {
+            if ($length > 0) {
                 $time = time() + $timeout;
                 if ($read = fread($this->connection, $length)) {
                     $length = $length - strlen($read);
